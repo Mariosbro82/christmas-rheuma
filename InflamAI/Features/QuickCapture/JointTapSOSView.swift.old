@@ -1,0 +1,542 @@
+//
+//  JointTapSOSView.swift
+//  Spinalytics
+//
+//  Rapid flare capture system - optimized for use during acute flares
+//  Large buttons, minimal taps, gesture-based interface
+//
+
+import SwiftUI
+import CoreData
+import CoreHaptics
+
+struct JointTapSOSView: View {
+    @StateObject private var viewModel: JointTapSOSViewModel
+    @StateObject private var painMapViewModel: BodyMapViewModel
+    @Environment(\.dismiss) private var dismiss
+    @State private var selectedSeverity: FlareSeverity?
+    @State private var showingConfirmation = false
+    @State private var selectedBodyView: BodyView = .front
+
+    init(context: NSManagedObjectContext = SpinalyticsPersistenceController.shared.container.viewContext) {
+        _viewModel = StateObject(wrappedValue: JointTapSOSViewModel(context: context))
+        _painMapViewModel = StateObject(wrappedValue: BodyMapViewModel(context: context))
+    }
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                // Emergency red background for visual urgency
+                Color(.systemRed).opacity(0.05)
+                    .ignoresSafeArea()
+
+                ScrollView {
+                    VStack(spacing: 24) {
+                        // Header
+                        headerSection
+
+                        // Quick Severity Selection (Big Buttons)
+                        severitySection
+
+                        // Body Tap Interface
+                        bodyTapSection
+
+                        // Quick Triggers
+                        quickTriggersSection
+
+                        // Save Button
+                        saveButton
+                    }
+                    .padding()
+                }
+            }
+            .navigationTitle("SOS Flare Log")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+            }
+            .alert("Flare Logged", isPresented: $showingConfirmation) {
+                Button("OK") {
+                    dismiss()
+                }
+            } message: {
+                Text("Your flare has been recorded. Rest and take care of yourself.")
+            }
+        }
+    }
+
+    // MARK: - Header
+
+    private var headerSection: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.system(size: 50))
+                .foregroundColor(.red)
+
+            Text("Quick Flare Capture")
+                .font(.title2)
+                .fontWeight(.bold)
+
+            Text("Tap quickly to log your flare")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+        }
+        .padding()
+    }
+
+    // MARK: - Severity Selection
+
+    private var severitySection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("How severe?")
+                .font(.headline)
+
+            VStack(spacing: 12) {
+                ForEach(FlareSeverity.allCases, id: \.self) { severity in
+                    Button {
+                        selectedSeverity = severity
+                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                    } label: {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack {
+                                    Text(severity.icon)
+                                        .font(.title)
+                                    Text(severity.rawValue)
+                                        .font(.title3)
+                                        .fontWeight(.bold)
+                                }
+
+                                Text(severity.description)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            Spacer()
+
+                            if selectedSeverity == severity {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                            }
+                        }
+                        .padding(20)
+                        .frame(maxWidth: .infinity)
+                        .background(selectedSeverity == severity ? severity.color : Color(.systemGray6))
+                        .foregroundColor(selectedSeverity == severity ? .white : .primary)
+                        .cornerRadius(16)
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(20)
+        .shadow(color: Color.black.opacity(0.1), radius: 10)
+    }
+
+    // MARK: - Body Tap Interface
+
+    private var bodyTapSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Where does it hurt? (Tap dots)")
+                .font(.headline)
+
+            // Front/Back selector
+            HStack(spacing: 0) {
+                Button {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        selectedBodyView = .front
+                    }
+                } label: {
+                    Text("Front")
+                        .font(.system(size: 15, weight: .medium))
+                        .foregroundColor(selectedBodyView == .front ? .white : Color.gray)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(selectedBodyView == .front ? Color.red : Color(.systemGray6))
+                        .cornerRadius(12, corners: [.topLeft, .bottomLeft])
+                }
+
+                Button {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        selectedBodyView = .back
+                    }
+                } label: {
+                    Text("Back")
+                        .font(.system(size: 15, weight: .medium))
+                        .foregroundColor(selectedBodyView == .back ? .white : Color.gray)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(selectedBodyView == .back ? Color.red : Color(.systemGray6))
+                        .cornerRadius(12, corners: [.topRight, .bottomRight])
+                }
+            }
+            .background(Color(.systemGray6))
+            .cornerRadius(12)
+
+            // Clickable body diagram with dots
+            GeometryReader { geometry in
+                ZStack {
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color(.systemGray6).opacity(0.3))
+
+                    if selectedBodyView == .front {
+                        frontBodyCircles(in: geometry.size)
+                    } else {
+                        backBodyCircles(in: geometry.size)
+                    }
+                }
+            }
+            .frame(height: 400)
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(20)
+        .shadow(color: Color.black.opacity(0.1), radius: 10)
+    }
+
+    // MARK: - Front Body Circles (29 points)
+
+    private func frontBodyCircles(in size: CGSize) -> some View {
+        let centerX = size.width / 2
+        let circleSpacing: CGFloat = 14
+        let horizontalSpacing: CGFloat = 16
+
+        return ZStack {
+            // HEAD (1)
+            painCircle(id: 1, position: CGPoint(x: centerX, y: 30))
+
+            // NECK & UPPER CHEST (3)
+            painCircle(id: 2, position: CGPoint(x: centerX, y: 30 + circleSpacing * 1.5))
+            painCircle(id: 3, position: CGPoint(x: centerX, y: 30 + circleSpacing * 2.5))
+            painCircle(id: 4, position: CGPoint(x: centerX, y: 30 + circleSpacing * 3.5))
+
+            // SHOULDERS (4)
+            painCircle(id: 5, position: CGPoint(x: centerX - horizontalSpacing * 2, y: 30 + circleSpacing * 2.5))
+            painCircle(id: 6, position: CGPoint(x: centerX + horizontalSpacing * 2, y: 30 + circleSpacing * 2.5))
+            painCircle(id: 7, position: CGPoint(x: centerX - horizontalSpacing * 2.5, y: 30 + circleSpacing * 3.5))
+            painCircle(id: 8, position: CGPoint(x: centerX + horizontalSpacing * 2.5, y: 30 + circleSpacing * 3.5))
+
+            // ARMS (8)
+            painCircle(id: 9, position: CGPoint(x: centerX - horizontalSpacing * 2.8, y: 30 + circleSpacing * 4.5))
+            painCircle(id: 10, position: CGPoint(x: centerX - horizontalSpacing * 3, y: 30 + circleSpacing * 5.5))
+            painCircle(id: 11, position: CGPoint(x: centerX - horizontalSpacing * 3, y: 30 + circleSpacing * 6.5))
+            painCircle(id: 12, position: CGPoint(x: centerX - horizontalSpacing * 3, y: 30 + circleSpacing * 7.5))
+
+            painCircle(id: 13, position: CGPoint(x: centerX + horizontalSpacing * 2.8, y: 30 + circleSpacing * 4.5))
+            painCircle(id: 14, position: CGPoint(x: centerX + horizontalSpacing * 3, y: 30 + circleSpacing * 5.5))
+            painCircle(id: 15, position: CGPoint(x: centerX + horizontalSpacing * 3, y: 30 + circleSpacing * 6.5))
+            painCircle(id: 16, position: CGPoint(x: centerX + horizontalSpacing * 3, y: 30 + circleSpacing * 7.5))
+
+            // CENTRAL COLUMN (6)
+            painCircle(id: 17, position: CGPoint(x: centerX, y: 30 + circleSpacing * 4.5))
+            painCircle(id: 18, position: CGPoint(x: centerX, y: 30 + circleSpacing * 5.5))
+            painCircle(id: 19, position: CGPoint(x: centerX, y: 30 + circleSpacing * 6.5))
+            painCircle(id: 20, position: CGPoint(x: centerX, y: 30 + circleSpacing * 7.5))
+            painCircle(id: 21, position: CGPoint(x: centerX, y: 30 + circleSpacing * 8.5))
+            painCircle(id: 22, position: CGPoint(x: centerX, y: 30 + circleSpacing * 9.5))
+
+            // LEGS (8)
+            painCircle(id: 23, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 10.5))
+            painCircle(id: 24, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 11.5))
+            painCircle(id: 25, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 12.5))
+            painCircle(id: 26, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 13.5))
+
+            painCircle(id: 27, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 10.5))
+            painCircle(id: 28, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 11.5))
+            painCircle(id: 29, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 12.5))
+            painCircle(id: 30, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 13.5))
+        }
+    }
+
+    // MARK: - Back Body Circles (29 points)
+
+    private func backBodyCircles(in size: CGSize) -> some View {
+        let centerX = size.width / 2
+        let circleSpacing: CGFloat = 14
+        let horizontalSpacing: CGFloat = 16
+
+        return ZStack {
+            // HEAD (1)
+            painCircle(id: 31, position: CGPoint(x: centerX, y: 30))
+
+            // NECK & UPPER BACK (3)
+            painCircle(id: 32, position: CGPoint(x: centerX, y: 30 + circleSpacing * 1.5))
+            painCircle(id: 33, position: CGPoint(x: centerX, y: 30 + circleSpacing * 2.5))
+            painCircle(id: 34, position: CGPoint(x: centerX, y: 30 + circleSpacing * 3.5))
+
+            // SHOULDERS (4)
+            painCircle(id: 35, position: CGPoint(x: centerX - horizontalSpacing * 2, y: 30 + circleSpacing * 2.5))
+            painCircle(id: 36, position: CGPoint(x: centerX + horizontalSpacing * 2, y: 30 + circleSpacing * 2.5))
+            painCircle(id: 37, position: CGPoint(x: centerX - horizontalSpacing * 2.5, y: 30 + circleSpacing * 3.5))
+            painCircle(id: 38, position: CGPoint(x: centerX + horizontalSpacing * 2.5, y: 30 + circleSpacing * 3.5))
+
+            // ARMS (8)
+            painCircle(id: 39, position: CGPoint(x: centerX - horizontalSpacing * 2.8, y: 30 + circleSpacing * 4.5))
+            painCircle(id: 40, position: CGPoint(x: centerX - horizontalSpacing * 3, y: 30 + circleSpacing * 5.5))
+            painCircle(id: 41, position: CGPoint(x: centerX - horizontalSpacing * 3, y: 30 + circleSpacing * 6.5))
+            painCircle(id: 42, position: CGPoint(x: centerX - horizontalSpacing * 3, y: 30 + circleSpacing * 7.5))
+
+            painCircle(id: 43, position: CGPoint(x: centerX + horizontalSpacing * 2.8, y: 30 + circleSpacing * 4.5))
+            painCircle(id: 44, position: CGPoint(x: centerX + horizontalSpacing * 3, y: 30 + circleSpacing * 5.5))
+            painCircle(id: 45, position: CGPoint(x: centerX + horizontalSpacing * 3, y: 30 + circleSpacing * 6.5))
+            painCircle(id: 46, position: CGPoint(x: centerX + horizontalSpacing * 3, y: 30 + circleSpacing * 7.5))
+
+            // SPINE (6)
+            painCircle(id: 47, position: CGPoint(x: centerX, y: 30 + circleSpacing * 4.5))
+            painCircle(id: 48, position: CGPoint(x: centerX, y: 30 + circleSpacing * 5.5))
+            painCircle(id: 49, position: CGPoint(x: centerX, y: 30 + circleSpacing * 6.5))
+            painCircle(id: 50, position: CGPoint(x: centerX, y: 30 + circleSpacing * 7.5))
+            painCircle(id: 51, position: CGPoint(x: centerX, y: 30 + circleSpacing * 8.5))
+            painCircle(id: 52, position: CGPoint(x: centerX, y: 30 + circleSpacing * 9.5))
+
+            // LEGS (8)
+            painCircle(id: 53, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 10.5))
+            painCircle(id: 54, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 11.5))
+            painCircle(id: 55, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 12.5))
+            painCircle(id: 56, position: CGPoint(x: centerX - horizontalSpacing, y: 30 + circleSpacing * 13.5))
+
+            painCircle(id: 57, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 10.5))
+            painCircle(id: 58, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 11.5))
+            painCircle(id: 59, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 12.5))
+            painCircle(id: 60, position: CGPoint(x: centerX + horizontalSpacing, y: 30 + circleSpacing * 13.5))
+        }
+    }
+
+    // MARK: - Pain Circle
+
+    private func painCircle(id: Int, position: CGPoint) -> some View {
+        let isSelected = painMapViewModel.isLocationSelected(id)
+        let intensity = painMapViewModel.getIntensity(id)
+
+        return Circle()
+            .strokeBorder(
+                isSelected ? Color.red : Color.gray.opacity(0.5),
+                lineWidth: 2
+            )
+            .background(
+                Circle()
+                    .fill(isSelected ? Color.red.opacity(0.6) : Color.clear)
+            )
+            .frame(width: 20, height: 20)
+            .position(position)
+            .onTapGesture {
+                painMapViewModel.toggleLocation(id)
+                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            }
+    }
+
+    // MARK: - Quick Triggers
+
+    private var quickTriggersSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Possible trigger? (Optional)")
+                .font(.headline)
+
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                ForEach(QuickTrigger.allCases, id: \.self) { trigger in
+                    Button {
+                        viewModel.toggleTrigger(trigger)
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    } label: {
+                        VStack(spacing: 8) {
+                            Text(trigger.icon)
+                                .font(.system(size: 30))
+                            Text(trigger.rawValue)
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(viewModel.selectedTriggers.contains(trigger) ? Color.orange : Color(.systemGray6))
+                        .foregroundColor(viewModel.selectedTriggers.contains(trigger) ? .white : .primary)
+                        .cornerRadius(12)
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(20)
+        .shadow(color: Color.black.opacity(0.1), radius: 10)
+    }
+
+    // MARK: - Save Button
+
+    private var saveButton: some View {
+        Button {
+            saveFlare()
+        } label: {
+            HStack {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.title2)
+                Text("Log Flare")
+                    .font(.title3)
+                    .fontWeight(.bold)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(24)
+            .background(canSave ? Color.red : Color.gray)
+            .foregroundColor(.white)
+            .cornerRadius(16)
+            .shadow(color: canSave ? Color.red.opacity(0.3) : Color.clear, radius: 10)
+        }
+        .disabled(!canSave)
+        .padding(.bottom, 20)
+    }
+
+    private var canSave: Bool {
+        selectedSeverity != nil && painMapViewModel.hasSelections
+    }
+
+    private func saveFlare() {
+        guard let severity = selectedSeverity else { return }
+
+        // Save pain map first
+        Task {
+            await painMapViewModel.savePainMap()
+        }
+
+        // Then save flare with selected location IDs
+        viewModel.saveFlare(
+            severity: severity,
+            selectedLocations: Array(painMapViewModel.selectedLocations),
+            triggers: Array(viewModel.selectedTriggers)
+        )
+
+        // Haptic feedback for confirmation
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+
+        showingConfirmation = true
+    }
+}
+
+// MARK: - View Model
+
+@MainActor
+class JointTapSOSViewModel: ObservableObject {
+    @Published var selectedTriggers: Set<QuickTrigger> = []
+
+    private let context: NSManagedObjectContext
+
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
+
+    func toggleTrigger(_ trigger: QuickTrigger) {
+        if selectedTriggers.contains(trigger) {
+            selectedTriggers.remove(trigger)
+        } else {
+            selectedTriggers.insert(trigger)
+        }
+    }
+
+    func saveFlare(severity: FlareSeverity, selectedLocations: [Int], triggers: [QuickTrigger]) {
+        Task {
+            await context.perform {
+                let flareEvent = FlareEvent(context: self.context)
+                flareEvent.id = UUID()
+                flareEvent.startDate = Date()
+                flareEvent.severity = Int16(severity.numericValue)
+
+                // Encode affected location IDs
+                if let locationsData = try? JSONEncoder().encode(selectedLocations) {
+                    flareEvent.primaryRegions = locationsData
+                }
+
+                // Encode triggers
+                if let triggersData = try? JSONEncoder().encode(triggers.map { $0.rawValue }) {
+                    flareEvent.suspectedTriggers = triggersData
+                }
+
+                flareEvent.notes = "Quick capture via SOS - \(selectedLocations.count) areas affected"
+
+                do {
+                    try self.context.save()
+                    print("✅ Flare event saved successfully with \(selectedLocations.count) affected areas")
+                } catch {
+                    print("❌ Error saving flare event: \(error)")
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Models
+
+enum FlareSeverity: String, CaseIterable {
+    case mild = "Mild"
+    case moderate = "Moderate"
+    case severe = "Severe"
+    case extreme = "Extreme"
+
+    var icon: String {
+        switch self {
+        case .mild: return "🟢"
+        case .moderate: return "🟡"
+        case .severe: return "🟠"
+        case .extreme: return "🔴"
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .mild: return "Uncomfortable but manageable"
+        case .moderate: return "Significantly affecting activities"
+        case .severe: return "Difficulty with basic tasks"
+        case .extreme: return "Unable to function normally"
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .mild: return .green
+        case .moderate: return .yellow
+        case .severe: return .orange
+        case .extreme: return .red
+        }
+    }
+
+    var numericValue: Int {
+        switch self {
+        case .mild: return 1
+        case .moderate: return 2
+        case .severe: return 3
+        case .extreme: return 4
+        }
+    }
+}
+
+
+enum QuickTrigger: String, CaseIterable {
+    case stress = "Stress"
+    case sleep = "Poor Sleep"
+    case weather = "Weather"
+    case activity = "Activity"
+    case medication = "Missed Med"
+    case diet = "Diet"
+
+    var icon: String {
+        switch self {
+        case .stress: return "😰"
+        case .sleep: return "😴"
+        case .weather: return "🌧️"
+        case .activity: return "🏃"
+        case .medication: return "💊"
+        case .diet: return "🍔"
+        }
+    }
+}
+
+// MARK: - Preview
+
+struct JointTapSOSView_Previews: PreviewProvider {
+    static var previews: some View {
+        JointTapSOSView(context: SpinalyticsPersistenceController.preview.container.viewContext)
+    }
+}

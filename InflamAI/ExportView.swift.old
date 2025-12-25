@@ -1,0 +1,599 @@
+//
+//  ExportView.swift
+//  RheumaApp-Swift
+//
+//  Created by Assistant on 2024.
+//
+
+import SwiftUI
+import CoreData
+import HealthKit
+import PDFKit
+import UniformTypeIdentifiers
+
+struct ExportView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @State private var showingExportOptions = false
+    @State private var showingHealthKitAuth = false
+    @State private var healthStore = HKHealthStore()
+    @State private var isHealthKitAuthorized = false
+    @State private var exportStatus = ""
+    @State private var showingShareSheet = false
+    @State private var exportedFileURL: URL?
+    @State private var basfiResponses: [QuestionnaireResponse] = []
+    @State private var basgResponses: [QuestionnaireResponse] = []
+    
+    // Fetch requests for all data
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \PainEntry.timestamp, ascending: false)],
+        animation: .default)
+    private var painEntries: FetchedResults<PainEntry>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \JournalEntry.date, ascending: false)],
+        animation: .default)
+    private var journalEntries: FetchedResults<JournalEntry>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \BASSDAIAssessment.date, ascending: false)],
+        animation: .default)
+    private var bassdaiAssessments: FetchedResults<BASSDAIAssessment>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Medication.name, ascending: true)],
+        animation: .default)
+    private var medications: FetchedResults<Medication>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \MedicationIntake.timestamp, ascending: false)],
+        animation: .default)
+    private var medicationIntakes: FetchedResults<MedicationIntake>
+
+    private var context: NSManagedObjectContext {
+        if viewContext.persistentStoreCoordinator != nil {
+            return viewContext
+        }
+        return PersistenceController.shared.container.viewContext
+    }
+    
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                VStack(spacing: 20) {
+                    // Header
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Data Export & Health Integration")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        
+                        Text("Export your health data or sync with HealthKit")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                    
+                    // Data Summary
+                    DataSummaryCard(
+                        painEntries: painEntries.count,
+                        journalEntries: journalEntries.count,
+                        bassdaiAssessments: bassdaiAssessments.count,
+                        basfiAssessments: basfiResponses.count,
+                        basgAssessments: basgResponses.count,
+                        medications: medications.count,
+                        medicationIntakes: medicationIntakes.count
+                    )
+                    
+                    // Export Options
+                    VStack(spacing: 16) {
+                        ExportOptionCard(
+                            title: "Medical PDF Report",
+                            description: "Comprehensive medical report with pain bubble maps, BASDAI trends, medication analysis, and clinical insights",
+                            icon: "doc.text.fill",
+                            color: .red
+                        ) {
+                            exportToPDF()
+                        }
+                        
+                        ExportOptionCard(
+                            title: "Export as CSV",
+                            description: "Export data for spreadsheet analysis",
+                            icon: "tablecells.fill",
+                            color: .green
+                        ) {
+                            exportToCSV()
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                    // HealthKit Integration
+                    VStack(spacing: 16) {
+                        Text("HealthKit Integration")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
+                        
+                        HealthKitCard(
+                            isAuthorized: isHealthKitAuthorized,
+                            onAuthorize: { requestHealthKitAuthorization() },
+                            onSync: { syncWithHealthKit() }
+                        )
+                    }
+                    
+                    // Status
+                    if !exportStatus.isEmpty {
+                        Text(exportStatus)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal)
+                    }
+                }
+                .padding(.vertical)
+            }
+            .navigationTitle("Export")
+            .onAppear {
+                checkHealthKitAuthorization()
+                loadQuestionnaireResponses()
+            }
+            .sheet(isPresented: $showingShareSheet) {
+                if let url = exportedFileURL {
+                    ShareSheet(activityItems: [url])
+                }
+            }
+        }
+    }
+    
+    // MARK: - Export Functions
+    
+    private func exportToPDF() {
+        exportStatus = "Generating PDF..."
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let pdfData = MedicalPDFGenerator.generateComprehensiveMedicalReport(
+                painEntries: Array(self.painEntries),
+                journalEntries: Array(self.journalEntries),
+                bassdaiAssessments: Array(self.bassdaiAssessments),
+                basfiResponses: self.basfiResponses,
+                basgResponses: self.basgResponses,
+                medications: Array(self.medications),
+                medicationIntakes: Array(self.medicationIntakes)
+            )
+            
+            DispatchQueue.main.async {
+                self.savePDFToDocuments(data: pdfData)
+            }
+        }
+    }
+    
+    private func exportToCSV() {
+        exportStatus = "Generating CSV files..."
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let csvData = generateCSVData()
+            
+            DispatchQueue.main.async {
+                saveCSVToDocuments(data: csvData)
+            }
+        }
+    }
+    
+    // Legacy PDF generation method - now replaced by MedicalPDFGenerator
+    private func generatePDFReport() -> Data {
+        // This method is now deprecated in favor of the comprehensive medical report
+        return MedicalPDFGenerator.generateComprehensiveMedicalReport(
+            painEntries: Array(self.painEntries),
+            journalEntries: Array(self.journalEntries),
+            bassdaiAssessments: Array(self.bassdaiAssessments),
+            basfiResponses: basfiResponses,
+            basgResponses: basgResponses,
+            medications: Array(self.medications),
+            medicationIntakes: Array(self.medicationIntakes)
+        )
+    }
+    
+    private func generateCSVData() -> [String: String] {
+        var csvFiles: [String: String] = [:]
+        
+        // Pain Entries CSV
+        var painCSV = "Date,Time,Pain Level,Body Regions,Pain Type,Trigger\n"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        
+        for entry in painEntries {
+            let date = dateFormatter.string(from: entry.timestamp ?? Date())
+            let time = timeFormatter.string(from: entry.timestamp ?? Date())
+            let level = String(entry.painLevel)
+            let regions = entry.bodyRegions?.replacingOccurrences(of: ",", with: ";") ?? ""
+            let type = entry.painType?.replacingOccurrences(of: ",", with: ";") ?? ""
+            let trigger = entry.trigger?.replacingOccurrences(of: ",", with: ";") ?? ""
+            
+            painCSV += "\(date),\(time),\(level),\(regions),\(type),\(trigger)\n"
+        }
+        csvFiles["pain_entries.csv"] = painCSV
+        
+        // Journal Entries CSV
+        var journalCSV = "Date,Mood,Energy Level,Sleep Quality,Pain Level,Symptoms,Activities,Notes\n"
+        for entry in journalEntries {
+            let date = dateFormatter.string(from: entry.date ?? Date())
+            let mood = entry.mood?.replacingOccurrences(of: ",", with: ";") ?? ""
+            let energy = String(entry.energyLevel)
+            let sleep = String(entry.sleepQuality)
+            let pain = String(entry.painLevel)
+            let symptoms = entry.symptoms?.replacingOccurrences(of: ",", with: ";") ?? ""
+            let activities = entry.activities?.replacingOccurrences(of: ",", with: ";") ?? ""
+            let notes = entry.notes?.replacingOccurrences(of: ",", with: ";") ?? ""
+            
+            journalCSV += "\(date),\(mood),\(energy),\(sleep),\(pain),\(symptoms),\(activities),\(notes)\n"
+        }
+        csvFiles["journal_entries.csv"] = journalCSV
+        
+        // BASDAI Assessments CSV
+        var bassdaiCSV = "Date,Total Score,Fatigue,Morning Stiffness,Spinal Pain,Neck/Shoulder/Hip Pain,Swelling Pain,Overall Wellbeing\n"
+        for assessment in bassdaiAssessments {
+            let date = dateFormatter.string(from: assessment.date ?? Date())
+            let score = String(format: "%.1f", assessment.totalScore)
+            let fatigue = String(format: "%.1f", assessment.fatigue)
+            let morningStiffness = String(format: "%.1f", assessment.morningStiffness)
+            let spinalPain = String(format: "%.1f", assessment.spinalPain)
+            let neckShoulderHipPain = String(format: "%.1f", assessment.neckShoulderHipPain)
+            let swellingPain = String(format: "%.1f", assessment.swellingPain)
+            let overallWellbeing = String(format: "%.1f", assessment.overallWellbeing)
+            
+            bassdaiCSV += "\(date),\(score),\(fatigue),\(morningStiffness),\(spinalPain),\(neckShoulderHipPain),\(swellingPain),\(overallWellbeing)\n"
+        }
+        csvFiles["basdai_assessments.csv"] = bassdaiCSV
+
+        // BASFI Responses CSV
+        let basfiItems = QuestionnaireDefinition.basfi.items
+        var basfiCSV = "Date,Time,Local Date,Score,Duration (ms),Note"
+        for item in basfiItems {
+            basfiCSV += ",\(item.id)"
+        }
+        basfiCSV += "\n"
+        for response in basfiResponses {
+            let creation = response.createdAt ?? Date()
+            let date = dateFormatter.string(from: creation)
+            let time = timeFormatter.string(from: creation)
+            let localDate = response.localDate ?? ""
+            let score = String(format: "%.2f", response.score)
+            let duration = String(format: "%.0f", response.durationMs)
+            let note = (response.note ?? "").replacingOccurrences(of: ",", with: ";")
+            basfiCSV += "\(date),\(time),\(localDate),\(score),\(duration),\(note)"
+            let answers = response.answers.values
+            for item in basfiItems {
+                let value = answers[item.id] ?? Double.nan
+                if value.isNaN {
+                    basfiCSV += ","
+                } else {
+                    basfiCSV += ",\(String(format: "%.0f", value))"
+                }
+            }
+            basfiCSV += "\n"
+        }
+        csvFiles["basfi_assessments.csv"] = basfiCSV
+
+        // BAS-G Responses CSV
+        let basgItems = QuestionnaireDefinition.basg.items
+        var basgCSV = "Date,Time,Local Date,Score,Duration (ms),Note"
+        for item in basgItems {
+            basgCSV += ",\(item.id)"
+        }
+        basgCSV += "\n"
+        for response in basgResponses {
+            let creation = response.createdAt ?? Date()
+            let date = dateFormatter.string(from: creation)
+            let time = timeFormatter.string(from: creation)
+            let localDate = response.localDate ?? ""
+            let score = String(format: "%.2f", response.score)
+            let duration = String(format: "%.0f", response.durationMs)
+            let note = (response.note ?? "").replacingOccurrences(of: ",", with: ";")
+            basgCSV += "\(date),\(time),\(localDate),\(score),\(duration),\(note)"
+            let answers = response.answers.values
+            for item in basgItems {
+                let value = answers[item.id] ?? Double.nan
+                if value.isNaN {
+                    basgCSV += ","
+                } else {
+                    basgCSV += ",\(String(format: "%.0f", value))"
+                }
+            }
+            basgCSV += "\n"
+        }
+        csvFiles["basg_assessments.csv"] = basgCSV
+        
+        return csvFiles
+    }
+
+    private func loadQuestionnaireResponses() {
+        let context = self.context
+        context.perform {
+            let basfi = self.fetchQuestionnaireResponses(.basfi, context: context)
+            let basg = self.fetchQuestionnaireResponses(.basg, context: context)
+            DispatchQueue.main.async {
+                self.basfiResponses = basfi
+                self.basgResponses = basg
+            }
+        }
+    }
+    
+    private func fetchQuestionnaireResponses(_ questionnaireID: QuestionnaireID, context: NSManagedObjectContext) -> [QuestionnaireResponse] {
+        let request: NSFetchRequest<QuestionnaireResponse> = QuestionnaireResponse.fetchRequest()
+        request.predicate = NSPredicate(format: "questionnaireID == %@", questionnaireID.rawValue)
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \QuestionnaireResponse.createdAt, ascending: true)]
+        do {
+            return try context.fetch(request)
+        } catch {
+            print("Failed to fetch questionnaire responses for \(questionnaireID): \(error)")
+            return []
+        }
+    }
+    
+    private func savePDFToDocuments(data: Data) {
+        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileName = "health_report_\(Date().timeIntervalSince1970).pdf"
+        let fileURL = documentsPath.appendingPathComponent(fileName)
+        
+        do {
+            try data.write(to: fileURL)
+            exportedFileURL = fileURL
+            exportStatus = "PDF exported successfully"
+            showingShareSheet = true
+        } catch {
+            exportStatus = "Error exporting PDF: \(error.localizedDescription)"
+        }
+    }
+    
+    private func saveCSVToDocuments(data: [String: String]) {
+        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let timestamp = Date().timeIntervalSince1970
+        
+        do {
+            for (fileName, csvContent) in data {
+                let fileURL = documentsPath.appendingPathComponent("\(timestamp)_\(fileName)")
+                try csvContent.write(to: fileURL, atomically: true, encoding: .utf8)
+            }
+            
+            // Create a zip file or just share the first file
+            if let firstFile = data.keys.first {
+                let fileURL = documentsPath.appendingPathComponent("\(timestamp)_\(firstFile)")
+                exportedFileURL = fileURL
+                exportStatus = "CSV files exported successfully"
+                showingShareSheet = true
+            }
+        } catch {
+            exportStatus = "Error exporting CSV: \(error.localizedDescription)"
+        }
+    }
+    
+    // MARK: - HealthKit Functions
+    
+    private func checkHealthKitAuthorization() {
+        guard HKHealthStore.isHealthDataAvailable() else {
+            exportStatus = "HealthKit is not available on this device"
+            return
+        }
+        
+        let typesToRead: Set<HKObjectType> = [
+            HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
+            HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
+        ]
+        
+        healthStore.getRequestStatusForAuthorization(toShare: Set(), read: typesToRead) { status, error in
+            DispatchQueue.main.async {
+                self.isHealthKitAuthorized = (status == .shouldRequest || status == .unnecessary)
+            }
+        }
+    }
+    
+    private func requestHealthKitAuthorization() {
+        guard HKHealthStore.isHealthDataAvailable() else {
+            exportStatus = "HealthKit is not available on this device"
+            return
+        }
+        
+        let typesToWrite: Set<HKSampleType> = [
+            HKObjectType.quantityType(forIdentifier: .bodyTemperature)!
+        ]
+        
+        let typesToRead: Set<HKObjectType> = [
+            HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
+            HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
+        ]
+        
+        healthStore.requestAuthorization(toShare: typesToWrite, read: typesToRead) { success, error in
+            DispatchQueue.main.async {
+                if success {
+                    self.isHealthKitAuthorized = true
+                    self.exportStatus = "HealthKit authorization granted"
+                } else {
+                    self.exportStatus = "HealthKit authorization denied: \(error?.localizedDescription ?? "Unknown error")"
+                }
+            }
+        }
+    }
+    
+    private func syncWithHealthKit() {
+        guard isHealthKitAuthorized else {
+            exportStatus = "HealthKit authorization required"
+            return
+        }
+        
+        exportStatus = "Syncing with HealthKit..."
+        
+        // Here you would implement actual HealthKit sync logic
+        // For now, we'll just simulate it
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.exportStatus = "HealthKit sync completed"
+        }
+    }
+}
+
+// MARK: - Supporting Views
+
+struct DataSummaryCard: View {
+    let painEntries: Int
+    let journalEntries: Int
+    let bassdaiAssessments: Int
+    let basfiAssessments: Int
+    let basgAssessments: Int
+    let medications: Int
+    let medicationIntakes: Int
+    
+    var body: some View {
+        let metrics: [(String, Int, Color)] = [
+            ("Pain Entries", painEntries, .red),
+            ("Journal Entries", journalEntries, .blue),
+            ("BASDAI Tests", bassdaiAssessments, .orange),
+            ("BASFI Tests", basfiAssessments, .purple),
+            ("BAS-G Tests", basgAssessments, .mint),
+            ("Medications", medications, .green),
+            ("Medication Intakes", medicationIntakes, .teal)
+        ]
+        
+        VStack(spacing: 16) {
+            Text("Your Data Summary")
+                .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 12) {
+                ForEach(metrics, id: \.0) { metric in
+                    ExportSummaryItem(title: metric.0, count: metric.1, color: metric.2)
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(12)
+        .padding(.horizontal)
+    }
+}
+
+struct ExportSummaryItem: View {
+    let title: String
+    let count: Int
+    let color: Color
+    
+    var body: some View {
+        VStack(spacing: 4) {
+            Text("\(count)")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(color)
+            
+            Text(title)
+                .font(.caption)
+                .foregroundColor(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
+        .background(Color(.systemBackground))
+        .cornerRadius(8)
+    }
+}
+
+struct ExportOptionCard: View {
+    let title: String
+    let description: String
+    let icon: String
+    let color: Color
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 16) {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundColor(color)
+                    .frame(width: 40, height: 40)
+                    .background(color.opacity(0.1))
+                    .cornerRadius(8)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                    
+                    Text(description)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.leading)
+                }
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(12)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
+
+struct HealthKitCard: View {
+    let isAuthorized: Bool
+    let onAuthorize: () -> Void
+    let onSync: () -> Void
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            HStack {
+                Image(systemName: "heart.fill")
+                    .font(.title2)
+                    .foregroundColor(.red)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("HealthKit")
+                        .font(.headline)
+                    
+                    Text(isAuthorized ? "Connected" : "Not Connected")
+                        .font(.subheadline)
+                        .foregroundColor(isAuthorized ? .green : .secondary)
+                }
+                
+                Spacer()
+                
+                Circle()
+                    .fill(isAuthorized ? Color.green : Color.gray)
+                    .frame(width: 12, height: 12)
+            }
+            
+            HStack(spacing: 12) {
+                if !isAuthorized {
+                    Button("Connect", action: onAuthorize)
+                        .buttonStyle(.borderedProminent)
+                } else {
+                    Button("Sync Data", action: onSync)
+                        .buttonStyle(.bordered)
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(12)
+        .padding(.horizontal)
+    }
+}
+
+struct ShareSheet: UIViewControllerRepresentable {
+    let activityItems: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+}
+
+struct ExportView_Previews: PreviewProvider {
+    static var previews: some View {
+        ExportView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
+}

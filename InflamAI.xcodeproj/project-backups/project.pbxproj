@@ -1,0 +1,1004 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01609CFB1D3D5F10D8AAC507 /* ExerciseFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2640F6B51AD58805F9754F6 /* ExerciseFeedbackView.swift */; };
+		0B4CF447154EF38E6CB2BC1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A13166DADA264D1660A596 /* HomeView.swift */; };
+		0C1BEB5203AD2F9176578652 /* JointTapSOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C13782B00D8CDFB54EBF61 /* JointTapSOSView.swift */; };
+		10D0B6EB039FD82A7C6E3CBB /* WeatherDataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8BC44A54274D1DB3D79D0 /* WeatherDataValidator.swift */; };
+		1409BDD45014FE2B50269EEB /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96652CBBE3B266C1ECDEBBD6 /* YouTubePlayerView.swift */; };
+		16291AC5A56D9AF0998343F0 /* BodyRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91A335C1E8EAEC3E2965AD /* BodyRegion.swift */; };
+		1C6F7C8D44C0EB9FC3502415 /* BASDAICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9AD23206C8D840C82EC981 /* BASDAICalculator.swift */; };
+		267A4A1D292F2A70FE6D5003 /* ExerciseLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71560A3D6F6DBF0F7240422 /* ExerciseLibraryView.swift */; };
+		26A8497988859E827F7D845E /* RoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEB65BB7B8130383E4067F /* RoutineDetailView.swift */; };
+		2829C7B3C2F0E84B80FD415C /* SOSFlareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F606E0D440594921954E9 /* SOSFlareView.swift */; };
+		2919208AE2BFD5C60F10AD40 /* QuestionnaireSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB69A5638C0CA448F84D72 /* QuestionnaireSettingsView.swift */; };
+		348E08E49186F9C417B4AF18 /* TrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237DBFFA07AB18677FB69E9 /* TrendsViewModel.swift */; };
+		35C322BEB55DC2F36FCA5A5C /* CoachCompositorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC215D204B4FE4F1BB174DA4 /* CoachCompositorView.swift */; };
+		37014F3C14C84574BC8412E7 /* ExportDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752C47EAFD6480D996A88C5 /* ExportDataView.swift */; };
+		439BEF329FEE66754FC938BB /* WeatherCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F764CB2A97A81B3FE9AF33B /* WeatherCache.swift */; };
+		461408C93B796DACC1380D74 /* TimeRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1BD485C24AC35924475D3D /* TimeRange.swift */; };
+		475FF7D20F0BEFB01A0ED1E7 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A285695EDB4B798729BC1017 /* WeatherService.swift */; };
+		4B4B8CB55843C43F77CB343B /* QuestionnaireFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A6064DA855D8E5302711 /* QuestionnaireFormView.swift */; };
+		4B8789729FF64B71A924585E /* TriggerSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B2C1436D4042F4A5D5FCDD /* TriggerSelectorView.swift */; };
+		4BF9217F0DDC7399CA3849FD /* PressureTrendChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40A2E1B7F3EC960F26DC06 /* PressureTrendChart.swift */; };
+		528697023BC75945925E2F30 /* WeatherFlareRiskCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D019A203006D766853073 /* WeatherFlareRiskCard.swift */; };
+		53D07DFA8EF80653BBE07CBC /* ASDACalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396D0BF0F017E496B48BFAF /* ASDACalculator.swift */; };
+		54F7F7857261D1108EE0EFA8 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340EC2383F3D9C77058F2272 /* HealthKitService.swift */; };
+		554F70FA84358D0F0C7CBB3A /* SpinalyticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E73DCF112CD0E78A006D9 /* SpinalyticsApp.swift */; };
+		557713C2B02CE8BA21F541A0 /* RoutineBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874FAF6A1A9557806EA0A2C /* RoutineBuilderView.swift */; };
+		5828FED0DA63099A36BAE566 /* ExerciseStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC94804069705F956C2E99E /* ExerciseStep.swift */; };
+		5958F0CA0E48E8DA2D3B7156 /* CoreDataErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFCF2F2DB4A15FB13BC2484 /* CoreDataErrorHandler.swift */; };
+		5A6B59EBD2060AFD07320CFC /* ExerciseStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E52513FD6ABD8A594AEB9 /* ExerciseStatsView.swift */; };
+		5E0CD6E5DDEA4DE6BC09195E /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB30A684E9924C08948E279B /* AssetsManager.swift */; };
+		659D6BB42C8A473EAC589371 /* JournalHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08956087D85E4B37A3E3B0B6 /* JournalHistoryView.swift */; };
+		7281FBEE3AAB609A3CBD94F6 /* WeatherNotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96DBB83D3141CECF21F23E /* WeatherNotificationSettingsView.swift */; };
+		74B472CDCEB4357EBE7D51E7 /* WeatherNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546BC08AA4D3F58AEAE25FA /* WeatherNotificationService.swift */; };
+		78F638D9148A482A86C14D1B /* StepCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6836E59BDF98FDB913DFE /* StepCoachView.swift */; };
+		7ADEBA69F5E9A03B4BAF7BA1 /* YouTubeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C89305B3503DC565BA4A1 /* YouTubeHelper.swift */; };
+		7D9B8EADE1614C438A0C961C /* BASSDAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA29896EC044A09A6DA832 /* BASSDAIView.swift */; };
+		8D7E58044C44FFA1D928879A /* FlareTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B9E842996A4229490860A /* FlareTimelineView.swift */; };
+		8D9017C25DFECFEAF380F648 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA2234EF9C926466EE0475 /* TrendsView.swift */; };
+		8DC196A34C6E6D19148FAEBC /* BodyDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724306ABD00EA8912671CD9D /* BodyDiagramView.swift */; };
+		922EA2A9F0E554D71529771B /* QuestionnairePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724C487C2F7176A7420F670 /* QuestionnairePreferences.swift */; };
+		93FB19CC8AB09E5BC3369689 /* MedicationManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC463DA15D9FC55914F923 /* MedicationManagementView.swift */; };
+		94162E5B501251481FFCFB5B /* RoutineManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4EF7E34AE4CC5406F64ED /* RoutineManagementView.swift */; };
+		9A17D4BCC37A4D39ADC9138B /* PainTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078E15E483B64A36ABE14032 /* PainTrackingView.swift */; };
+		9ADF3B7A34A0AEFD43C17AC6 /* QuickLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E70A859BE11AF906A74F4C7 /* QuickLogView.swift */; };
+		9E4550B8C7554254B7936312 /* FlareTriggers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEBEBB35414ADDA749723D /* FlareTriggers.swift */; };
+		9FBD9D4C4B234EA597548230 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8F0CAC57DC54A5EAFE53F64 /* Localizable.strings */; };
+		A1000009000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000009000000000000001 /* Assets.xcassets */; };
+		A1000010000000000000001 /* Spinalytics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2000010000000000000001 /* Spinalytics.xcdatamodeld */; };
+		A1000021000000000000001 /* BASSDAIPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000024000000000000001 /* BASSDAIPracticeView.swift */; };
+		A1000022000000000000001 /* StandardizedMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000025000000000000001 /* StandardizedMedications.swift */; };
+		AD6C8646ECDFD82521970B65 /* MedicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263862431FB13695E9719D0 /* MedicationViewModel.swift */; };
+		ADC171EBB74E32F1C2ED1949 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D47E10E070280870FB36A /* WeatherKitService.swift */; };
+		ADD84D8D29B777D0CE1C0891 /* QuestionnaireUserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228215B1DE413628281C5A5 /* QuestionnaireUserPreferences.swift */; };
+		B165F003ACCAB3DFE5BBA202 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB71E6D49975201D8A1AAE8 /* OnboardingFlow.swift */; };
+		B33068DE95DDCE8C2F8E979C /* ExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BD36935FA7C7413B12A0B9 /* ExerciseData.swift */; };
+		BF787EDF177DB354B8E0854A /* SOSFlareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126E928A974AF53EF2C4B209 /* SOSFlareViewModel.swift */; };
+		C154C19C9898755AB776475D /* WeatherFlareRiskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07214F59B66A882DE95D112E /* WeatherFlareRiskViewModel.swift */; };
+		C4289E43BA045FBCED84086C /* CorrelationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A7F90FE1DD73AD8191447F /* CorrelationEngine.swift */; };
+		C4DCC7FD6B0C457A9ED82658 /* PainTrackingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF67A955F14576ABDB8C4A /* PainTrackingHistoryView.swift */; };
+		CD587D4E042308754F6AA764 /* QuestionnaireModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45C93D2CD6D03BAD7CF1358 /* QuestionnaireModels.swift */; };
+		CF04BBFE538F646C4B4E2744 /* QuestionnaireResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A64646A77B8D9F84693D68 /* QuestionnaireResponse+Extensions.swift */; };
+		CF599721CBEC0CF875C51DA9 /* QuickLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0539EEDF5476FF1BC25768 /* QuickLogViewModel.swift */; };
+		D086E01F2041813A911E1479 /* AnkylosaurusMascot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A46470B0AFACDABE125A91 /* AnkylosaurusMascot.swift */; };
+		D26C44A41612E355800B7437 /* AssessmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D812D109758EF578EBC0529 /* AssessmentsView.swift */; };
+		D4AA5EEB8CBF4D849250EF9A /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72643BB0024C26B5790D86 /* JournalView.swift */; };
+		DAC100BE6E8AC33DBD35B21C /* ResilientWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006003A82652C02FB1C0D0 /* ResilientWeatherService.swift */; };
+		DD4CFE31E71A2A80D4017B2F /* SpinalyticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD9C1EDCAB2720A962DB04 /* SpinalyticsApp.swift */; };
+		E1CB74FCC6584F198F850C33 /* UIApplication+TopMost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8666143BB84F25889501FC /* UIApplication+TopMost.swift */; };
+		E29C96466E0AD4E815DBBD7D /* RoutineExecutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079877999E7E43762F8DD36B /* RoutineExecutionView.swift */; };
+		E32F886FE2B033B82956549E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063B4E9692C2E38CDE691E8B /* SettingsView.swift */; };
+		E330F170E3309C6ADAFD448F /* ExerciseHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0960788127148FD2E67705 /* ExerciseHistoryView.swift */; };
+		EAFBEA2DD9C70BA4AD509766 /* PDFExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39893B5C415B10996A5D210 /* PDFExportService.swift */; };
+		EB0B71D2DB073D3E1B8B3CC8 /* SpinalyticsPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57180701B3F61894B1604116 /* SpinalyticsPersistenceController.swift */; };
+		EFA0309D7FDAA1500F6A36A4 /* WeatherServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19AA4F8972B9111BC0EB53 /* WeatherServiceError.swift */; };
+		F7E2C932D09A071E26F601E0 /* QuestionnaireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1A944BE0509BBFAF4CB27F /* QuestionnaireManager.swift */; };
+		F9764A97C1D6DB4B7602A76E /* QuestionnaireConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E3E86F78C4C1555BE8BE5 /* QuestionnaireConfigView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		063B4E9692C2E38CDE691E8B /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = "RheumaApp-Swift/SettingsView.swift"; sourceTree = "<group>"; };
+		07214F59B66A882DE95D112E /* WeatherFlareRiskViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Weather/WeatherFlareRiskViewModel.swift; sourceTree = "<group>"; };
+		078E15E483B64A36ABE14032 /* PainTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTrackingView.swift; sourceTree = "<group>"; };
+		079877999E7E43762F8DD36B /* RoutineExecutionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineExecutionView.swift; sourceTree = "<group>"; };
+		08956087D85E4B37A3E3B0B6 /* JournalHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalHistoryView.swift; sourceTree = "<group>"; };
+		0B8666143BB84F25889501FC /* UIApplication+TopMost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopMost.swift"; sourceTree = "<group>"; };
+		0DC94804069705F956C2E99E /* ExerciseStep.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Models/ExerciseStep.swift; sourceTree = "<group>"; };
+		1041A6064DA855D8E5302711 /* QuestionnaireFormView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireFormView.swift; path = "RheumaApp-Swift/Features/Questionnaires/QuestionnaireFormView.swift"; sourceTree = "<group>"; };
+		105D47E10E070280870FB36A /* WeatherKitService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
+		126E928A974AF53EF2C4B209 /* SOSFlareViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SOSFlareViewModel.swift; path = Features/QuickCapture/SOSFlareViewModel.swift; sourceTree = "<group>"; };
+		151D149956F18ACCA81C8C03 /* ExerciseLibraryViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/ExerciseLibraryViewModel.swift; sourceTree = "<group>"; };
+		1D40A2E1B7F3EC960F26DC06 /* PressureTrendChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Weather/PressureTrendChart.swift; sourceTree = "<group>"; };
+		1D812D109758EF578EBC0529 /* AssessmentsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssessmentsView.swift; path = "RheumaApp-Swift/Features/Questionnaires/AssessmentsView.swift"; sourceTree = "<group>"; };
+		1EB4EF7E34AE4CC5406F64ED /* RoutineManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineManagementView.swift; sourceTree = "<group>"; };
+		27008EC6396EF4C8FB96719A /* OnboardingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingFlow.swift; path = "RheumaApp-Swift/Features/Onboarding/OnboardingFlow.swift"; sourceTree = "<group>"; };
+		2F9AD23206C8D840C82EC981 /* BASDAICalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BASDAICalculator.swift; sourceTree = "<group>"; };
+		3228215B1DE413628281C5A5 /* QuestionnaireUserPreferences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireUserPreferences.swift; path = "RheumaApp-Swift/Core/Preferences/QuestionnaireUserPreferences.swift"; sourceTree = "<group>"; };
+		340EC2383F3D9C77058F2272 /* HealthKitService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		39CF67A955F14576ABDB8C4A /* PainTrackingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTrackingHistoryView.swift; sourceTree = "<group>"; };
+		3AFCF2F2DB4A15FB13BC2484 /* CoreDataErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreDataErrorHandler.swift; path = "RheumaApp-Swift/CoreDataErrorHandler.swift"; sourceTree = "<group>"; };
+		3DC6836E59BDF98FDB913DFE /* StepCoachView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/StepCoachView.swift; sourceTree = "<group>"; };
+		419E3E86F78C4C1555BE8BE5 /* QuestionnaireConfigView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireConfigView.swift; path = "RheumaApp-Swift/Features/Settings/QuestionnaireConfigView.swift"; sourceTree = "<group>"; };
+		42C13782B00D8CDFB54EBF61 /* JointTapSOSView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JointTapSOSView.swift; path = Features/QuickCapture/JointTapSOSView.swift; sourceTree = "<group>"; };
+		47A7F90FE1DD73AD8191447F /* CorrelationEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CorrelationEngine.swift; sourceTree = "<group>"; };
+		48CC463DA15D9FC55914F923 /* MedicationManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MedicationManagementView.swift; path = Features/Medication/MedicationManagementView.swift; sourceTree = "<group>"; };
+		49006003A82652C02FB1C0D0 /* ResilientWeatherService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResilientWeatherService.swift; sourceTree = "<group>"; };
+		4E70A859BE11AF906A74F4C7 /* QuickLogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLogView.swift; sourceTree = "<group>"; };
+		4EEA29896EC044A09A6DA832 /* BASSDAIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASSDAIView.swift; sourceTree = "<group>"; };
+		4F764CB2A97A81B3FE9AF33B /* WeatherCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherCache.swift; sourceTree = "<group>"; };
+		53DEBEBB35414ADDA749723D /* FlareTriggers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Types/FlareTriggers.swift; sourceTree = "<group>"; };
+		564355D1C2A877FCA14F91B9 /* MedicationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MedicationViewModel.swift; path = "RheumaApp-Swift/Features/Medication/MedicationViewModel.swift"; sourceTree = "<group>"; };
+		57180701B3F61894B1604116 /* SpinalyticsPersistenceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpinalyticsPersistenceController.swift; sourceTree = "<group>"; };
+		65BB69A5638C0CA448F84D72 /* QuestionnaireSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireSettingsView.swift; path = "RheumaApp-Swift/Features/Settings/QuestionnaireSettingsView.swift"; sourceTree = "<group>"; };
+		6DF8BC44A54274D1DB3D79D0 /* WeatherDataValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherDataValidator.swift; sourceTree = "<group>"; };
+		6E96DBB83D3141CECF21F23E /* WeatherNotificationSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Settings/WeatherNotificationSettingsView.swift; sourceTree = "<group>"; };
+		724306ABD00EA8912671CD9D /* BodyDiagramView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BodyDiagramView.swift; path = "RheumaApp-Swift/BodyDiagramView.swift"; sourceTree = "<group>"; };
+		738C0F04E3F9597D2EBCFEAA /* TrendsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsViewModel.swift; path = "RheumaApp-Swift/Features/Trends/TrendsViewModel.swift"; sourceTree = "<group>"; };
+		7546BC08AA4D3F58AEAE25FA /* WeatherNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherNotificationService.swift; sourceTree = "<group>"; };
+		75A13166DADA264D1660A596 /* HomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Features/Home/HomeView.swift; sourceTree = "<group>"; };
+		7A0539EEDF5476FF1BC25768 /* QuickLogViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLogViewModel.swift; sourceTree = "<group>"; };
+		7B9F606E0D440594921954E9 /* SOSFlareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SOSFlareView.swift; path = Features/QuickCapture/SOSFlareView.swift; sourceTree = "<group>"; };
+		7C19AA4F8972B9111BC0EB53 /* WeatherServiceError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherServiceError.swift; sourceTree = "<group>"; };
+		7F1BD485C24AC35924475D3D /* TimeRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeRange.swift; sourceTree = "<group>"; };
+		8237DBFFA07AB18677FB69E9 /* TrendsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsViewModel.swift; path = Features/Trends/TrendsViewModel.swift; sourceTree = "<group>"; };
+		87C91C2CC2B09658882BD6A3 /* PDFExportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PDFExportService.swift; path = "RheumaApp-Swift/Core/Export/PDFExportService.swift"; sourceTree = "<group>"; };
+		8C4B9E842996A4229490860A /* FlareTimelineView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlareTimelineView.swift; path = Features/Flares/FlareTimelineView.swift; sourceTree = "<group>"; };
+		9396D0BF0F017E496B48BFAF /* ASDACalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ASDACalculator.swift; sourceTree = "<group>"; };
+		93A46470B0AFACDABE125A91 /* AnkylosaurusMascot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnkylosaurusMascot.swift; sourceTree = "<group>"; };
+		96652CBBE3B266C1ECDEBBD6 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
+		9EBEB65BB7B8130383E4067F /* RoutineDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineDetailView.swift; sourceTree = "<group>"; };
+		A16E52513FD6ABD8A594AEB9 /* ExerciseStatsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/ExerciseStatsView.swift; sourceTree = "<group>"; };
+		A2000009000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000011000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000012000000000000001 /* RheumaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RheumaApp.entitlements; sourceTree = "<group>"; };
+		A2000013000000000000001 /* Spinalytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spinalytics.xcdatamodel; sourceTree = "<group>"; };
+		A2000024000000000000001 /* BASSDAIPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASSDAIPracticeView.swift; sourceTree = "<group>"; };
+		A2000025000000000000001 /* StandardizedMedications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardizedMedications.swift; sourceTree = "<group>"; };
+		A285695EDB4B798729BC1017 /* WeatherService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		A3000001000000000000001 /* RheumaApp-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RheumaApp-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8BD36935FA7C7413B12A0B9 /* ExerciseData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/ExerciseData.swift; sourceTree = "<group>"; };
+		AA72643BB0024C26B5790D86 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		B263862431FB13695E9719D0 /* MedicationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MedicationViewModel.swift; path = Features/Medication/MedicationViewModel.swift; sourceTree = "<group>"; };
+		B724C487C2F7176A7420F670 /* QuestionnairePreferences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnairePreferences.swift; path = "RheumaApp-Swift/Managers/QuestionnairePreferences.swift"; sourceTree = "<group>"; };
+		B874FAF6A1A9557806EA0A2C /* RoutineBuilderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineBuilderView.swift; sourceTree = "<group>"; };
+		BB6D019A203006D766853073 /* WeatherFlareRiskCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Weather/WeatherFlareRiskCard.swift; sourceTree = "<group>"; };
+		BF0960788127148FD2E67705 /* ExerciseHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/ExerciseHistoryView.swift; sourceTree = "<group>"; };
+		BFB71E6D49975201D8A1AAE8 /* OnboardingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingFlow.swift; path = Features/Onboarding/OnboardingFlow.swift; sourceTree = "<group>"; };
+		C72C89305B3503DC565BA4A1 /* YouTubeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YouTubeHelper.swift; sourceTree = "<group>"; };
+		C7BA2234EF9C926466EE0475 /* TrendsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsView.swift; path = Features/Trends/TrendsView.swift; sourceTree = "<group>"; };
+		C95C2FBEEE47431C931C4C65 /* MotherModeSelfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherModeSelfTests.swift; sourceTree = "<group>"; };
+		CC215D204B4FE4F1BB174DA4 /* CoachCompositorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Coach/CoachCompositorView.swift; sourceTree = "<group>"; };
+		D39893B5C415B10996A5D210 /* PDFExportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PDFExportService.swift; path = Core/Export/PDFExportService.swift; sourceTree = "<group>"; };
+		D45C93D2CD6D03BAD7CF1358 /* QuestionnaireModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireModels.swift; path = "RheumaApp-Swift/Features/Questionnaires/QuestionnaireModels.swift"; sourceTree = "<group>"; };
+		DB30A684E9924C08948E279B /* AssetsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		DD91A335C1E8EAEC3E2965AD /* BodyRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BodyRegion.swift; path = "RheumaApp-Swift/Features/BodyMap/BodyRegion.swift"; sourceTree = "<group>"; };
+		E2640F6B51AD58805F9754F6 /* ExerciseFeedbackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/ExerciseFeedbackView.swift; sourceTree = "<group>"; };
+		E4A64646A77B8D9F84693D68 /* QuestionnaireResponse+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "QuestionnaireResponse+Extensions.swift"; path = "RheumaApp-Swift/Core/Extensions/QuestionnaireResponse+Extensions.swift"; sourceTree = "<group>"; };
+		E71560A3D6F6DBF0F7240422 /* ExerciseLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/ExerciseLibraryView.swift; sourceTree = "<group>"; };
+		E8F0CAC57DC54A5EAFE53F64 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDCB2441FB08FC395B0F010A /* HomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "RheumaApp-Swift/Features/Home/HomeView.swift"; sourceTree = "<group>"; };
+		F3B2C1436D4042F4A5D5FCDD /* TriggerSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Components/TriggerSelectorView.swift; sourceTree = "<group>"; };
+		F752C47EAFD6480D996A88C5 /* ExportDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/ExportDataView.swift; sourceTree = "<group>"; };
+		FBDD9C1EDCAB2720A962DB04 /* SpinalyticsApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpinalyticsApp.swift; sourceTree = "<group>"; };
+		FC1A944BE0509BBFAF4CB27F /* QuestionnaireManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireManager.swift; path = "RheumaApp-Swift/Managers/QuestionnaireManager.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4000001000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D9F1C8E4F3798DC54D801C6 /* ExerciseCoach */ = {
+			isa = PBXGroup;
+			children = (
+				679B087999A7B3B039DB5FD3 /* Models */,
+				5A0F7F9BEB9619D0F3B1FF24 /* ViewModels */,
+				CBD88CBB7B6A09D51B101606 /* Views */,
+				FF2917371D955C9809D5808E /* Services */,
+				CF89B06A1CEC73A7A5CB7F48 /* Extensions */,
+			);
+			name = ExerciseCoach;
+			sourceTree = "<group>";
+		};
+		199BE2B08B696B7C3DA2BE97 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		1A77854951EBAC79D290BD8C /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				3228215B1DE413628281C5A5 /* QuestionnaireUserPreferences.swift */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		1F20C306C190E70DFCB039DA /* Flares */ = {
+			isa = PBXGroup;
+			children = (
+				8C4B9E842996A4229490860A /* FlareTimelineView.swift */,
+			);
+			name = Flares;
+			sourceTree = "<group>";
+		};
+		2F1017B590A355B7A99A37DA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EDCB2441FB08FC395B0F010A /* HomeView.swift */,
+				75A13166DADA264D1660A596 /* HomeView.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		3CDECAE17403E784015F4C4E /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+				CC215D204B4FE4F1BB174DA4 /* CoachCompositorView.swift */,
+			);
+			name = Coach;
+			sourceTree = "<group>";
+		};
+		5A0F7F9BEB9619D0F3B1FF24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C30673B9262CACA4C797FE4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DC94804069705F956C2E99E /* ExerciseStep.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5E37A84DA7F7A8D33D24AA40 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				57180701B3F61894B1604116 /* SpinalyticsPersistenceController.swift */,
+			);
+			name = Persistence;
+			path = Core/Persistence;
+			sourceTree = "<group>";
+		};
+		60A14478E8C313062202BBE7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CB0924C9105640D3BCC5306D /* PainMap */,
+				C79D1426F6175707F7DF995F /* AI */,
+				F752C47EAFD6480D996A88C5 /* ExportDataView.swift */,
+			);
+			name = Features;
+			path = Features;
+			sourceTree = "<group>";
+		};
+		643E23CD886EED6B5FB11D22 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				87C91C2CC2B09658882BD6A3 /* PDFExportService.swift */,
+				D39893B5C415B10996A5D210 /* PDFExportService.swift */,
+			);
+			name = Export;
+			sourceTree = "<group>";
+		};
+		679B087999A7B3B039DB5FD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		67D4715129F8A5001B62C0F3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D18239053985BEBFAED67AF7 /* Trends */,
+				AC3E84158D79A5D28A1BAC58 /* Medication */,
+				77974FE61E83ED22E889AEA4 /* Exercise */,
+				AA0E1F18165590CC654FA95A /* QuickCapture */,
+				3CDECAE17403E784015F4C4E /* Coach */,
+				1F20C306C190E70DFCB039DA /* Flares */,
+				2F1017B590A355B7A99A37DA /* Home */,
+				E29EFC944CD596A9FE29B2F9 /* Onboarding */,
+				ED1A344981DDDAA241EA9912 /* CheckIn */,
+				9691A91A7A37F3064836986C /* Routines */,
+				0D9F1C8E4F3798DC54D801C6 /* ExerciseCoach */,
+				8304BC48C32D2F7489427313 /* Weather */,
+				B85B2DCE9E9D92BE014B8922 /* Settings */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		77974FE61E83ED22E889AEA4 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				5C30673B9262CACA4C797FE4 /* Models */,
+				8577CC126F519264C851C66A /* Views */,
+				E71560A3D6F6DBF0F7240422 /* ExerciseLibraryView.swift */,
+				151D149956F18ACCA81C8C03 /* ExerciseLibraryViewModel.swift */,
+				A8BD36935FA7C7413B12A0B9 /* ExerciseData.swift */,
+			);
+			name = Exercise;
+			sourceTree = "<group>";
+		};
+		78A6FCDA6E0C2068EBDEAB13 /* Questionnaires */ = {
+			isa = PBXGroup;
+			children = (
+				D45C93D2CD6D03BAD7CF1358 /* QuestionnaireModels.swift */,
+				1041A6064DA855D8E5302711 /* QuestionnaireFormView.swift */,
+			);
+			name = Questionnaires;
+			sourceTree = "<group>";
+		};
+		7B63B29D3069D50AE7060840 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7F1BD485C24AC35924475D3D /* TimeRange.swift */,
+				47A7F90FE1DD73AD8191447F /* CorrelationEngine.swift */,
+				2F9AD23206C8D840C82EC981 /* BASDAICalculator.swift */,
+				9396D0BF0F017E496B48BFAF /* ASDACalculator.swift */,
+				DB30A684E9924C08948E279B /* AssetsManager.swift */,
+				C72C89305B3503DC565BA4A1 /* YouTubeHelper.swift */,
+			);
+			name = Utilities;
+			path = Core/Utilities;
+			sourceTree = "<group>";
+		};
+		8304BC48C32D2F7489427313 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				1D40A2E1B7F3EC960F26DC06 /* PressureTrendChart.swift */,
+				07214F59B66A882DE95D112E /* WeatherFlareRiskViewModel.swift */,
+				BB6D019A203006D766853073 /* WeatherFlareRiskCard.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		8577CC126F519264C851C66A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2640F6B51AD58805F9754F6 /* ExerciseFeedbackView.swift */,
+				BF0960788127148FD2E67705 /* ExerciseHistoryView.swift */,
+				A16E52513FD6ABD8A594AEB9 /* ExerciseStatsView.swift */,
+				3DC6836E59BDF98FDB913DFE /* StepCoachView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9691A91A7A37F3064836986C /* Routines */ = {
+			isa = PBXGroup;
+			children = (
+				9EBEB65BB7B8130383E4067F /* RoutineDetailView.swift */,
+				1EB4EF7E34AE4CC5406F64ED /* RoutineManagementView.swift */,
+				B874FAF6A1A9557806EA0A2C /* RoutineBuilderView.swift */,
+				079877999E7E43762F8DD36B /* RoutineExecutionView.swift */,
+			);
+			name = Routines;
+			sourceTree = "<group>";
+		};
+		A5000001000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A5000002000000000000001 /* RheumaApp-Swift */,
+				A5000003000000000000001 /* Products */,
+				D5F432E4D36454458301E6DD /* RheumaApp-Swift */,
+				B03952BFD8B0FC39F3C2F943 /* Core */,
+				F500FFFFD61B13989DCF83B7 /* Features */,
+				B29154BF1688120900400520 /* Managers */,
+				063B4E9692C2E38CDE691E8B /* SettingsView.swift */,
+				1D812D109758EF578EBC0529 /* AssessmentsView.swift */,
+				3AFCF2F2DB4A15FB13BC2484 /* CoreDataErrorHandler.swift */,
+				724306ABD00EA8912671CD9D /* BodyDiagramView.swift */,
+			);
+			sourceTree = "<group>";
+		};
+		A5000002000000000000001 /* RheumaApp-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				AA2A1FDDE2A241D8B0C3A7F5 /* MotherMode */,
+				A2000024000000000000001 /* BASSDAIPracticeView.swift */,
+				A2000025000000000000001 /* StandardizedMedications.swift */,
+				A2000010000000000000001 /* Spinalytics.xcdatamodeld */,
+				A2000009000000000000001 /* Assets.xcassets */,
+				A2000011000000000000001 /* Info.plist */,
+				A2000012000000000000001 /* RheumaApp.entitlements */,
+				E8F0CAC57DC54A5EAFE53F64 /* Localizable.strings */,
+				67D4715129F8A5001B62C0F3 /* Features */,
+				BEDEAB42E0A9FC9DE45A946F /* Core */,
+				B24E73DCF112CD0E78A006D9 /* SpinalyticsApp.swift */,
+				FBDD9C1EDCAB2720A962DB04 /* SpinalyticsApp.swift */,
+				078E15E483B64A36ABE14032 /* PainTrackingView.swift */,
+				AA72643BB0024C26B5790D86 /* JournalView.swift */,
+				4EEA29896EC044A09A6DA832 /* BASSDAIView.swift */,
+				08956087D85E4B37A3E3B0B6 /* JournalHistoryView.swift */,
+				39CF67A955F14576ABDB8C4A /* PainTrackingHistoryView.swift */,
+			);
+			path = "RheumaApp-Swift";
+			sourceTree = "<group>";
+		};
+		A5000003000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3000001000000000000001 /* RheumaApp-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7D547DB658160AF239AB437 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E4A64646A77B8D9F84693D68 /* QuestionnaireResponse+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		AA0E1F18165590CC654FA95A /* QuickCapture */ = {
+			isa = PBXGroup;
+			children = (
+				42C13782B00D8CDFB54EBF61 /* JointTapSOSView.swift */,
+				7B9F606E0D440594921954E9 /* SOSFlareView.swift */,
+				126E928A974AF53EF2C4B209 /* SOSFlareViewModel.swift */,
+			);
+			name = QuickCapture;
+			sourceTree = "<group>";
+		};
+		AA2A1FDDE2A241D8B0C3A7F5 /* MotherMode */ = {
+			isa = PBXGroup;
+			children = (
+				0B8666143BB84F25889501FC /* UIApplication+TopMost.swift */,
+				C95C2FBEEE47431C931C4C65 /* MotherModeSelfTests.swift */,
+			);
+			path = MotherMode;
+			sourceTree = "<group>";
+		};
+		AC3E84158D79A5D28A1BAC58 /* Medication */ = {
+			isa = PBXGroup;
+			children = (
+				564355D1C2A877FCA14F91B9 /* MedicationViewModel.swift */,
+				48CC463DA15D9FC55914F923 /* MedicationManagementView.swift */,
+				B263862431FB13695E9719D0 /* MedicationViewModel.swift */,
+			);
+			name = Medication;
+			sourceTree = "<group>";
+		};
+		B03952BFD8B0FC39F3C2F943 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1A77854951EBAC79D290BD8C /* Preferences */,
+				A7D547DB658160AF239AB437 /* Extensions */,
+				199BE2B08B696B7C3DA2BE97 /* Services */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B24E73DCF112CD0E78A006D9 /* SpinalyticsApp.swift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SpinalyticsApp.swift;
+			sourceTree = "<group>";
+		};
+		B29154BF1688120900400520 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FC1A944BE0509BBFAF4CB27F /* QuestionnaireManager.swift */,
+				B724C487C2F7176A7420F670 /* QuestionnairePreferences.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		B85B2DCE9E9D92BE014B8922 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6E96DBB83D3141CECF21F23E /* WeatherNotificationSettingsView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		B9197D38373394A53B259895 /* BodyMap */ = {
+			isa = PBXGroup;
+			children = (
+				DD91A335C1E8EAEC3E2965AD /* BodyRegion.swift */,
+			);
+			name = BodyMap;
+			sourceTree = "<group>";
+		};
+		BEDEAB42E0A9FC9DE45A946F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				643E23CD886EED6B5FB11D22 /* Export */,
+				7B63B29D3069D50AE7060840 /* Utilities */,
+				5E37A84DA7F7A8D33D24AA40 /* Persistence */,
+				D666C60B25901D4F0FF88713 /* Services */,
+				DBE65A41EE7E5421FEAEA86D /* Components */,
+				53DEBEBB35414ADDA749723D /* FlareTriggers.swift */,
+				F3B2C1436D4042F4A5D5FCDD /* TriggerSelectorView.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		C79D1426F6175707F7DF995F /* AI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AI;
+			path = AI;
+			sourceTree = "<group>";
+		};
+		CB0924C9105640D3BCC5306D /* PainMap */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PainMap;
+			path = PainMap;
+			sourceTree = "<group>";
+		};
+		CB4A2762B59F317E59C610B3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				65BB69A5638C0CA448F84D72 /* QuestionnaireSettingsView.swift */,
+				419E3E86F78C4C1555BE8BE5 /* QuestionnaireConfigView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		CBD88CBB7B6A09D51B101606 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CF89B06A1CEC73A7A5CB7F48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D18239053985BEBFAED67AF7 /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				738C0F04E3F9597D2EBCFEAA /* TrendsViewModel.swift */,
+				C7BA2234EF9C926466EE0475 /* TrendsView.swift */,
+				8237DBFFA07AB18677FB69E9 /* TrendsViewModel.swift */,
+			);
+			name = Trends;
+			sourceTree = "<group>";
+		};
+		D5F432E4D36454458301E6DD /* RheumaApp-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				60A14478E8C313062202BBE7 /* Features */,
+			);
+			name = "RheumaApp-Swift";
+			path = "RheumaApp-Swift";
+			sourceTree = "<group>";
+		};
+		D666C60B25901D4F0FF88713 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				340EC2383F3D9C77058F2272 /* HealthKitService.swift */,
+				105D47E10E070280870FB36A /* WeatherKitService.swift */,
+				7546BC08AA4D3F58AEAE25FA /* WeatherNotificationService.swift */,
+				7C19AA4F8972B9111BC0EB53 /* WeatherServiceError.swift */,
+				49006003A82652C02FB1C0D0 /* ResilientWeatherService.swift */,
+				4F764CB2A97A81B3FE9AF33B /* WeatherCache.swift */,
+				6DF8BC44A54274D1DB3D79D0 /* WeatherDataValidator.swift */,
+				A285695EDB4B798729BC1017 /* WeatherService.swift */,
+			);
+			name = Services;
+			path = Core/Services;
+			sourceTree = "<group>";
+		};
+		DBE65A41EE7E5421FEAEA86D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				93A46470B0AFACDABE125A91 /* AnkylosaurusMascot.swift */,
+				96652CBBE3B266C1ECDEBBD6 /* YouTubePlayerView.swift */,
+			);
+			name = Components;
+			path = Core/Components;
+			sourceTree = "<group>";
+		};
+		E29EFC944CD596A9FE29B2F9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				27008EC6396EF4C8FB96719A /* OnboardingFlow.swift */,
+				BFB71E6D49975201D8A1AAE8 /* OnboardingFlow.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		ED1A344981DDDAA241EA9912 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				4E70A859BE11AF906A74F4C7 /* QuickLogView.swift */,
+				7A0539EEDF5476FF1BC25768 /* QuickLogViewModel.swift */,
+			);
+			name = CheckIn;
+			path = Features/CheckIn;
+			sourceTree = "<group>";
+		};
+		F500FFFFD61B13989DCF83B7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CB4A2762B59F317E59C610B3 /* Settings */,
+				78A6FCDA6E0C2068EBDEAB13 /* Questionnaires */,
+				B9197D38373394A53B259895 /* BodyMap */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		FF2917371D955C9809D5808E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6000001000000000000001 /* RheumaApp-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000001000000000000001 /* Build configuration list for PBXNativeTarget "RheumaApp-Swift" */;
+			buildPhases = (
+				A8000001000000000000001 /* Sources */,
+				A4000001000000000000001 /* Frameworks */,
+				A9000001000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RheumaApp-Swift";
+			productName = "RheumaApp-Swift";
+			productReference = A3000001000000000000001 /* RheumaApp-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0000001000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A6000001000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = B1000001000000000000001 /* Build configuration list for PBXProject "RheumaApp-Swift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5000001000000000000001;
+			productRefGroup = A5000003000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6000001000000000000001 /* RheumaApp-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9000001000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000009000000000000001 /* Assets.xcassets in Resources */,
+				9FBD9D4C4B234EA597548230 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8000001000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CB74FCC6584F198F850C33 /* UIApplication+TopMost.swift in Sources */,
+				A1000010000000000000001 /* Spinalytics.xcdatamodeld in Sources */,
+				A1000021000000000000001 /* BASSDAIPracticeView.swift in Sources */,
+				A1000022000000000000001 /* StandardizedMedications.swift in Sources */,
+				8D9017C25DFECFEAF380F648 /* TrendsView.swift in Sources */,
+				348E08E49186F9C417B4AF18 /* TrendsViewModel.swift in Sources */,
+				93FB19CC8AB09E5BC3369689 /* MedicationManagementView.swift in Sources */,
+				AD6C8646ECDFD82521970B65 /* MedicationViewModel.swift in Sources */,
+				0C1BEB5203AD2F9176578652 /* JointTapSOSView.swift in Sources */,
+				8D7E58044C44FFA1D928879A /* FlareTimelineView.swift in Sources */,
+				0B4CF447154EF38E6CB2BC1F /* HomeView.swift in Sources */,
+				EAFBEA2DD9C70BA4AD509766 /* PDFExportService.swift in Sources */,
+				461408C93B796DACC1380D74 /* TimeRange.swift in Sources */,
+				C4289E43BA045FBCED84086C /* CorrelationEngine.swift in Sources */,
+				1C6F7C8D44C0EB9FC3502415 /* BASDAICalculator.swift in Sources */,
+				53D07DFA8EF80653BBE07CBC /* ASDACalculator.swift in Sources */,
+				EB0B71D2DB073D3E1B8B3CC8 /* SpinalyticsPersistenceController.swift in Sources */,
+				54F7F7857261D1108EE0EFA8 /* HealthKitService.swift in Sources */,
+				ADC171EBB74E32F1C2ED1949 /* WeatherKitService.swift in Sources */,
+				D086E01F2041813A911E1479 /* AnkylosaurusMascot.swift in Sources */,
+				554F70FA84358D0F0C7CBB3A /* SpinalyticsApp.swift in Sources */,
+				DD4CFE31E71A2A80D4017B2F /* SpinalyticsApp.swift in Sources */,
+				9A17D4BCC37A4D39ADC9138B /* PainTrackingView.swift in Sources */,
+				D4AA5EEB8CBF4D849250EF9A /* JournalView.swift in Sources */,
+				7D9B8EADE1614C438A0C961C /* BASSDAIView.swift in Sources */,
+				37014F3C14C84574BC8412E7 /* ExportDataView.swift in Sources */,
+				5E0CD6E5DDEA4DE6BC09195E /* AssetsManager.swift in Sources */,
+				659D6BB42C8A473EAC589371 /* JournalHistoryView.swift in Sources */,
+				C4DCC7FD6B0C457A9ED82658 /* PainTrackingHistoryView.swift in Sources */,
+				9E4550B8C7554254B7936312 /* FlareTriggers.swift in Sources */,
+				4B8789729FF64B71A924585E /* TriggerSelectorView.swift in Sources */,
+				9ADF3B7A34A0AEFD43C17AC6 /* QuickLogView.swift in Sources */,
+				CF599721CBEC0CF875C51DA9 /* QuickLogViewModel.swift in Sources */,
+				2829C7B3C2F0E84B80FD415C /* SOSFlareView.swift in Sources */,
+				BF787EDF177DB354B8E0854A /* SOSFlareViewModel.swift in Sources */,
+				ADD84D8D29B777D0CE1C0891 /* QuestionnaireUserPreferences.swift in Sources */,
+				2919208AE2BFD5C60F10AD40 /* QuestionnaireSettingsView.swift in Sources */,
+				F9764A97C1D6DB4B7602A76E /* QuestionnaireConfigView.swift in Sources */,
+				CD587D4E042308754F6AA764 /* QuestionnaireModels.swift in Sources */,
+				F7E2C932D09A071E26F601E0 /* QuestionnaireManager.swift in Sources */,
+				CF04BBFE538F646C4B4E2744 /* QuestionnaireResponse+Extensions.swift in Sources */,
+				4B4B8CB55843C43F77CB343B /* QuestionnaireFormView.swift in Sources */,
+				922EA2A9F0E554D71529771B /* QuestionnairePreferences.swift in Sources */,
+				E32F886FE2B033B82956549E /* SettingsView.swift in Sources */,
+				7ADEBA69F5E9A03B4BAF7BA1 /* YouTubeHelper.swift in Sources */,
+				1409BDD45014FE2B50269EEB /* YouTubePlayerView.swift in Sources */,
+				D26C44A41612E355800B7437 /* AssessmentsView.swift in Sources */,
+				16291AC5A56D9AF0998343F0 /* BodyRegion.swift in Sources */,
+				5958F0CA0E48E8DA2D3B7156 /* CoreDataErrorHandler.swift in Sources */,
+				8DC196A34C6E6D19148FAEBC /* BodyDiagramView.swift in Sources */,
+				35C322BEB55DC2F36FCA5A5C /* CoachCompositorView.swift in Sources */,
+				26A8497988859E827F7D845E /* RoutineDetailView.swift in Sources */,
+				94162E5B501251481FFCFB5B /* RoutineManagementView.swift in Sources */,
+				557713C2B02CE8BA21F541A0 /* RoutineBuilderView.swift in Sources */,
+				E29C96466E0AD4E815DBBD7D /* RoutineExecutionView.swift in Sources */,
+				267A4A1D292F2A70FE6D5003 /* ExerciseLibraryView.swift in Sources */,
+				5828FED0DA63099A36BAE566 /* ExerciseStep.swift in Sources */,
+				01609CFB1D3D5F10D8AAC507 /* ExerciseFeedbackView.swift in Sources */,
+				E330F170E3309C6ADAFD448F /* ExerciseHistoryView.swift in Sources */,
+				5A6B59EBD2060AFD07320CFC /* ExerciseStatsView.swift in Sources */,
+				78F638D9148A482A86C14D1B /* StepCoachView.swift in Sources */,
+				B33068DE95DDCE8C2F8E979C /* ExerciseData.swift in Sources */,
+				74B472CDCEB4357EBE7D51E7 /* WeatherNotificationService.swift in Sources */,
+				EFA0309D7FDAA1500F6A36A4 /* WeatherServiceError.swift in Sources */,
+				DAC100BE6E8AC33DBD35B21C /* ResilientWeatherService.swift in Sources */,
+				439BEF329FEE66754FC938BB /* WeatherCache.swift in Sources */,
+				10D0B6EB039FD82A7C6E3CBB /* WeatherDataValidator.swift in Sources */,
+				4BF9217F0DDC7399CA3849FD /* PressureTrendChart.swift in Sources */,
+				C154C19C9898755AB776475D /* WeatherFlareRiskViewModel.swift in Sources */,
+				528697023BC75945925E2F30 /* WeatherFlareRiskCard.swift in Sources */,
+				7281FBEE3AAB609A3CBD94F6 /* WeatherNotificationSettingsView.swift in Sources */,
+				475FF7D20F0BEFB01A0ED1E7 /* WeatherService.swift in Sources */,
+				B165F003ACCAB3DFE5BBA202 /* OnboardingFlow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C1000001000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASYNC_COMPILATION_ENABLED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C1000002000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASYNC_COMPILATION_ENABLED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2000001000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RheumaApp-Swift/RheumaApp.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = LY8UKF9CDR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "RheumaApp-Swift/Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to HealthKit to track your health data and pain levels.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app needs to update HealthKit with your pain and medication data.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rheumaapp.RheumaApp-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2000002000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RheumaApp-Swift/RheumaApp.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = LY8UKF9CDR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "RheumaApp-Swift/Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to HealthKit to track your health data and pain levels.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app needs to update HealthKit with your pain and medication data.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rheumaapp.RheumaApp-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7000001000000000000001 /* Build configuration list for PBXNativeTarget "RheumaApp-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2000001000000000000001 /* Debug */,
+				C2000002000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1000001000000000000001 /* Build configuration list for PBXProject "RheumaApp-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1000001000000000000001 /* Debug */,
+				C1000002000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A2000010000000000000001 /* Spinalytics.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A2000013000000000000001 /* Spinalytics.xcdatamodel */,
+			);
+			currentVersion = A2000013000000000000001 /* Spinalytics.xcdatamodel */;
+			path = Spinalytics.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B0000001000000000000001 /* Project object */;
+}

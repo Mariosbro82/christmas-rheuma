@@ -1,0 +1,24 @@
+{
+  "Inputs" : {
+    "features" : {
+      "MLFeatureShortDescription" : "30-day x 92-feature patient history (normalized)"
+    }
+  },
+  "Outputs" : {
+    "probabilities" : {
+      "MLFeatureShortDescription" : "Softmax probabilities [P(no_flare), P(will_flare)]"
+    },
+    "risk_score" : {
+      "MLFeatureShortDescription" : "Continuous risk (0-1)"
+    },
+    "logits" : {
+      "MLFeatureShortDescription" : "Classification logits [no_flare, will_flare]"
+    }
+  },
+  "TrainingInputs" : {
+
+  },
+  "States" : {
+
+  }
+}

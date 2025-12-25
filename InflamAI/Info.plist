@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>AccentColor</string>
+		<key>UIImageName</key>
+		<string>AppIcon</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
+		<key>UILaunchScreenMininumTime</key>
+		<real>2</real>
+	</dict>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<!-- INFLAMAI PRIVACY STRINGS - Hospital-grade transparency -->
+
+	<!-- HealthKit - 25+ data streams for ML flare prediction -->
+	<key>NSHealthShareUsageDescription</key>
+	<string>InflamAI uses 25+ health data streams to predict AS flares:
+
+• Heart: HRV, resting/average heart rate, VO2 max
+• Sleep: Duration, stages (REM, deep, core), efficiency
+• Activity: Steps, distance, flights climbed, exercise time
+• Mobility: Walking speed, step length, gait symmetry
+• Vitals: Blood oxygen, respiratory rate
+• Body: Weight, BMI, height
+• Workouts: Type, duration, calories burned
+
+All data is processed on-device using our Neural Engine. Nothing is uploaded to the cloud.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>InflamAI can save your symptom logs to Health app for a complete health record. This is optional and data never leaves your device without your permission.</string>
+
+	<!-- Location/Weather -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is used only to fetch local weather data (barometric pressure, humidity) which research shows can trigger AS flares. Your location is never shared or stored.</string>
+
+	<!-- Camera (for body region photos) -->
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access allows you to document swelling, redness, or inflammation in affected body regions for your personal health records and clinical reports.</string>
+
+	<!-- Photo Library -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access your photo library to attach images of affected regions to your symptom logs.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save generated PDF reports and charts to your photo library for easy sharing with your rheumatologist.</string>
+
+	<!-- Face ID -->
+	<key>NSFaceIDUsageDescription</key>
+	<string>Face ID protects your sensitive health data while providing quick, secure access to InflamAI.</string>
+
+	<!-- Motion (for activity correlation) -->
+	<key>NSMotionUsageDescription</key>
+	<string>Motion data helps correlate physical activity levels with symptom patterns to identify your personal triggers.</string>
+
+	<!-- Notifications -->
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>InflamAI can notify you of daily check-in reminders, medication schedules, and elevated flare risk based on weather patterns.</string>
+
+	<!-- Background Modes - REQUIRED for BGTaskScheduler -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+	</array>
+
+	<!-- Background Tasks -->
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.inflamai.flare.prediction</string>
+		<string>com.inflamai.context.sync</string>
+		<string>com.inflamai.weatherMonitoring</string>
+		<string>com.inflamai.predictionRefresh</string>
+		<string>com.inflamai.background.health.processing</string>
+		<string>com.inflamai.health.monitoring</string>
+		<string>com.inflamai.modelupdate</string>
+		<string>com.inflamai.notification.processing</string>
+	</array>
+
+	<!-- WeatherKit -->
+	<key>NSWeatherUsageDescription</key>
+	<string>Weather data (barometric pressure, humidity, temperature) is used to correlate environmental conditions with your AS symptoms.</string>
+
+	<!-- App Transport Security - YouTube Video Playback -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>youtube-nocookie.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+			</dict>
+			<key>youtube.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+			</dict>
+			<key>googlevideo.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+			</dict>
+			<key>ytimg.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+			</dict>
+			<key>ggpht.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

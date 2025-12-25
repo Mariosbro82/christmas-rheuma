@@ -1,0 +1,1966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 90;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01609CFB1D3D5F10D8AAC507 /* Features/Exercise/Views/ExerciseFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2640F6B51AD58805F9754F6 /* Features/Exercise/Views/ExerciseFeedbackView.swift */; };
+		07A1DCEB605B41BDA227CD20 /* MentalHealthSurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDE947B8E748BF9C46688B /* MentalHealthSurveyView.swift */; };
+		0B4CF447154EF38E6CB2BC1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A13166DADA264D1660A596 /* HomeView.swift */; };
+		0C1BEB5203AD2F9176578652 /* JointTapSOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C13782B00D8CDFB54EBF61 /* JointTapSOSView.swift */; };
+		1409BDD45014FE2B50269EEB /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96652CBBE3B266C1ECDEBBD6 /* YouTubePlayerView.swift */; };
+		16291AC5A56D9AF0998343F0 /* BodyRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91A335C1E8EAEC3E2965AD /* BodyRegion.swift */; };
+		1BDCE092DEBA8A1BC29C13EB /* OnboardingAnimationExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3EE13F30268B86A75D1A7E /* OnboardingAnimationExtras.swift */; };
+		1C6F7C8D44C0EB9FC3502415 /* BASDAICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9AD23206C8D840C82EC981 /* BASDAICalculator.swift */; };
+		20D450484C3741F6A04E86DA /* MorningCheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FE101126C4CFEB9816D34 /* MorningCheckInViewModel.swift */; };
+		24257FBEB3D5A5561C531E47 /* PainLocationSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC38AF4BF4084DD1D30DA0E /* PainLocationSelector.swift */; };
+		24FCF8744A4D47A3A00A9994 /* InflamAI/Features/Navigation/WellnessHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F781DA047C984C48908A93B3 /* InflamAI/Features/Navigation/WellnessHubView.swift */; };
+		267A4A1D292F2A70FE6D5003 /* Features/Exercise/ExerciseLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71560A3D6F6DBF0F7240422 /* Features/Exercise/ExerciseLibraryView.swift */; };
+		26A8497988859E827F7D845E /* Features/Routines/RoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEB65BB7B8130383E4067F /* Features/Routines/RoutineDetailView.swift */; };
+		27B4C3D1E5F6789012345678 /* Features/Routines/RoutineAnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5D4E2F6789ABCDEF01234 /* Features/Routines/RoutineAnalyticsView.swift */; };
+		2829C7B3C2F0E84B80FD415C /* SOSFlareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F606E0D440594921954E9 /* SOSFlareView.swift */; };
+		2919208AE2BFD5C60F10AD40 /* QuestionnaireSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB69A5638C0CA448F84D72 /* QuestionnaireSettingsView.swift */; };
+		348E08E49186F9C417B4AF18 /* TrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237DBFFA07AB18677FB69E9 /* TrendsViewModel.swift */; };
+		35C322BEB55DC2F36FCA5A5C /* Features/Coach/CoachCompositorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC215D204B4FE4F1BB174DA4 /* Features/Coach/CoachCompositorView.swift */; };
+		36A660562C0A44E0B005EEB4 /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8B1A698F4446239E4328EC /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift */; };
+		37014F3C14C84574BC8412E7 /* Settings/ExportDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752C47EAFD6480D996A88C5 /* Settings/ExportDataView.swift */; };
+		38554714FFBC455986FA9965 /* MentalHealthSurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD4EB1C85A47119B0BF854 /* MentalHealthSurveyViewModel.swift */; };
+		461408C93B796DACC1380D74 /* TimeRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1BD485C24AC35924475D3D /* TimeRange.swift */; };
+		492416B4BF16403594FAE203 /* InflamAI/Features/Navigation/TrackHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1B0BFB47F49D8ADEDD872 /* InflamAI/Features/Navigation/TrackHubView.swift */; };
+		4B4B8CB55843C43F77CB343B /* QuestionnaireFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A6064DA855D8E5302711 /* QuestionnaireFormView.swift */; };
+		4B6D6CBD13E741649962250B /* LabResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5719E172B764B018483F04C /* LabResultsView.swift */; };
+		4B8789729FF64B71A924585E /* Core/Components/TriggerSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B2C1436D4042F4A5D5FCDD /* Core/Components/TriggerSelectorView.swift */; };
+		4BF9217F0DDC7399CA3849FD /* Features/Weather/PressureTrendChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40A2E1B7F3EC960F26DC06 /* Features/Weather/PressureTrendChart.swift */; };
+		4FEF309D76234C989FC337C0 /* MorningCheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78D27E616548A083D1901E /* MorningCheckInView.swift */; };
+		528697023BC75945925E2F30 /* Features/Weather/WeatherFlareRiskCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D019A203006D766853073 /* Features/Weather/WeatherFlareRiskCard.swift */; };
+		53D07DFA8EF80653BBE07CBC /* ASDACalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396D0BF0F017E496B48BFAF /* ASDACalculator.swift */; };
+		54F7F7857261D1108EE0EFA8 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340EC2383F3D9C77058F2272 /* HealthKitService.swift */; };
+		554F70FA84358D0F0C7CBB3A /* InflamAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E73DCF112CD0E78A006D9 /* InflamAIApp.swift */; };
+		557713C2B02CE8BA21F541A0 /* Features/Routines/RoutineBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874FAF6A1A9557806EA0A2C /* Features/Routines/RoutineBuilderView.swift */; };
+		5828FED0DA63099A36BAE566 /* Features/Exercise/Models/ExerciseStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC94804069705F956C2E99E /* Features/Exercise/Models/ExerciseStep.swift */; };
+		5958F0CA0E48E8DA2D3B7156 /* CoreDataErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFCF2F2DB4A15FB13BC2484 /* CoreDataErrorHandler.swift */; };
+		5A6B59EBD2060AFD07320CFC /* Features/Exercise/Views/ExerciseStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E52513FD6ABD8A594AEB9 /* Features/Exercise/Views/ExerciseStatsView.swift */; };
+		5C0DDA33F35641CAAABFF43A /* ClinicalMeasurementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413D2D0D5694F5B9ACEE661 /* ClinicalMeasurementsView.swift */; };
+		5DC36AF71BCC4EEC8DD11CA6 /* DailyCheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E933DFF480FA4FDC8D6494FB /* DailyCheckInViewModel.swift */; };
+		5E0CD6E5DDEA4DE6BC09195E /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB30A684E9924C08948E279B /* AssetsManager.swift */; };
+		64287BDA13FAB063853E8D01 /* WellnessJourneySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88F4AF6D33F6EA19D673DD /* WellnessJourneySystem.swift */; };
+		650726991D5047FDB8FE3038 /* InflamAI/Features/Navigation/AnalyticsHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B47B4B498945ABA9386D26 /* InflamAI/Features/Navigation/AnalyticsHubView.swift */; };
+		659D6BB42C8A473EAC589371 /* JournalHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08956087D85E4B37A3E3B0B6 /* JournalHistoryView.swift */; };
+		690B38132EDA3F87003F16C8 /* ASFlarePredictor.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 690B38122EDA3F87003F16C8 /* ASFlarePredictor.mlpackage */; };
+		6993BE902EF908DB00DFBE61 /* InflamAI/Features/Navigation/TrackHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1B0BFB47F49D8ADEDD872 /* InflamAI/Features/Navigation/TrackHubView.swift */; };
+		6993BE912EF908DB00DFBE61 /* InflamAI/Features/Navigation/AnalyticsHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B47B4B498945ABA9386D26 /* InflamAI/Features/Navigation/AnalyticsHubView.swift */; };
+		6993BE922EF908DB00DFBE61 /* InflamAI/Features/Navigation/WellnessHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F781DA047C984C48908A93B3 /* InflamAI/Features/Navigation/WellnessHubView.swift */; };
+		6993BE932EF908DB00DFBE61 /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8B1A698F4446239E4328EC /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift */; };
+		69BE465D2EFB39AD00459CEA /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 69BE465C2EFB39AD00459CEA /* RiveRuntime */; };
+		69EC72EB2EE62A920020E0BB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 69EC72EA2EE62A920020E0BB /* Lottie */; };
+		6B1ECB6409564778A27EF212 /* QuickSymptomLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0A3B09F60843439091BF57 /* QuickSymptomLogView.swift */; };
+		7281FBEE3AAB609A3CBD94F6 /* Features/Settings/WeatherNotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E96DBB83D3141CECF21F23E /* Features/Settings/WeatherNotificationSettingsView.swift */; };
+		74B472CDCEB4357EBE7D51E7 /* WeatherNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7546BC08AA4D3F58AEAE25FA /* WeatherNotificationService.swift */; };
+		74E41CDCF53547E9B42E342A /* BASFIQuestionnaireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D533B138F4DB0A3637738 /* BASFIQuestionnaireViewModel.swift */; };
+		788DA3F5F1736CB20B97DD74 /* NewOnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB9DD183D24C732F0B1B361 /* NewOnboardingFlow.swift */; };
+		78F638D9148A482A86C14D1B /* Features/Exercise/Views/StepCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6836E59BDF98FDB913DFE /* Features/Exercise/Views/StepCoachView.swift */; };
+		7ADEBA69F5E9A03B4BAF7BA1 /* YouTubeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C89305B3503DC565BA4A1 /* YouTubeHelper.swift */; };
+		7D9B8EADE1614C438A0C961C /* BASSDAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA29896EC044A09A6DA832 /* BASSDAIView.swift */; };
+		8D7E58044C44FFA1D928879A /* FlareTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B9E842996A4229490860A /* FlareTimelineView.swift */; };
+		8D9017C25DFECFEAF380F648 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BA2234EF9C926466EE0475 /* TrendsView.swift */; };
+		8DC196A34C6E6D19148FAEBC /* BodyDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724306ABD00EA8912671CD9D /* BodyDiagramView.swift */; };
+		8EAB137002444B8F9BD85E7B /* LabResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D96C9AFC294936853BB8A2 /* LabResultsViewModel.swift */; };
+		922EA2A9F0E554D71529771B /* QuestionnairePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B724C487C2F7176A7420F670 /* QuestionnairePreferences.swift */; };
+		9310BEE993554AA6B2948EE6 /* ClinicalMeasurementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5E856358A4449A368E2A9 /* ClinicalMeasurementsViewModel.swift */; };
+		93FB19CC8AB09E5BC3369689 /* MedicationManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC463DA15D9FC55914F923 /* MedicationManagementView.swift */; };
+		94162E5B501251481FFCFB5B /* Features/Routines/RoutineManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4EF7E34AE4CC5406F64ED /* Features/Routines/RoutineManagementView.swift */; };
+		99D0F5A2F7D649F08FD7CE9B /* QuestionnaireHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA758B43014D67B4642F64 /* QuestionnaireHistoryView.swift */; };
+		9A17D4BCC37A4D39ADC9138B /* PainTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078E15E483B64A36ABE14032 /* PainTrackingView.swift */; };
+		9ADF3B7A34A0AEFD43C17AC6 /* QuickLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E70A859BE11AF906A74F4C7 /* QuickLogView.swift */; };
+		9E4550B8C7554254B7936312 /* Core/Types/FlareTriggers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEBEBB35414ADDA749723D /* Core/Types/FlareTriggers.swift */; };
+		9FBD9D4C4B234EA597548230 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8F0CAC57DC54A5EAFE53F64 /* Localizable.strings */; };
+		A1000009000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000009000000000000001 /* Assets.xcassets */; };
+		A1000010000000000000001 /* InflamAI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2000010000000000000001 /* InflamAI.xcdatamodeld */; };
+		A1000021000000000000001 /* BASSDAIPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000024000000000000001 /* BASSDAIPracticeView.swift */; };
+		A1000022000000000000001 /* StandardizedMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000025000000000000001 /* StandardizedMedications.swift */; };
+		A3DV01000000000000001 /* Anky3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DV02000000000000001 /* Anky3DView.swift */; };
+		AD6C8646ECDFD82521970B65 /* MedicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263862431FB13695E9719D0 /* MedicationViewModel.swift */; };
+		ADC171EBB74E32F1C2ED1949 /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D47E10E070280870FB36A /* WeatherKitService.swift */; };
+		ADD84D8D29B777D0CE1C0891 /* QuestionnaireUserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228215B1DE413628281C5A5 /* QuestionnaireUserPreferences.swift */; };
+		AIINSV01000000000000001 /* InflamAI/Features/AI/AIInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AIINSV02000000000000001 /* InflamAI/Features/AI/AIInsightsView.swift */; };
+		AIINVM01000000000000001 /* InflamAI/Features/AI/AIInsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AIINVM02000000000000001 /* InflamAI/Features/AI/AIInsightsViewModel.swift */; };
+		ANKY3D01000000000001 /* AnkyCharacter.usdz in Resources */ = {isa = PBXBuildFile; fileRef = ANKY3D02000000000001 /* AnkyCharacter.usdz */; };
+		ANKYRIV01000000000000001 /* AnkyRiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ANKYRIV02000000000000001 /* AnkyRiveView.swift */; };
+		B165F003ACCAB3DFE5BBA202 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB71E6D49975201D8A1AAE8 /* OnboardingFlow.swift */; };
+		B2E2F1432E07F6BDC41F96D5 /* AnimatedSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1A2F5416C47F30BB8ECC3 /* AnimatedSplashScreen.swift */; };
+		B33068DE95DDCE8C2F8E979C /* Features/Exercise/ExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BD36935FA7C7413B12A0B9 /* Features/Exercise/ExerciseData.swift */; };
+		BF787EDF177DB354B8E0854A /* SOSFlareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126E928A974AF53EF2C4B209 /* SOSFlareViewModel.swift */; };
+		BOOSTR01000000000000001 /* InflamAI/Core/ML/BootstrapStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BOOSTR02000000000000001 /* InflamAI/Core/ML/BootstrapStrategy.swift */; };
+		C154C19C9898755AB776475D /* Features/Weather/WeatherFlareRiskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07214F59B66A882DE95D112E /* Features/Weather/WeatherFlareRiskViewModel.swift */; };
+		C4289E43BA045FBCED84086C /* CorrelationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A7F90FE1DD73AD8191447F /* CorrelationEngine.swift */; };
+		C4DCC7FD6B0C457A9ED82658 /* PainTrackingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF67A955F14576ABDB8C4A /* PainTrackingHistoryView.swift */; };
+		C7A22F103DFD435B10AF52CC /* PainMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D6F654B5356C7821A2AC8C /* PainMapViewModel.swift */; };
+		CALENG001000000000001 /* InflamAI/Core/ML/CalibrationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CALENG002000000000001 /* InflamAI/Core/ML/CalibrationEngine.swift */; };
+		CD587D4E042308754F6AA764 /* QuestionnaireModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45C93D2CD6D03BAD7CF1358 /* QuestionnaireModels.swift */; };
+		CF04BBFE538F646C4B4E2744 /* QuestionnaireResponse+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A64646A77B8D9F84693D68 /* QuestionnaireResponse+Extensions.swift */; };
+		CF599721CBEC0CF875C51DA9 /* QuickLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0539EEDF5476FF1BC25768 /* QuickLogViewModel.swift */; };
+		CONTLP01000000000000001 /* InflamAI/Core/ML/ContinuousLearningPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CONTLP02000000000000001 /* InflamAI/Core/ML/ContinuousLearningPipeline.swift */; };
+		D086E01F2041813A911E1479 /* AnkylosaurusMascot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A46470B0AFACDABE125A91 /* AnkylosaurusMascot.swift */; };
+		D26C44A41612E355800B7437 /* AssessmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D812D109758EF578EBC0529 /* AssessmentsView.swift */; };
+		D4AA5EEB8CBF4D849250EF9A /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72643BB0024C26B5790D86 /* JournalView.swift */; };
+		D5D0A07EB2193162A0CD6E6F /* OnboardingRedesignFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E63D0D783E6F14E8710F5CB /* OnboardingRedesignFlow.swift */; };
+		D6391B775EEB4BA2A18A2FE9 /* Features/Settings/MLFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC647138085643039224234D /* Features/Settings/MLFeaturesView.swift */; };
+		DD4CFE31E71A2A80D4017B2F /* InflamAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD9C1EDCAB2720A962DB04 /* InflamAIApp.swift */; };
+		DEMOSEED01000000000001 /* DemoDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEMOSEED02000000000001 /* DemoDataSeeder.swift */; };
+		DSNCMP01000000000000001 /* InflamAI/Core/DesignSystem/InflamAIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DSNCMP02000000000000001 /* InflamAI/Core/DesignSystem/InflamAIComponents.swift */; };
+		DSNSYS01000000000000001 /* InflamAI/Core/DesignSystem/InflamAIDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DSNSYS02000000000000001 /* InflamAI/Core/DesignSystem/InflamAIDesignSystem.swift */; };
+		E29C96466E0AD4E815DBBD7D /* Features/Routines/RoutineExecutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079877999E7E43762F8DD36B /* Features/Routines/RoutineExecutionView.swift */; };
+		E32F886FE2B033B82956549E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063B4E9692C2E38CDE691E8B /* SettingsView.swift */; };
+		E330F170E3309C6ADAFD448F /* Features/Exercise/Views/ExerciseHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0960788127148FD2E67705 /* Features/Exercise/Views/ExerciseHistoryView.swift */; };
+		EAFBEA2DD9C70BA4AD509766 /* PDFExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39893B5C415B10996A5D210 /* PDFExportService.swift */; };
+		EB0B71D2DB073D3E1B8B3CC8 /* InflamAIPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57180701B3F61894B1604116 /* InflamAIPersistenceController.swift */; };
+		EC2818E8BA2744C387677547 /* DailyCheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5045458FA04B4988085C21 /* DailyCheckInView.swift */; };
+		EFBA0FFFF8AF24F4567172CE /* AnkyAnimatedMascot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676AE332862B628C19AA6C54 /* AnkyAnimatedMascot.swift */; };
+		EXPLAI01000000000000001 /* InflamAI/Core/ML/ExplainabilityEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EXPLAI02000000000000001 /* InflamAI/Core/ML/ExplainabilityEngine.swift */; };
+		F0APPGRP001000000000001 /* AppGroupConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0APPGRP002000000000001 /* AppGroupConfig.swift */; };
+		F0SHARED001000000000001 /* SharedDataSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0SHARED002000000000001 /* SharedDataSyncService.swift */; };
+		F0WIDGDM001000000000001 /* WidgetDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0WIDGDM002000000000001 /* WidgetDataModels.swift */; };
+		F0WIDGDP001000000000001 /* WidgetDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0WIDGDP002000000000001 /* WidgetDataProvider.swift */; };
+		F5D7972F21944DD78B3CEA3A /* BASFIQuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F73A980845E4C579A7508C2 /* BASFIQuestionnaireView.swift */; };
+		F7E2C932D09A071E26F601E0 /* QuestionnaireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1A944BE0509BBFAF4CB27F /* QuestionnaireManager.swift */; };
+		F9764A97C1D6DB4B7602A76E /* QuestionnaireConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419E3E86F78C4C1555BE8BE5 /* QuestionnaireConfigView.swift */; };
+		FEATEX01000000000000001 /* InflamAI/Core/ML/FeatureExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEATEX02000000000000001 /* InflamAI/Core/ML/FeatureExtractor.swift */; };
+		FEATSC01000000000000001 /* InflamAI/Core/ML/NeuralEngine/data/FeatureScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEATSC02000000000000001 /* InflamAI/Core/ML/NeuralEngine/data/FeatureScaler.swift */; };
+		FLNOT001000000000000001 /* InflamAI/Core/Services/FlareNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FLNOT002000000000000001 /* InflamAI/Core/Services/FlareNotificationService.swift */; };
+		FLPRED01000000000000001 /* InflamAI/Core/ML/FlarePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FLPRED02000000000000001 /* InflamAI/Core/ML/FlarePredictor.swift */; };
+		IOSWIDGET13000000000001 /* InflamAIWidgets.appex in Embed iOS App Extensions */ = {isa = PBXBuildFile; fileRef = IOSWIDGET02000000000001 /* InflamAIWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		KNNENG01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/KNNTriggerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = KNNENG02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/KNNTriggerEngine.swift */; };
+		LIBV001000000000000001 /* InflamAI/Features/Library/LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = LIBV002000000000000001 /* InflamAI/Features/Library/LibraryView.swift */; };
+		LIBVM01000000000000001 /* InflamAI/Features/Library/LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = LIBVM02000000000000001 /* InflamAI/Features/Library/LibraryViewModel.swift */; };
+		LOTV001000000000000001 /* InflamAI/Core/Components/LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = LOTV002000000000000001 /* InflamAI/Core/Components/LottieView.swift */; };
+		MEDASSETS01000000000001 /* InflamAI/Features/Meditation/Models/MeditationAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDASSETS01000000000001REF /* InflamAI/Features/Meditation/Models/MeditationAssets.swift */; };
+		MEDBR01000000000000001 /* InflamAI/Features/Meditation/Models/BreathingPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDBR01000000000000001REF /* InflamAI/Features/Meditation/Models/BreathingPattern.swift */; };
+		MEDCAT01000000000000001 /* InflamAI/Features/Meditation/Models/MeditationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDCAT01000000000000001REF /* InflamAI/Features/Meditation/Models/MeditationCategory.swift */; };
+		MEDCE01000000000000001 /* InflamAI/Features/Meditation/Services/MeditationCorrelationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDCE01000000000000001REF /* InflamAI/Features/Meditation/Services/MeditationCorrelationEngine.swift */; };
+		MEDHV01000000000000001 /* InflamAI/Features/Meditation/Views/MeditationHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDHV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationHomeView.swift */; };
+		MEDPH01000000000000001 /* InflamAI/Core/Persistence/MeditationPersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDPH01000000000000001REF /* InflamAI/Core/Persistence/MeditationPersistenceHelper.swift */; };
+		MEDPLV01000000000000001 /* InflamAI/Features/Meditation/Views/MeditationPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDPLV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationPlayerView.swift */; };
+		MEDPV01000000000000001 /* InflamAI/Features/Meditation/Views/MeditationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDPV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationProgressView.swift */; };
+		MEDSM01000000000000001 /* InflamAI/Features/Meditation/Models/MeditationSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDSM01000000000000001REF /* InflamAI/Features/Meditation/Models/MeditationSessionModel.swift */; };
+		MEDVM01000000000000001 /* InflamAI/Features/Meditation/ViewModels/MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = MEDVM01000000000000001REF /* InflamAI/Features/Meditation/ViewModels/MeditationViewModel.swift */; };
+		MINMAX01000000000001 /* InflamAI/Core/ML/NeuralEngine/data/minmax_params.json in Resources */ = {isa = PBXBuildFile; fileRef = MINMAX02000000000001 /* InflamAI/Core/ML/NeuralEngine/data/minmax_params.json */; };
+		MLFD001000000000000000001 /* InflamAI/Features/AI/MLFeaturesDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = MLFD002000000000000000001 /* InflamAI/Features/AI/MLFeaturesDisplayView.swift */; };
+		MLINT001000000000000001 /* InflamAI/Core/ML/MLIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = MLINT002000000000000001 /* InflamAI/Core/ML/MLIntegration.swift */; };
+		MLPRED01000000000000001 /* InflamAI/Core/ML/MLPredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = MLPRED02000000000000001 /* InflamAI/Core/ML/MLPredictionService.swift */; };
+		MLTYP001000000000000001 /* InflamAI/Core/ML/MLTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = MLTYP002000000000000001 /* InflamAI/Core/ML/MLTypes.swift */; };
+		NEUENG01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/NeuralTriggerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEUENG02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/NeuralTriggerEngine.swift */; };
+		NEUEPS01000000000000001 /* InflamAI/Core/ML/NeuralEnginePredictionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEUEPS02000000000000001 /* InflamAI/Core/ML/NeuralEnginePredictionService.swift */; };
+		NEUROI01000000000000001 /* InflamAI/Features/TriggerInsights/NeuralOptInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEUROI02000000000000001 /* InflamAI/Features/TriggerInsights/NeuralOptInView.swift */; };
+		NEURST01000000000000001 /* InflamAI/Features/AI/NeuralEngineStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEURST02000000000000001 /* InflamAI/Features/AI/NeuralEngineStatusView.swift */; };
+		OPNMTO001000000000000001 /* OpenMeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OPNMTO002000000000000001 /* OpenMeteoService.swift */; };
+		OUTTRK001000000000001 /* InflamAI/Core/ML/OutcomeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OUTTRK002000000000001 /* InflamAI/Core/ML/OutcomeTracker.swift */; };
+		PERFMN01000000000000001 /* InflamAI/Core/ML/PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = PERFMN02000000000000001 /* InflamAI/Core/ML/PerformanceMonitor.swift */; };
+		PREDHIST01000000000001 /* InflamAI/Features/AI/PredictionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PREDHIST02000000000001 /* InflamAI/Features/AI/PredictionHistoryView.swift */; };
+		PRESHM001000000000000001 /* PressureHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = PRESHM002000000000000001 /* PressureHistoryManager.swift */; };
+		SCALERP01000000000001 /* InflamAI/Core/ML/NeuralEngine/data/scaler_params.json in Resources */ = {isa = PBXBuildFile; fileRef = SCALERP02000000000001 /* InflamAI/Core/ML/NeuralEngine/data/scaler_params.json */; };
+		SKELTN01000000000000001 /* InflamAI/Core/DesignSystem/SkeletonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = SKELTN02000000000000001 /* InflamAI/Core/DesignSystem/SkeletonViews.swift */; };
+		SLEEPDINO01000000000001 /* InflamAI/Resources/Animations/sleeping-dino.json in Resources */ = {isa = PBXBuildFile; fileRef = SLEEPDINO02000000000001 /* InflamAI/Resources/Animations/sleeping-dino.json */; };
+		RIVERIV01000000000000001 /* anky_mascot.riv in Resources */ = {isa = PBXBuildFile; fileRef = RIVERIV02000000000000001 /* anky_mascot.riv */; };
+		STATTE01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/StatisticalTriggerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = STATTE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/StatisticalTriggerEngine.swift */; };
+		STREXT01000000000000001 /* InflamAI/Extensions/StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = STREXT02000000000000001 /* InflamAI/Extensions/StringExtensions.swift */; };
+		SYMEXT01000000000000001 /* InflamAI/Core/ML/SymptomLog+MLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = SYMEXT02000000000000001 /* InflamAI/Core/ML/SymptomLog+MLExtensions.swift */; };
+		TEMPIM01000000000000001 /* InflamAI/Core/ML/TemporalImportanceAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = TEMPIM02000000000000001 /* InflamAI/Core/ML/TemporalImportanceAnalyzer.swift */; };
+		TRIGAS01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Services/TriggerAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGAS02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Services/TriggerAnalysisService.swift */; };
+		TRIGCE01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerAnalysisCache+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGCE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerAnalysisCache+Extensions.swift */; };
+		TRIGDF01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGDF02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerDefinitions.swift */; };
+		TRIGDS01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGDS02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerDataService.swift */; };
+		TRIGDV01000000000000001 /* InflamAI/Features/TriggerInsights/TriggerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGDV02000000000000001 /* InflamAI/Features/TriggerInsights/TriggerDetailView.swift */; };
+		TRIGIV01000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGIV02000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsView.swift */; };
+		TRIGIVM1000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGIVM2000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsViewModel.swift */; };
+		TRIGLE01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGLE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerLog+Extensions.swift */; };
+		TRIGTY01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRIGTY02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerTypes.swift */; };
+		TRNCOL01000000000000001 /* InflamAI/Core/ML/TrainingDataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = TRNCOL02000000000000001 /* InflamAI/Core/ML/TrainingDataCollector.swift */; };
+		UNEVIEW01000000000001 /* InflamAI/Features/AI/UnifiedNeuralEngineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = UNEVIEW02000000000001 /* InflamAI/Features/AI/UnifiedNeuralEngineView.swift */; };
+		UNIFNE01000000000000001 /* InflamAI/Core/ML/UnifiedNeuralEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = UNIFNE02000000000000001 /* InflamAI/Core/ML/UnifiedNeuralEngine.swift */; };
+		VALFWK01000000000000001 /* InflamAI/Core/ML/ValidationFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = VALFWK02000000000000001 /* InflamAI/Core/ML/ValidationFramework.swift */; };
+		WIDGET13000000000000001 /* InflamAIWatchWidgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = WIDGET02000000000000001 /* InflamAIWatchWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69BF6E952EC301560039E7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0000001000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69BF6E8C2EC301540039E7C2;
+			remoteInfo = "InflamAI Watch App";
+		};
+		IOSWIDGET11000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0000001000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = IOSWIDGET01000000000001;
+			remoteInfo = InflamAIWidgets;
+		};
+		WIDGET11000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0000001000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = WIDGET01000000000000001;
+			remoteInfo = InflamAIWatchWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		69BF6E982EC301560039E7C2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolder = None;
+			files = (
+			);
+			name = "Embed Watch Content";
+		};
+		IOSWIDGET10000000000001 /* Embed iOS App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = None;
+			files = (
+				IOSWIDGET13000000000001 /* InflamAIWidgets.appex in Embed iOS App Extensions */,
+			);
+			name = "Embed iOS App Extensions";
+		};
+		WIDGET10000000000000001 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = None;
+			files = (
+				WIDGET13000000000000001 /* InflamAIWatchWidgets.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0031449EC7711678E1908FD6 /* InflamAIWatchWidgetBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflamAIWatchWidgetBundle.swift; sourceTree = "<group>"; };
+		063B4E9692C2E38CDE691E8B /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = InflamAI/SettingsView.swift; sourceTree = "<group>"; };
+		07214F59B66A882DE95D112E /* Features/Weather/WeatherFlareRiskViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Weather/WeatherFlareRiskViewModel.swift; sourceTree = "<group>"; };
+		078E15E483B64A36ABE14032 /* PainTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTrackingView.swift; sourceTree = "<group>"; };
+		079877999E7E43762F8DD36B /* Features/Routines/RoutineExecutionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineExecutionView.swift; sourceTree = "<group>"; };
+		08956087D85E4B37A3E3B0B6 /* JournalHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalHistoryView.swift; sourceTree = "<group>"; };
+		0B8666143BB84F25889501FC /* UIApplication+TopMost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopMost.swift"; sourceTree = "<group>"; };
+		0DC94804069705F956C2E99E /* Features/Exercise/Models/ExerciseStep.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Models/ExerciseStep.swift; sourceTree = "<group>"; };
+		0EC6091D85F5482B94562B52 /* WatchStreakWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStreakWidget.swift; sourceTree = "<group>"; };
+		1041A6064DA855D8E5302711 /* QuestionnaireFormView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireFormView.swift; path = InflamAI/Features/Questionnaires/QuestionnaireFormView.swift; sourceTree = "<group>"; };
+		105D47E10E070280870FB36A /* WeatherKitService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
+		126E928A974AF53EF2C4B209 /* SOSFlareViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SOSFlareViewModel.swift; path = Features/QuickCapture/SOSFlareViewModel.swift; sourceTree = "<group>"; };
+		1413D2D0D5694F5B9ACEE661 /* ClinicalMeasurementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicalMeasurementsView.swift; sourceTree = "<group>"; };
+		151D149956F18ACCA81C8C03 /* Features/Exercise/ExerciseLibraryViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/ExerciseLibraryViewModel.swift; sourceTree = "<group>"; };
+		1D40A2E1B7F3EC960F26DC06 /* Features/Weather/PressureTrendChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Weather/PressureTrendChart.swift; sourceTree = "<group>"; };
+		1D812D109758EF578EBC0529 /* AssessmentsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssessmentsView.swift; path = InflamAI/Features/Questionnaires/AssessmentsView.swift; sourceTree = "<group>"; };
+		1EB4EF7E34AE4CC5406F64ED /* Features/Routines/RoutineManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineManagementView.swift; sourceTree = "<group>"; };
+		27008EC6396EF4C8FB96719A /* OnboardingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingFlow.swift; path = InflamAI/Features/Onboarding/OnboardingFlow.swift; sourceTree = "<group>"; };
+		27AD4EB1C85A47119B0BF854 /* MentalHealthSurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthSurveyViewModel.swift; sourceTree = "<group>"; };
+		2A5045458FA04B4988085C21 /* DailyCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInView.swift; sourceTree = "<group>"; };
+		2E0A3B09F60843439091BF57 /* QuickSymptomLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSymptomLogView.swift; sourceTree = "<group>"; };
+		2F9AD23206C8D840C82EC981 /* BASDAICalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BASDAICalculator.swift; sourceTree = "<group>"; };
+		3228215B1DE413628281C5A5 /* QuestionnaireUserPreferences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireUserPreferences.swift; path = InflamAI/Core/Preferences/QuestionnaireUserPreferences.swift; sourceTree = "<group>"; };
+		340EC2383F3D9C77058F2272 /* HealthKitService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		38C5D4E2F6789ABCDEF01234 /* Features/Routines/RoutineAnalyticsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineAnalyticsView.swift; sourceTree = "<group>"; };
+		39CF67A955F14576ABDB8C4A /* PainTrackingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTrackingHistoryView.swift; sourceTree = "<group>"; };
+		3AFCF2F2DB4A15FB13BC2484 /* CoreDataErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreDataErrorHandler.swift; path = InflamAI/CoreDataErrorHandler.swift; sourceTree = "<group>"; };
+		3DC6836E59BDF98FDB913DFE /* Features/Exercise/Views/StepCoachView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/StepCoachView.swift; sourceTree = "<group>"; };
+		3E63D0D783E6F14E8710F5CB /* OnboardingRedesignFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingRedesignFlow.swift; path = Features/Onboarding/DuolingoStyle/OnboardingRedesignFlow.swift; sourceTree = "<group>"; };
+		3ECF95BF8B4F3C5BA72BA88E /* WatchFlareWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WatchFlareWidget.swift; sourceTree = "<group>"; };
+		419E3E86F78C4C1555BE8BE5 /* QuestionnaireConfigView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireConfigView.swift; path = InflamAI/Features/Settings/QuestionnaireConfigView.swift; sourceTree = "<group>"; };
+		42C13782B00D8CDFB54EBF61 /* JointTapSOSView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JointTapSOSView.swift; path = Features/QuickCapture/JointTapSOSView.swift; sourceTree = "<group>"; };
+		44C1B0BFB47F49D8ADEDD872 /* InflamAI/Features/Navigation/TrackHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Navigation/TrackHubView.swift; sourceTree = SOURCE_ROOT; };
+		47A7F90FE1DD73AD8191447F /* CorrelationEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CorrelationEngine.swift; sourceTree = "<group>"; };
+		48CC463DA15D9FC55914F923 /* MedicationManagementView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MedicationManagementView.swift; path = Features/Medication/MedicationManagementView.swift; sourceTree = "<group>"; };
+		4E70A859BE11AF906A74F4C7 /* QuickLogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLogView.swift; sourceTree = "<group>"; };
+		4EEA29896EC044A09A6DA832 /* BASSDAIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASSDAIView.swift; sourceTree = "<group>"; };
+		4F73A980845E4C579A7508C2 /* BASFIQuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASFIQuestionnaireView.swift; sourceTree = "<group>"; };
+		53DEBEBB35414ADDA749723D /* Core/Types/FlareTriggers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Types/FlareTriggers.swift; sourceTree = "<group>"; };
+		564355D1C2A877FCA14F91B9 /* MedicationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MedicationViewModel.swift; path = InflamAI/Features/Medication/MedicationViewModel.swift; sourceTree = "<group>"; };
+		57180701B3F61894B1604116 /* InflamAIPersistenceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflamAIPersistenceController.swift; sourceTree = "<group>"; };
+		57DA758B43014D67B4642F64 /* QuestionnaireHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireHistoryView.swift; path = InflamAI/Features/Questionnaires/QuestionnaireHistoryView.swift; sourceTree = "<group>"; };
+		5A94E7A8D21C495EBFFC98D2 /* WatchFlareWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchFlareWidget.swift; sourceTree = "<group>"; };
+		5D3EE13F30268B86A75D1A7E /* OnboardingAnimationExtras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingAnimationExtras.swift; path = Features/Onboarding/DuolingoStyle/OnboardingAnimationExtras.swift; sourceTree = "<group>"; };
+		65BB69A5638C0CA448F84D72 /* QuestionnaireSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireSettingsView.swift; path = InflamAI/Features/Settings/QuestionnaireSettingsView.swift; sourceTree = "<group>"; };
+		676AE332862B628C19AA6C54 /* AnkyAnimatedMascot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnkyAnimatedMascot.swift; path = Features/Onboarding/DuolingoStyle/AnkyAnimatedMascot.swift; sourceTree = "<group>"; };
+		690B38122EDA3F87003F16C8 /* ASFlarePredictor.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = ASFlarePredictor.mlpackage; path = InflamAI/Resources/ML/ASFlarePredictor.mlpackage; sourceTree = SOURCE_ROOT; };
+		69BF6E8D2EC301540039E7C2 /* InflamAI Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InflamAI Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69FDE947B8E748BF9C46688B /* MentalHealthSurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthSurveyView.swift; sourceTree = "<group>"; };
+		6A853C87EBB94B1A82AB15D7 /* PainLocationSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainLocationSelector.swift; sourceTree = "<group>"; };
+		6E96DBB83D3141CECF21F23E /* Features/Settings/WeatherNotificationSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Settings/WeatherNotificationSettingsView.swift; sourceTree = "<group>"; };
+		70B47B4B498945ABA9386D26 /* InflamAI/Features/Navigation/AnalyticsHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Navigation/AnalyticsHubView.swift; sourceTree = SOURCE_ROOT; };
+		724306ABD00EA8912671CD9D /* BodyDiagramView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BodyDiagramView.swift; path = InflamAI/BodyDiagramView.swift; sourceTree = "<group>"; };
+		738C0F04E3F9597D2EBCFEAA /* TrendsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsViewModel.swift; path = InflamAI/Features/Trends/TrendsViewModel.swift; sourceTree = "<group>"; };
+		7546BC08AA4D3F58AEAE25FA /* WeatherNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeatherNotificationService.swift; sourceTree = "<group>"; };
+		75A13166DADA264D1660A596 /* HomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Features/Home/HomeView.swift; sourceTree = "<group>"; };
+		7A0539EEDF5476FF1BC25768 /* QuickLogViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLogViewModel.swift; sourceTree = "<group>"; };
+		7A78D27E616548A083D1901E /* MorningCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningCheckInView.swift; sourceTree = "<group>"; };
+		7AF1A2F5416C47F30BB8ECC3 /* AnimatedSplashScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedSplashScreen.swift; path = Features/Onboarding/DuolingoStyle/AnimatedSplashScreen.swift; sourceTree = "<group>"; };
+		7B9F606E0D440594921954E9 /* SOSFlareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SOSFlareView.swift; path = Features/QuickCapture/SOSFlareView.swift; sourceTree = "<group>"; };
+		7CC26CB74C8437C79BF3F305 /* WatchDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WatchDataProvider.swift; sourceTree = "<group>"; };
+		7F1BD485C24AC35924475D3D /* TimeRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeRange.swift; sourceTree = "<group>"; };
+		8237DBFFA07AB18677FB69E9 /* TrendsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsViewModel.swift; path = Features/Trends/TrendsViewModel.swift; sourceTree = "<group>"; };
+		87C91C2CC2B09658882BD6A3 /* PDFExportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PDFExportService.swift; path = InflamAI/Core/Export/PDFExportService.swift; sourceTree = "<group>"; };
+		87D3B277D06B48D3B228724D /* WatchMedicationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMedicationWidget.swift; sourceTree = "<group>"; };
+		88067219BDEB4EC7B66E8758 /* WatchQuickStatsWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WatchQuickStatsWidget.swift; sourceTree = "<group>"; };
+		8B1E70A17E144EDD8BA5C075 /* WatchBASDAIWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBASDAIWidget.swift; sourceTree = "<group>"; };
+		8C4B9E842996A4229490860A /* FlareTimelineView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlareTimelineView.swift; path = Features/Flares/FlareTimelineView.swift; sourceTree = "<group>"; };
+		9396D0BF0F017E496B48BFAF /* ASDACalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ASDACalculator.swift; sourceTree = "<group>"; };
+		93A46470B0AFACDABE125A91 /* AnkylosaurusMascot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnkylosaurusMascot.swift; sourceTree = "<group>"; };
+		96652CBBE3B266C1ECDEBBD6 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
+		98DC098C5BCBD1D46FD1CB8F /* WatchMedicationWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WatchMedicationWidget.swift; sourceTree = "<group>"; };
+		9EBEB65BB7B8130383E4067F /* Features/Routines/RoutineDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineDetailView.swift; sourceTree = "<group>"; };
+		A16E52513FD6ABD8A594AEB9 /* Features/Exercise/Views/ExerciseStatsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/ExerciseStatsView.swift; sourceTree = "<group>"; };
+		A2000009000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000011000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000012000000000000001 /* InflamAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InflamAI.entitlements; sourceTree = "<group>"; };
+		A2000013000000000000001 /* InflamAI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InflamAI.xcdatamodel; sourceTree = "<group>"; };
+		A2000024000000000000001 /* BASSDAIPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASSDAIPracticeView.swift; sourceTree = "<group>"; };
+		A2000025000000000000001 /* StandardizedMedications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardizedMedications.swift; sourceTree = "<group>"; };
+		A26447ADE152A1B5EF2CDDA3 /* WatchStreakWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WatchStreakWidget.swift; sourceTree = "<group>"; };
+		A3000001000000000000001 /* InflamAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InflamAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3DV02000000000000001 /* Anky3DView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Anky3DView.swift; path = Features/Onboarding/DuolingoStyle/Anky3DView.swift; sourceTree = "<group>"; };
+		A41D533B138F4DB0A3637738 /* BASFIQuestionnaireViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BASFIQuestionnaireViewModel.swift; sourceTree = "<group>"; };
+		A64378064C8B42D696AB2EA9 /* PainMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainMapViewModel.swift; sourceTree = "<group>"; };
+		A8BD36935FA7C7413B12A0B9 /* Features/Exercise/ExerciseData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/ExerciseData.swift; sourceTree = "<group>"; };
+		AA72643BB0024C26B5790D86 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		AFB9DD183D24C732F0B1B361 /* NewOnboardingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NewOnboardingFlow.swift; path = Features/Onboarding/NewOnboardingFlow.swift; sourceTree = "<group>"; };
+		AIINSV02000000000000001 /* InflamAI/Features/AI/AIInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/AI/AIInsightsView.swift; sourceTree = SOURCE_ROOT; };
+		AIINVM02000000000000001 /* InflamAI/Features/AI/AIInsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/AI/AIInsightsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		ANKY3D02000000000001 /* AnkyCharacter.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = AnkyCharacter.usdz; path = Resources/AnkyCharacter.usdz; sourceTree = "<group>"; };
+		ANKYRIV02000000000000001 /* AnkyRiveView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnkyRiveView.swift; path = Features/Onboarding/DuolingoStyle/AnkyRiveView.swift; sourceTree = "<group>"; };
+		B120F35D9BED75701AC5CDB6 /* WatchBASDAIWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WatchBASDAIWidget.swift; sourceTree = "<group>"; };
+		B263862431FB13695E9719D0 /* MedicationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MedicationViewModel.swift; path = Features/Medication/MedicationViewModel.swift; sourceTree = "<group>"; };
+		B724C487C2F7176A7420F670 /* QuestionnairePreferences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnairePreferences.swift; path = InflamAI/Managers/QuestionnairePreferences.swift; sourceTree = "<group>"; };
+		B874FAF6A1A9557806EA0A2C /* Features/Routines/RoutineBuilderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Routines/RoutineBuilderView.swift; sourceTree = "<group>"; };
+		BB6D019A203006D766853073 /* Features/Weather/WeatherFlareRiskCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Weather/WeatherFlareRiskCard.swift; sourceTree = "<group>"; };
+		BF0960788127148FD2E67705 /* Features/Exercise/Views/ExerciseHistoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/ExerciseHistoryView.swift; sourceTree = "<group>"; };
+		BFB71E6D49975201D8A1AAE8 /* OnboardingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingFlow.swift; path = Features/Onboarding/OnboardingFlow.swift; sourceTree = "<group>"; };
+		BOOSTR02000000000000001 /* InflamAI/Core/ML/BootstrapStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/BootstrapStrategy.swift; sourceTree = SOURCE_ROOT; };
+		C59FC80AF55E44338C6E9CC6 /* WatchDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDataProvider.swift; sourceTree = "<group>"; };
+		C72C89305B3503DC565BA4A1 /* YouTubeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YouTubeHelper.swift; sourceTree = "<group>"; };
+		C7BA2234EF9C926466EE0475 /* TrendsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrendsView.swift; path = Features/Trends/TrendsView.swift; sourceTree = "<group>"; };
+		C95C2FBEEE47431C931C4C65 /* MotherModeSelfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherModeSelfTests.swift; sourceTree = "<group>"; };
+		CALENG002000000000001 /* InflamAI/Core/ML/CalibrationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/CalibrationEngine.swift; sourceTree = SOURCE_ROOT; };
+		CC215D204B4FE4F1BB174DA4 /* Features/Coach/CoachCompositorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Coach/CoachCompositorView.swift; sourceTree = "<group>"; };
+		CONTLP02000000000000001 /* InflamAI/Core/ML/ContinuousLearningPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/ContinuousLearningPipeline.swift; sourceTree = SOURCE_ROOT; };
+		D39893B5C415B10996A5D210 /* PDFExportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PDFExportService.swift; path = Core/Export/PDFExportService.swift; sourceTree = "<group>"; };
+		D45C93D2CD6D03BAD7CF1358 /* QuestionnaireModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireModels.swift; path = InflamAI/Features/Questionnaires/QuestionnaireModels.swift; sourceTree = "<group>"; };
+		D5719E172B764B018483F04C /* LabResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabResultsView.swift; sourceTree = "<group>"; };
+		D7A8F9737BE34EDD8F7E69B7 /* InflamAIWatchWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAIWatchWidgetBundle.swift; sourceTree = "<group>"; };
+		DB30A684E9924C08948E279B /* AssetsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		DD88F4AF6D33F6EA19D673DD /* WellnessJourneySystem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WellnessJourneySystem.swift; path = Features/Onboarding/DuolingoStyle/WellnessJourneySystem.swift; sourceTree = "<group>"; };
+		DD91A335C1E8EAEC3E2965AD /* BodyRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BodyRegion.swift; path = InflamAI/Features/BodyMap/BodyRegion.swift; sourceTree = "<group>"; };
+		DEMOSEED02000000000001 /* DemoDataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataSeeder.swift; sourceTree = "<group>"; };
+		DSNCMP02000000000000001 /* InflamAI/Core/DesignSystem/InflamAIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/DesignSystem/InflamAIComponents.swift; sourceTree = SOURCE_ROOT; };
+		DSNSYS02000000000000001 /* InflamAI/Core/DesignSystem/InflamAIDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/DesignSystem/InflamAIDesignSystem.swift; sourceTree = SOURCE_ROOT; };
+		E2640F6B51AD58805F9754F6 /* Features/Exercise/Views/ExerciseFeedbackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/Views/ExerciseFeedbackView.swift; sourceTree = "<group>"; };
+		E4A64646A77B8D9F84693D68 /* QuestionnaireResponse+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "QuestionnaireResponse+Extensions.swift"; path = "InflamAI/Core/Extensions/QuestionnaireResponse+Extensions.swift"; sourceTree = "<group>"; };
+		E71560A3D6F6DBF0F7240422 /* Features/Exercise/ExerciseLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Features/Exercise/ExerciseLibraryView.swift; sourceTree = "<group>"; };
+		E7C5E856358A4449A368E2A9 /* ClinicalMeasurementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicalMeasurementsViewModel.swift; sourceTree = "<group>"; };
+		E8F0CAC57DC54A5EAFE53F64 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E933DFF480FA4FDC8D6494FB /* DailyCheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInViewModel.swift; sourceTree = "<group>"; };
+		EC647138085643039224234D /* Features/Settings/MLFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Settings/MLFeaturesView.swift; sourceTree = "<group>"; };
+		EDCB2441FB08FC395B0F010A /* HomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = InflamAI/Features/Home/HomeView.swift; sourceTree = "<group>"; };
+		EE8B1A698F4446239E4328EC /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift; sourceTree = SOURCE_ROOT; };
+		EXPLAI02000000000000001 /* InflamAI/Core/ML/ExplainabilityEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/ExplainabilityEngine.swift; sourceTree = SOURCE_ROOT; };
+		F0APPGRP002000000000001 /* AppGroupConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppGroupConfig.swift; sourceTree = "<group>"; };
+		F0D6F654B5356C7821A2AC8C /* PainMapViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PainMapViewModel.swift; sourceTree = "<group>"; };
+		F0D7BDEEAB0C4D5A8D6D381A /* WatchQuickStatsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchQuickStatsWidget.swift; sourceTree = "<group>"; };
+		F0SHARED002000000000001 /* SharedDataSyncService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SharedDataSyncService.swift; sourceTree = "<group>"; };
+		F0WIDGDM002000000000001 /* WidgetDataModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetDataModels.swift; sourceTree = "<group>"; };
+		F0WIDGDP002000000000001 /* WidgetDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetDataProvider.swift; sourceTree = "<group>"; };
+		F3B2C1436D4042F4A5D5FCDD /* Core/Components/TriggerSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Components/TriggerSelectorView.swift; sourceTree = "<group>"; };
+		F752C47EAFD6480D996A88C5 /* Settings/ExportDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/ExportDataView.swift; sourceTree = "<group>"; };
+		F781DA047C984C48908A93B3 /* InflamAI/Features/Navigation/WellnessHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Navigation/WellnessHubView.swift; sourceTree = SOURCE_ROOT; };
+		F7D96C9AFC294936853BB8A2 /* LabResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabResultsViewModel.swift; sourceTree = "<group>"; };
+		FB1FE101126C4CFEB9816D34 /* MorningCheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningCheckInViewModel.swift; sourceTree = "<group>"; };
+		FBDD9C1EDCAB2720A962DB04 /* InflamAIApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflamAIApp.swift; sourceTree = "<group>"; };
+		FC1A944BE0509BBFAF4CB27F /* QuestionnaireManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuestionnaireManager.swift; path = InflamAI/Managers/QuestionnaireManager.swift; sourceTree = "<group>"; };
+		FCC38AF4BF4084DD1D30DA0E /* PainLocationSelector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PainLocationSelector.swift; sourceTree = "<group>"; };
+		FEATEX02000000000000001 /* InflamAI/Core/ML/FeatureExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/FeatureExtractor.swift; sourceTree = SOURCE_ROOT; };
+		FEATSC02000000000000001 /* InflamAI/Core/ML/NeuralEngine/data/FeatureScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/NeuralEngine/data/FeatureScaler.swift; sourceTree = SOURCE_ROOT; };
+		FLNOT002000000000000001 /* InflamAI/Core/Services/FlareNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/Services/FlareNotificationService.swift; sourceTree = SOURCE_ROOT; };
+		FLPRED02000000000000001 /* InflamAI/Core/ML/FlarePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/FlarePredictor.swift; sourceTree = SOURCE_ROOT; };
+		IOSWIDGET02000000000001 /* InflamAIWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InflamAIWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		KNNENG02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/KNNTriggerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TriggerAnalysis/Engines/KNNTriggerEngine.swift; sourceTree = SOURCE_ROOT; };
+		LIBV002000000000000001 /* InflamAI/Features/Library/LibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Library/LibraryView.swift; sourceTree = "<group>"; };
+		LIBVM02000000000000001 /* InflamAI/Features/Library/LibraryViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Library/LibraryViewModel.swift; sourceTree = "<group>"; };
+		LOTV002000000000000001 /* InflamAI/Core/Components/LottieView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/Components/LottieView.swift; sourceTree = "<group>"; };
+		MEDASSETS01000000000001REF /* InflamAI/Features/Meditation/Models/MeditationAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Models/MeditationAssets.swift; sourceTree = "<group>"; };
+		MEDBR01000000000000001REF /* InflamAI/Features/Meditation/Models/BreathingPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Models/BreathingPattern.swift; sourceTree = "<group>"; };
+		MEDCAT01000000000000001REF /* InflamAI/Features/Meditation/Models/MeditationCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Models/MeditationCategory.swift; sourceTree = "<group>"; };
+		MEDCE01000000000000001REF /* InflamAI/Features/Meditation/Services/MeditationCorrelationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Services/MeditationCorrelationEngine.swift; sourceTree = "<group>"; };
+		MEDHV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Views/MeditationHomeView.swift; sourceTree = "<group>"; };
+		MEDPH01000000000000001REF /* InflamAI/Core/Persistence/MeditationPersistenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/Persistence/MeditationPersistenceHelper.swift; sourceTree = "<group>"; };
+		MEDPLV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Views/MeditationPlayerView.swift; sourceTree = "<group>"; };
+		MEDPV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Views/MeditationProgressView.swift; sourceTree = "<group>"; };
+		MEDSM01000000000000001REF /* InflamAI/Features/Meditation/Models/MeditationSessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/Models/MeditationSessionModel.swift; sourceTree = "<group>"; };
+		MEDVM01000000000000001REF /* InflamAI/Features/Meditation/ViewModels/MeditationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/Meditation/ViewModels/MeditationViewModel.swift; sourceTree = "<group>"; };
+		MINMAX02000000000001 /* InflamAI/Core/ML/NeuralEngine/data/minmax_params.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InflamAI/Core/ML/NeuralEngine/data/minmax_params.json; sourceTree = SOURCE_ROOT; };
+		MLFD002000000000000000001 /* InflamAI/Features/AI/MLFeaturesDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/AI/MLFeaturesDisplayView.swift; sourceTree = SOURCE_ROOT; };
+		MLINT002000000000000001 /* InflamAI/Core/ML/MLIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/MLIntegration.swift; sourceTree = SOURCE_ROOT; };
+		MLPRED02000000000000001 /* InflamAI/Core/ML/MLPredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/MLPredictionService.swift; sourceTree = SOURCE_ROOT; };
+		MLTYP002000000000000001 /* InflamAI/Core/ML/MLTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/MLTypes.swift; sourceTree = SOURCE_ROOT; };
+		NEUENG02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/NeuralTriggerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TriggerAnalysis/Engines/NeuralTriggerEngine.swift; sourceTree = SOURCE_ROOT; };
+		NEUEPS02000000000000001 /* InflamAI/Core/ML/NeuralEnginePredictionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/NeuralEnginePredictionService.swift; sourceTree = SOURCE_ROOT; };
+		NEUROI02000000000000001 /* InflamAI/Features/TriggerInsights/NeuralOptInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/TriggerInsights/NeuralOptInView.swift; sourceTree = SOURCE_ROOT; };
+		NEURST02000000000000001 /* InflamAI/Features/AI/NeuralEngineStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/AI/NeuralEngineStatusView.swift; sourceTree = SOURCE_ROOT; };
+		OPNMTO002000000000000001 /* OpenMeteoService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OpenMeteoService.swift; sourceTree = "<group>"; };
+		OUTTRK002000000000001 /* InflamAI/Core/ML/OutcomeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/OutcomeTracker.swift; sourceTree = SOURCE_ROOT; };
+		PERFMN02000000000000001 /* InflamAI/Core/ML/PerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/PerformanceMonitor.swift; sourceTree = SOURCE_ROOT; };
+		PREDHIST02000000000001 /* InflamAI/Features/AI/PredictionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/AI/PredictionHistoryView.swift; sourceTree = SOURCE_ROOT; };
+		PRESHM002000000000000001 /* PressureHistoryManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PressureHistoryManager.swift; sourceTree = "<group>"; };
+		SCALERP02000000000001 /* InflamAI/Core/ML/NeuralEngine/data/scaler_params.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InflamAI/Core/ML/NeuralEngine/data/scaler_params.json; sourceTree = SOURCE_ROOT; };
+		SKELTN02000000000000001 /* InflamAI/Core/DesignSystem/SkeletonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/DesignSystem/SkeletonViews.swift; sourceTree = SOURCE_ROOT; };
+		SLEEPDINO02000000000001 /* InflamAI/Resources/Animations/sleeping-dino.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "InflamAI/Resources/Animations/sleeping-dino.json"; sourceTree = SOURCE_ROOT; };
+		RIVERIV02000000000000001 /* anky_mascot.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InflamAI/Resources/Rive/anky_mascot.riv"; sourceTree = SOURCE_ROOT; };
+		STATTE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/StatisticalTriggerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TriggerAnalysis/Engines/StatisticalTriggerEngine.swift; sourceTree = SOURCE_ROOT; };
+		STREXT02000000000000001 /* InflamAI/Extensions/StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Extensions/StringExtensions.swift; sourceTree = SOURCE_ROOT; };
+		SYMEXT02000000000000001 /* InflamAI/Core/ML/SymptomLog+MLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InflamAI/Core/ML/SymptomLog+MLExtensions.swift"; sourceTree = SOURCE_ROOT; };
+		TEMPIM02000000000000001 /* InflamAI/Core/ML/TemporalImportanceAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TemporalImportanceAnalyzer.swift; sourceTree = SOURCE_ROOT; };
+		TRIGAS02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Services/TriggerAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TriggerAnalysis/Services/TriggerAnalysisService.swift; sourceTree = SOURCE_ROOT; };
+		TRIGCE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerAnalysisCache+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerAnalysisCache+Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		TRIGDF02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TriggerAnalysis/Types/TriggerDefinitions.swift; sourceTree = SOURCE_ROOT; };
+		TRIGDS02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerDataService.swift; sourceTree = SOURCE_ROOT; };
+		TRIGDV02000000000000001 /* InflamAI/Features/TriggerInsights/TriggerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/TriggerInsights/TriggerDetailView.swift; sourceTree = SOURCE_ROOT; };
+		TRIGIV02000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/TriggerInsights/TriggerInsightsView.swift; sourceTree = SOURCE_ROOT; };
+		TRIGIVM2000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/TriggerInsights/TriggerInsightsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		TRIGLE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerLog+Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		TRIGTY02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TriggerAnalysis/Types/TriggerTypes.swift; sourceTree = SOURCE_ROOT; };
+		TRNCOL02000000000000001 /* InflamAI/Core/ML/TrainingDataCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/TrainingDataCollector.swift; sourceTree = SOURCE_ROOT; };
+		UNEVIEW02000000000001 /* InflamAI/Features/AI/UnifiedNeuralEngineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Features/AI/UnifiedNeuralEngineView.swift; sourceTree = SOURCE_ROOT; };
+		UNIFNE02000000000000001 /* InflamAI/Core/ML/UnifiedNeuralEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/UnifiedNeuralEngine.swift; sourceTree = SOURCE_ROOT; };
+		VALFWK02000000000000001 /* InflamAI/Core/ML/ValidationFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InflamAI/Core/ML/ValidationFramework.swift; sourceTree = SOURCE_ROOT; };
+		WIDGET02000000000000001 /* InflamAIWatchWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InflamAIWatchWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		699D07732EE5E7DC00E043E5 /* Exceptions for "InflamAI Watch App" folder in "InflamAI Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 69BF6E8C2EC301540039E7C2 /* InflamAI Watch App */;
+		};
+		699D07742EE5E7DC00E043E5 /* Exceptions for "InflamAI/InflamAIWatchWidgets" folder in "InflamAIWatchWidgets" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = WIDGET01000000000000001 /* InflamAIWatchWidgets */;
+		};
+		699D07752EE5E7DC00E043E5 /* Exceptions for "InflamAI/InflamAIWidgets" folder in "InflamAIWidgets" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = IOSWIDGET01000000000001 /* InflamAIWidgets */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		69BF6E8E2EC301540039E7C2 /* InflamAI Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				699D07732EE5E7DC00E043E5 /* Exceptions for "InflamAI Watch App" folder in "InflamAI Watch App" target */,
+			);
+			path = "InflamAI Watch App";
+			sourceTree = "<group>";
+		};
+		IOSWIDGET03000000000001 /* InflamAI/InflamAIWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				699D07752EE5E7DC00E043E5 /* Exceptions for "InflamAI/InflamAIWidgets" folder in "InflamAIWidgets" target */,
+			);
+			path = InflamAI/InflamAIWidgets;
+			sourceTree = "<group>";
+		};
+		WIDGET03000000000000001 /* InflamAI/InflamAIWatchWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				699D07742EE5E7DC00E043E5 /* Exceptions for "InflamAI/InflamAIWatchWidgets" folder in "InflamAIWatchWidgets" target */,
+			);
+			path = InflamAI/InflamAIWatchWidgets;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69BF6E8A2EC301540039E7C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		A4000001000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				69EC72EB2EE62A920020E0BB /* Lottie in Frameworks */,
+				69BE465D2EFB39AD00459CEA /* RiveRuntime in Frameworks */,
+			);
+		};
+		IOSWIDGET05000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		WIDGET05000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D9F1C8E4F3798DC54D801C6 /* ExerciseCoach */ = {
+			isa = PBXGroup;
+			children = (
+				679B087999A7B3B039DB5FD3 /* Models */,
+				5A0F7F9BEB9619D0F3B1FF24 /* ViewModels */,
+				CBD88CBB7B6A09D51B101606 /* Views */,
+				FF2917371D955C9809D5808E /* Services */,
+				CF89B06A1CEC73A7A5CB7F48 /* Extensions */,
+			);
+			name = ExerciseCoach;
+			sourceTree = "<group>";
+		};
+		199BE2B08B696B7C3DA2BE97 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		1A77854951EBAC79D290BD8C /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				3228215B1DE413628281C5A5 /* QuestionnaireUserPreferences.swift */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		1BD7DB0577C43617CCCB0230 /* PainMap */ = {
+			isa = PBXGroup;
+			children = (
+				FCC38AF4BF4084DD1D30DA0E /* PainLocationSelector.swift */,
+				F0D6F654B5356C7821A2AC8C /* PainMapViewModel.swift */,
+			);
+			name = PainMap;
+			path = Features/PainMap;
+			sourceTree = "<group>";
+		};
+		1F20C306C190E70DFCB039DA /* Flares */ = {
+			isa = PBXGroup;
+			children = (
+				8C4B9E842996A4229490860A /* FlareTimelineView.swift */,
+			);
+			name = Flares;
+			sourceTree = "<group>";
+		};
+		2F1017B590A355B7A99A37DA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EDCB2441FB08FC395B0F010A /* HomeView.swift */,
+				75A13166DADA264D1660A596 /* HomeView.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		3679D8AB64CBAF760A46D7C1 /* InflamAIWatchWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				8927BFA47FE6AB69FE675618 /* WatchWidgets */,
+				0031449EC7711678E1908FD6 /* InflamAIWatchWidgetBundle.swift */,
+				7CC26CB74C8437C79BF3F305 /* WatchDataProvider.swift */,
+			);
+			path = InflamAIWatchWidgets;
+			sourceTree = "<group>";
+		};
+		3CDECAE17403E784015F4C4E /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+				CC215D204B4FE4F1BB174DA4 /* Features/Coach/CoachCompositorView.swift */,
+			);
+			name = Coach;
+			sourceTree = "<group>";
+		};
+		5A0F7F9BEB9619D0F3B1FF24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C30673B9262CACA4C797FE4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DC94804069705F956C2E99E /* Features/Exercise/Models/ExerciseStep.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5E37A84DA7F7A8D33D24AA40 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				57180701B3F61894B1604116 /* InflamAIPersistenceController.swift */,
+				DEMOSEED02000000000001 /* DemoDataSeeder.swift */,
+			);
+			name = Persistence;
+			path = Core/Persistence;
+			sourceTree = "<group>";
+		};
+		60A14478E8C313062202BBE7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CB0924C9105640D3BCC5306D /* PainMap */,
+				C79D1426F6175707F7DF995F /* AI */,
+				F752C47EAFD6480D996A88C5 /* Settings/ExportDataView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		643E23CD886EED6B5FB11D22 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				A64378064C8B42D696AB2EA9 /* PainMapViewModel.swift */,
+				6A853C87EBB94B1A82AB15D7 /* PainLocationSelector.swift */,
+				87C91C2CC2B09658882BD6A3 /* PDFExportService.swift */,
+				D39893B5C415B10996A5D210 /* PDFExportService.swift */,
+			);
+			name = Export;
+			sourceTree = "<group>";
+		};
+		679B087999A7B3B039DB5FD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		67D4715129F8A5001B62C0F3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D18239053985BEBFAED67AF7 /* Trends */,
+				AC3E84158D79A5D28A1BAC58 /* Medication */,
+				77974FE61E83ED22E889AEA4 /* Exercise */,
+				AA0E1F18165590CC654FA95A /* QuickCapture */,
+				3CDECAE17403E784015F4C4E /* Coach */,
+				1F20C306C190E70DFCB039DA /* Flares */,
+				2F1017B590A355B7A99A37DA /* Home */,
+				E29EFC944CD596A9FE29B2F9 /* Onboarding */,
+				ED1A344981DDDAA241EA9912 /* CheckIn */,
+				9691A91A7A37F3064836986C /* Routines */,
+				0D9F1C8E4F3798DC54D801C6 /* ExerciseCoach */,
+				8304BC48C32D2F7489427313 /* Weather */,
+				B85B2DCE9E9D92BE014B8922 /* Settings */,
+				1BD7DB0577C43617CCCB0230 /* PainMap */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		690B38112EDA2ACD003F16C8 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				UNIFNE02000000000000001 /* InflamAI/Core/ML/UnifiedNeuralEngine.swift */,
+				FEATEX02000000000000001 /* InflamAI/Core/ML/FeatureExtractor.swift */,
+				FLPRED02000000000000001 /* InflamAI/Core/ML/FlarePredictor.swift */,
+				CONTLP02000000000000001 /* InflamAI/Core/ML/ContinuousLearningPipeline.swift */,
+				TRNCOL02000000000000001 /* InflamAI/Core/ML/TrainingDataCollector.swift */,
+				SYMEXT02000000000000001 /* InflamAI/Core/ML/SymptomLog+MLExtensions.swift */,
+				BOOSTR02000000000000001 /* InflamAI/Core/ML/BootstrapStrategy.swift */,
+				PERFMN02000000000000001 /* InflamAI/Core/ML/PerformanceMonitor.swift */,
+				VALFWK02000000000000001 /* InflamAI/Core/ML/ValidationFramework.swift */,
+				EXPLAI02000000000000001 /* InflamAI/Core/ML/ExplainabilityEngine.swift */,
+				TEMPIM02000000000000001 /* InflamAI/Core/ML/TemporalImportanceAnalyzer.swift */,
+				MLFD002000000000000000001 /* InflamAI/Features/AI/MLFeaturesDisplayView.swift */,
+				0EC6091D85F5482B94562B52 /* WatchStreakWidget.swift */,
+				F0D7BDEEAB0C4D5A8D6D381A /* WatchQuickStatsWidget.swift */,
+				87D3B277D06B48D3B228724D /* WatchMedicationWidget.swift */,
+				5A94E7A8D21C495EBFFC98D2 /* WatchFlareWidget.swift */,
+				8B1E70A17E144EDD8BA5C075 /* WatchBASDAIWidget.swift */,
+				C59FC80AF55E44338C6E9CC6 /* WatchDataProvider.swift */,
+				D7A8F9737BE34EDD8F7E69B7 /* InflamAIWatchWidgetBundle.swift */,
+				69BF6E8E2EC301540039E7C2 /* InflamAI Watch App */,
+				WIDGET03000000000000001 /* InflamAI/InflamAIWatchWidgets */,
+				IOSWIDGET03000000000001 /* InflamAI/InflamAIWidgets */,
+				MLINT002000000000000001 /* InflamAI/Core/ML/MLIntegration.swift */,
+				MLTYP002000000000000001 /* InflamAI/Core/ML/MLTypes.swift */,
+				FLNOT002000000000000001 /* InflamAI/Core/Services/FlareNotificationService.swift */,
+				PREDHIST02000000000001 /* InflamAI/Features/AI/PredictionHistoryView.swift */,
+				UNEVIEW02000000000001 /* InflamAI/Features/AI/UnifiedNeuralEngineView.swift */,
+				OUTTRK002000000000001 /* InflamAI/Core/ML/OutcomeTracker.swift */,
+				CALENG002000000000001 /* InflamAI/Core/ML/CalibrationEngine.swift */,
+				SCALERP02000000000001 /* InflamAI/Core/ML/NeuralEngine/data/scaler_params.json */,
+				MINMAX02000000000001 /* InflamAI/Core/ML/NeuralEngine/data/minmax_params.json */,
+				44C1B0BFB47F49D8ADEDD872 /* InflamAI/Features/Navigation/TrackHubView.swift */,
+				70B47B4B498945ABA9386D26 /* InflamAI/Features/Navigation/AnalyticsHubView.swift */,
+				F781DA047C984C48908A93B3 /* InflamAI/Features/Navigation/WellnessHubView.swift */,
+				EE8B1A698F4446239E4328EC /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift */,
+				DSNSYS02000000000000001 /* InflamAI/Core/DesignSystem/InflamAIDesignSystem.swift */,
+				DSNCMP02000000000000001 /* InflamAI/Core/DesignSystem/InflamAIComponents.swift */,
+				SKELTN02000000000000001 /* InflamAI/Core/DesignSystem/SkeletonViews.swift */,
+				STREXT02000000000000001 /* InflamAI/Extensions/StringExtensions.swift */,
+				MEDVM01000000000000001REF /* InflamAI/Features/Meditation/ViewModels/MeditationViewModel.swift */,
+				MEDCAT01000000000000001REF /* InflamAI/Features/Meditation/Models/MeditationCategory.swift */,
+				MEDASSETS01000000000001REF /* InflamAI/Features/Meditation/Models/MeditationAssets.swift */,
+				MEDBR01000000000000001REF /* InflamAI/Features/Meditation/Models/BreathingPattern.swift */,
+				MEDSM01000000000000001REF /* InflamAI/Features/Meditation/Models/MeditationSessionModel.swift */,
+				MEDPV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationProgressView.swift */,
+				MEDHV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationHomeView.swift */,
+				MEDPLV01000000000000001REF /* InflamAI/Features/Meditation/Views/MeditationPlayerView.swift */,
+				MEDCE01000000000000001REF /* InflamAI/Features/Meditation/Services/MeditationCorrelationEngine.swift */,
+				MEDPH01000000000000001REF /* InflamAI/Core/Persistence/MeditationPersistenceHelper.swift */,
+				LIBV002000000000000001 /* InflamAI/Features/Library/LibraryView.swift */,
+				LIBVM02000000000000001 /* InflamAI/Features/Library/LibraryViewModel.swift */,
+				LOTV002000000000000001 /* InflamAI/Core/Components/LottieView.swift */,
+				MLPRED02000000000000001 /* InflamAI/Core/ML/MLPredictionService.swift */,
+				AIINSV02000000000000001 /* InflamAI/Features/AI/AIInsightsView.swift */,
+				AIINVM02000000000000001 /* InflamAI/Features/AI/AIInsightsViewModel.swift */,
+				NEURST02000000000000001 /* InflamAI/Features/AI/NeuralEngineStatusView.swift */,
+				TRIGIV02000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsView.swift */,
+				TRIGIVM2000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsViewModel.swift */,
+				TRIGDV02000000000000001 /* InflamAI/Features/TriggerInsights/TriggerDetailView.swift */,
+				NEUROI02000000000000001 /* InflamAI/Features/TriggerInsights/NeuralOptInView.swift */,
+				TRIGDF02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerDefinitions.swift */,
+				TRIGTY02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerTypes.swift */,
+				TRIGLE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerLog+Extensions.swift */,
+				TRIGDS02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerDataService.swift */,
+				TRIGCE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerAnalysisCache+Extensions.swift */,
+				STATTE02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/StatisticalTriggerEngine.swift */,
+				KNNENG02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/KNNTriggerEngine.swift */,
+				NEUENG02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/NeuralTriggerEngine.swift */,
+				FEATSC02000000000000001 /* InflamAI/Core/ML/NeuralEngine/data/FeatureScaler.swift */,
+				TRIGAS02000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Services/TriggerAnalysisService.swift */,
+				NEUEPS02000000000000001 /* InflamAI/Core/ML/NeuralEnginePredictionService.swift */,
+				SLEEPDINO02000000000001 /* InflamAI/Resources/Animations/sleeping-dino.json */,
+				RIVERIV02000000000000001 /* anky_mascot.riv */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		77974FE61E83ED22E889AEA4 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				5C30673B9262CACA4C797FE4 /* Models */,
+				8577CC126F519264C851C66A /* Views */,
+				E71560A3D6F6DBF0F7240422 /* Features/Exercise/ExerciseLibraryView.swift */,
+				151D149956F18ACCA81C8C03 /* Features/Exercise/ExerciseLibraryViewModel.swift */,
+				A8BD36935FA7C7413B12A0B9 /* Features/Exercise/ExerciseData.swift */,
+			);
+			name = Exercise;
+			sourceTree = "<group>";
+		};
+		78A6FCDA6E0C2068EBDEAB13 /* Questionnaires */ = {
+			isa = PBXGroup;
+			children = (
+				D45C93D2CD6D03BAD7CF1358 /* QuestionnaireModels.swift */,
+				1041A6064DA855D8E5302711 /* QuestionnaireFormView.swift */,
+				57DA758B43014D67B4642F64 /* QuestionnaireHistoryView.swift */,
+			);
+			name = Questionnaires;
+			sourceTree = "<group>";
+		};
+		7B63B29D3069D50AE7060840 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7F1BD485C24AC35924475D3D /* TimeRange.swift */,
+				47A7F90FE1DD73AD8191447F /* CorrelationEngine.swift */,
+				2F9AD23206C8D840C82EC981 /* BASDAICalculator.swift */,
+				9396D0BF0F017E496B48BFAF /* ASDACalculator.swift */,
+				DB30A684E9924C08948E279B /* AssetsManager.swift */,
+				C72C89305B3503DC565BA4A1 /* YouTubeHelper.swift */,
+			);
+			name = Utilities;
+			path = Core/Utilities;
+			sourceTree = "<group>";
+		};
+		8304BC48C32D2F7489427313 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				1D40A2E1B7F3EC960F26DC06 /* Features/Weather/PressureTrendChart.swift */,
+				07214F59B66A882DE95D112E /* Features/Weather/WeatherFlareRiskViewModel.swift */,
+				BB6D019A203006D766853073 /* Features/Weather/WeatherFlareRiskCard.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		8577CC126F519264C851C66A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2640F6B51AD58805F9754F6 /* Features/Exercise/Views/ExerciseFeedbackView.swift */,
+				BF0960788127148FD2E67705 /* Features/Exercise/Views/ExerciseHistoryView.swift */,
+				A16E52513FD6ABD8A594AEB9 /* Features/Exercise/Views/ExerciseStatsView.swift */,
+				3DC6836E59BDF98FDB913DFE /* Features/Exercise/Views/StepCoachView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8927BFA47FE6AB69FE675618 /* WatchWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				B120F35D9BED75701AC5CDB6 /* WatchBASDAIWidget.swift */,
+				3ECF95BF8B4F3C5BA72BA88E /* WatchFlareWidget.swift */,
+				98DC098C5BCBD1D46FD1CB8F /* WatchMedicationWidget.swift */,
+				88067219BDEB4EC7B66E8758 /* WatchQuickStatsWidget.swift */,
+				A26447ADE152A1B5EF2CDDA3 /* WatchStreakWidget.swift */,
+			);
+			path = WatchWidgets;
+			sourceTree = "<group>";
+		};
+		9691A91A7A37F3064836986C /* Routines */ = {
+			isa = PBXGroup;
+			children = (
+				9EBEB65BB7B8130383E4067F /* Features/Routines/RoutineDetailView.swift */,
+				38C5D4E2F6789ABCDEF01234 /* Features/Routines/RoutineAnalyticsView.swift */,
+				1EB4EF7E34AE4CC5406F64ED /* Features/Routines/RoutineManagementView.swift */,
+				B874FAF6A1A9557806EA0A2C /* Features/Routines/RoutineBuilderView.swift */,
+				079877999E7E43762F8DD36B /* Features/Routines/RoutineExecutionView.swift */,
+			);
+			name = Routines;
+			sourceTree = "<group>";
+		};
+		A5000001000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A5000002000000000000001 /* InflamAI */,
+				A5000003000000000000001 /* Products */,
+				D5F432E4D36454458301E6DD /* InflamAI */,
+				B03952BFD8B0FC39F3C2F943 /* Core */,
+				F500FFFFD61B13989DCF83B7 /* Features */,
+				B29154BF1688120900400520 /* Managers */,
+				063B4E9692C2E38CDE691E8B /* SettingsView.swift */,
+				1D812D109758EF578EBC0529 /* AssessmentsView.swift */,
+				3AFCF2F2DB4A15FB13BC2484 /* CoreDataErrorHandler.swift */,
+				724306ABD00EA8912671CD9D /* BodyDiagramView.swift */,
+				690B38112EDA2ACD003F16C8 /* Recovered References */,
+				690B38122EDA3F87003F16C8 /* ASFlarePredictor.mlpackage */,
+			);
+			sourceTree = "<group>";
+		};
+		A5000002000000000000001 /* InflamAI */ = {
+			isa = PBXGroup;
+			children = (
+				AA2A1FDDE2A241D8B0C3A7F5 /* MotherMode */,
+				A2000024000000000000001 /* BASSDAIPracticeView.swift */,
+				A2000025000000000000001 /* StandardizedMedications.swift */,
+				A2000010000000000000001 /* InflamAI.xcdatamodeld */,
+				A2000009000000000000001 /* Assets.xcassets */,
+				A2000011000000000000001 /* Info.plist */,
+				A2000012000000000000001 /* InflamAI.entitlements */,
+				E8F0CAC57DC54A5EAFE53F64 /* Localizable.strings */,
+				67D4715129F8A5001B62C0F3 /* Features */,
+				BEDEAB42E0A9FC9DE45A946F /* Core */,
+				B24E73DCF112CD0E78A006D9 /* InflamAIApp.swift */,
+				FBDD9C1EDCAB2720A962DB04 /* InflamAIApp.swift */,
+				078E15E483B64A36ABE14032 /* PainTrackingView.swift */,
+				AA72643BB0024C26B5790D86 /* JournalView.swift */,
+				4EEA29896EC044A09A6DA832 /* BASSDAIView.swift */,
+				08956087D85E4B37A3E3B0B6 /* JournalHistoryView.swift */,
+				39CF67A955F14576ABDB8C4A /* PainTrackingHistoryView.swift */,
+				3679D8AB64CBAF760A46D7C1 /* InflamAIWatchWidgets */,
+			);
+			path = InflamAI;
+			sourceTree = "<group>";
+		};
+		A5000003000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3000001000000000000001 /* InflamAI.app */,
+				69BF6E8D2EC301540039E7C2 /* InflamAI Watch App.app */,
+				WIDGET02000000000000001 /* InflamAIWatchWidgets.appex */,
+				IOSWIDGET02000000000001 /* InflamAIWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7D547DB658160AF239AB437 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E4A64646A77B8D9F84693D68 /* QuestionnaireResponse+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		AA0E1F18165590CC654FA95A /* QuickCapture */ = {
+			isa = PBXGroup;
+			children = (
+				42C13782B00D8CDFB54EBF61 /* JointTapSOSView.swift */,
+				7B9F606E0D440594921954E9 /* SOSFlareView.swift */,
+				126E928A974AF53EF2C4B209 /* SOSFlareViewModel.swift */,
+			);
+			name = QuickCapture;
+			sourceTree = "<group>";
+		};
+		AA2A1FDDE2A241D8B0C3A7F5 /* MotherMode */ = {
+			isa = PBXGroup;
+			children = (
+				0B8666143BB84F25889501FC /* UIApplication+TopMost.swift */,
+				C95C2FBEEE47431C931C4C65 /* MotherModeSelfTests.swift */,
+			);
+			path = MotherMode;
+			sourceTree = "<group>";
+		};
+		AC3E84158D79A5D28A1BAC58 /* Medication */ = {
+			isa = PBXGroup;
+			children = (
+				564355D1C2A877FCA14F91B9 /* MedicationViewModel.swift */,
+				48CC463DA15D9FC55914F923 /* MedicationManagementView.swift */,
+				B263862431FB13695E9719D0 /* MedicationViewModel.swift */,
+			);
+			name = Medication;
+			sourceTree = "<group>";
+		};
+		B03952BFD8B0FC39F3C2F943 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1A77854951EBAC79D290BD8C /* Preferences */,
+				A7D547DB658160AF239AB437 /* Extensions */,
+				199BE2B08B696B7C3DA2BE97 /* Services */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B24E73DCF112CD0E78A006D9 /* InflamAIApp.swift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = InflamAIApp.swift;
+			sourceTree = "<group>";
+		};
+		B29154BF1688120900400520 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FC1A944BE0509BBFAF4CB27F /* QuestionnaireManager.swift */,
+				B724C487C2F7176A7420F670 /* QuestionnairePreferences.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		B85B2DCE9E9D92BE014B8922 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6E96DBB83D3141CECF21F23E /* Features/Settings/WeatherNotificationSettingsView.swift */,
+				EC647138085643039224234D /* Features/Settings/MLFeaturesView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		B9197D38373394A53B259895 /* BodyMap */ = {
+			isa = PBXGroup;
+			children = (
+				DD91A335C1E8EAEC3E2965AD /* BodyRegion.swift */,
+			);
+			name = BodyMap;
+			sourceTree = "<group>";
+		};
+		BEDEAB42E0A9FC9DE45A946F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				643E23CD886EED6B5FB11D22 /* Export */,
+				7B63B29D3069D50AE7060840 /* Utilities */,
+				5E37A84DA7F7A8D33D24AA40 /* Persistence */,
+				D666C60B25901D4F0FF88713 /* Services */,
+				DBE65A41EE7E5421FEAEA86D /* Components */,
+				53DEBEBB35414ADDA749723D /* Core/Types/FlareTriggers.swift */,
+				F3B2C1436D4042F4A5D5FCDD /* Core/Components/TriggerSelectorView.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		C79D1426F6175707F7DF995F /* AI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		CB0924C9105640D3BCC5306D /* PainMap */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PainMap;
+			sourceTree = "<group>";
+		};
+		CB4A2762B59F317E59C610B3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				65BB69A5638C0CA448F84D72 /* QuestionnaireSettingsView.swift */,
+				419E3E86F78C4C1555BE8BE5 /* QuestionnaireConfigView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		CBD88CBB7B6A09D51B101606 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CF89B06A1CEC73A7A5CB7F48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D18239053985BEBFAED67AF7 /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				738C0F04E3F9597D2EBCFEAA /* TrendsViewModel.swift */,
+				C7BA2234EF9C926466EE0475 /* TrendsView.swift */,
+				8237DBFFA07AB18677FB69E9 /* TrendsViewModel.swift */,
+			);
+			name = Trends;
+			sourceTree = "<group>";
+		};
+		D5F432E4D36454458301E6DD /* InflamAI */ = {
+			isa = PBXGroup;
+			children = (
+				60A14478E8C313062202BBE7 /* Features */,
+				F0WIDGSH003000000000001 /* WidgetShared */,
+			);
+			path = InflamAI;
+			sourceTree = "<group>";
+		};
+		D666C60B25901D4F0FF88713 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				340EC2383F3D9C77058F2272 /* HealthKitService.swift */,
+				105D47E10E070280870FB36A /* WeatherKitService.swift */,
+				OPNMTO002000000000000001 /* OpenMeteoService.swift */,
+				PRESHM002000000000000001 /* PressureHistoryManager.swift */,
+				7546BC08AA4D3F58AEAE25FA /* WeatherNotificationService.swift */,
+				F0SHARED002000000000001 /* SharedDataSyncService.swift */,
+			);
+			name = Services;
+			path = Core/Services;
+			sourceTree = "<group>";
+		};
+		DBE65A41EE7E5421FEAEA86D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				93A46470B0AFACDABE125A91 /* AnkylosaurusMascot.swift */,
+				96652CBBE3B266C1ECDEBBD6 /* YouTubePlayerView.swift */,
+			);
+			name = Components;
+			path = Core/Components;
+			sourceTree = "<group>";
+		};
+		E29EFC944CD596A9FE29B2F9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				27008EC6396EF4C8FB96719A /* OnboardingFlow.swift */,
+				BFB71E6D49975201D8A1AAE8 /* OnboardingFlow.swift */,
+				AFB9DD183D24C732F0B1B361 /* NewOnboardingFlow.swift */,
+				676AE332862B628C19AA6C54 /* AnkyAnimatedMascot.swift */,
+				ANKYRIV02000000000000001 /* AnkyRiveView.swift */,
+				DD88F4AF6D33F6EA19D673DD /* WellnessJourneySystem.swift */,
+				7AF1A2F5416C47F30BB8ECC3 /* AnimatedSplashScreen.swift */,
+				3E63D0D783E6F14E8710F5CB /* OnboardingRedesignFlow.swift */,
+				5D3EE13F30268B86A75D1A7E /* OnboardingAnimationExtras.swift */,
+				A3DV02000000000000001 /* Anky3DView.swift */,
+				ANKY3D02000000000001 /* AnkyCharacter.usdz */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		ED1A344981DDDAA241EA9912 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				4F73A980845E4C579A7508C2 /* BASFIQuestionnaireView.swift */,
+				A41D533B138F4DB0A3637738 /* BASFIQuestionnaireViewModel.swift */,
+				1413D2D0D5694F5B9ACEE661 /* ClinicalMeasurementsView.swift */,
+				E7C5E856358A4449A368E2A9 /* ClinicalMeasurementsViewModel.swift */,
+				2A5045458FA04B4988085C21 /* DailyCheckInView.swift */,
+				E933DFF480FA4FDC8D6494FB /* DailyCheckInViewModel.swift */,
+				D5719E172B764B018483F04C /* LabResultsView.swift */,
+				F7D96C9AFC294936853BB8A2 /* LabResultsViewModel.swift */,
+				69FDE947B8E748BF9C46688B /* MentalHealthSurveyView.swift */,
+				27AD4EB1C85A47119B0BF854 /* MentalHealthSurveyViewModel.swift */,
+				7A78D27E616548A083D1901E /* MorningCheckInView.swift */,
+				FB1FE101126C4CFEB9816D34 /* MorningCheckInViewModel.swift */,
+				2E0A3B09F60843439091BF57 /* QuickSymptomLogView.swift */,
+				4E70A859BE11AF906A74F4C7 /* QuickLogView.swift */,
+				7A0539EEDF5476FF1BC25768 /* QuickLogViewModel.swift */,
+			);
+			name = CheckIn;
+			path = Features/CheckIn;
+			sourceTree = "<group>";
+		};
+		F0WIDGSH003000000000001 /* WidgetShared */ = {
+			isa = PBXGroup;
+			children = (
+				F0APPGRP002000000000001 /* AppGroupConfig.swift */,
+				F0WIDGDP002000000000001 /* WidgetDataProvider.swift */,
+				F0WIDGDM002000000000001 /* WidgetDataModels.swift */,
+			);
+			name = WidgetShared;
+			path = Shared/WidgetShared;
+			sourceTree = "<group>";
+		};
+		F500FFFFD61B13989DCF83B7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CB4A2762B59F317E59C610B3 /* Settings */,
+				78A6FCDA6E0C2068EBDEAB13 /* Questionnaires */,
+				B9197D38373394A53B259895 /* BodyMap */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		FF2917371D955C9809D5808E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69BF6E8C2EC301540039E7C2 /* InflamAI Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69BF6E9B2EC301570039E7C2 /* Build configuration list for PBXNativeTarget "InflamAI Watch App" */;
+			buildPhases = (
+				69BF6E892EC301540039E7C2 /* Sources */,
+				69BF6E8A2EC301540039E7C2 /* Frameworks */,
+				69BF6E8B2EC301540039E7C2 /* Resources */,
+				WIDGET10000000000000001 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				WIDGET12000000000000001 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				69BF6E8E2EC301540039E7C2 /* InflamAI Watch App */,
+			);
+			name = "InflamAI Watch App";
+			productName = "InflamAI Watch App";
+			productReference = 69BF6E8D2EC301540039E7C2 /* InflamAI Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6000001000000000000001 /* InflamAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000001000000000000001 /* Build configuration list for PBXNativeTarget "InflamAI" */;
+			buildPhases = (
+				A8000001000000000000001 /* Sources */,
+				A4000001000000000000001 /* Frameworks */,
+				A9000001000000000000001 /* Resources */,
+				69BF6E982EC301560039E7C2 /* Embed Watch Content */,
+				IOSWIDGET10000000000001 /* Embed iOS App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69BF6E962EC301560039E7C2 /* PBXTargetDependency */,
+				IOSWIDGET12000000000001 /* PBXTargetDependency */,
+			);
+			name = InflamAI;
+			packageProductDependencies = (
+				69EC72EA2EE62A920020E0BB /* Lottie */,
+				69BE465C2EFB39AD00459CEA /* RiveRuntime */,
+			);
+			productName = InflamAI;
+			productReference = A3000001000000000000001 /* InflamAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		IOSWIDGET01000000000001 /* InflamAIWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = IOSWIDGET09000000000001 /* Build configuration list for PBXNativeTarget "InflamAIWidgets" */;
+			buildPhases = (
+				IOSWIDGET04000000000001 /* Sources */,
+				IOSWIDGET05000000000001 /* Frameworks */,
+				IOSWIDGET06000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				IOSWIDGET03000000000001 /* InflamAI/InflamAIWidgets */,
+			);
+			name = InflamAIWidgets;
+			productName = InflamAIWidgets;
+			productReference = IOSWIDGET02000000000001 /* InflamAIWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		WIDGET01000000000000001 /* InflamAIWatchWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = WIDGET09000000000000001 /* Build configuration list for PBXNativeTarget "InflamAIWatchWidgets" */;
+			buildPhases = (
+				WIDGET04000000000000001 /* Sources */,
+				WIDGET05000000000000001 /* Frameworks */,
+				WIDGET06000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				WIDGET03000000000000001 /* InflamAI/InflamAIWatchWidgets */,
+			);
+			name = InflamAIWatchWidgets;
+			productName = InflamAIWatchWidgets;
+			productReference = WIDGET02000000000000001 /* InflamAIWatchWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0000001000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					69BF6E8C2EC301540039E7C2 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A6000001000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					IOSWIDGET01000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					WIDGET01000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = B1000001000000000000001 /* Build configuration list for PBXProject "InflamAI" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5000001000000000000001;
+			packageReferences = (
+				69EC72E92EE62A920020E0BB /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				69BE465B2EFB39AD00459CEA /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
+			preferredProjectObjectVersion = 90;
+			productRefGroup = A5000003000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6000001000000000000001 /* InflamAI */,
+				69BF6E8C2EC301540039E7C2 /* InflamAI Watch App */,
+				WIDGET01000000000000001 /* InflamAIWatchWidgets */,
+				IOSWIDGET01000000000001 /* InflamAIWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69BF6E8B2EC301540039E7C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		A9000001000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+				A1000009000000000000001 /* Assets.xcassets in Resources */,
+				9FBD9D4C4B234EA597548230 /* Localizable.strings in Resources */,
+				SCALERP01000000000001 /* InflamAI/Core/ML/NeuralEngine/data/scaler_params.json in Resources */,
+				SLEEPDINO01000000000001 /* InflamAI/Resources/Animations/sleeping-dino.json in Resources */,
+				MINMAX01000000000001 /* InflamAI/Core/ML/NeuralEngine/data/minmax_params.json in Resources */,
+				ANKY3D01000000000001 /* AnkyCharacter.usdz in Resources */,
+				RIVERIV01000000000000001 /* anky_mascot.riv in Resources */,
+			);
+		};
+		IOSWIDGET06000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		WIDGET06000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69BF6E892EC301540039E7C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+				492416B4BF16403594FAE203 /* InflamAI/Features/Navigation/TrackHubView.swift in Sources */,
+				650726991D5047FDB8FE3038 /* InflamAI/Features/Navigation/AnalyticsHubView.swift in Sources */,
+				24FCF8744A4D47A3A00A9994 /* InflamAI/Features/Navigation/WellnessHubView.swift in Sources */,
+				36A660562C0A44E0B005EEB4 /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift in Sources */,
+			);
+		};
+		A8000001000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+				6993BE902EF908DB00DFBE61 /* InflamAI/Features/Navigation/TrackHubView.swift in Sources */,
+				6993BE912EF908DB00DFBE61 /* InflamAI/Features/Navigation/AnalyticsHubView.swift in Sources */,
+				6993BE922EF908DB00DFBE61 /* InflamAI/Features/Navigation/WellnessHubView.swift in Sources */,
+				6993BE932EF908DB00DFBE61 /* InflamAI/Core/DesignSystem/InflamAIMotionSystem.swift in Sources */,
+				EFBA0FFFF8AF24F4567172CE /* AnkyAnimatedMascot.swift in Sources */,
+				ANKYRIV01000000000000001 /* AnkyRiveView.swift in Sources */,
+				64287BDA13FAB063853E8D01 /* WellnessJourneySystem.swift in Sources */,
+				B2E2F1432E07F6BDC41F96D5 /* AnimatedSplashScreen.swift in Sources */,
+				D5D0A07EB2193162A0CD6E6F /* OnboardingRedesignFlow.swift in Sources */,
+				1BDCE092DEBA8A1BC29C13EB /* OnboardingAnimationExtras.swift in Sources */,
+				A3DV01000000000000001 /* Anky3DView.swift in Sources */,
+				DSNSYS01000000000000001 /* InflamAI/Core/DesignSystem/InflamAIDesignSystem.swift in Sources */,
+				DSNCMP01000000000000001 /* InflamAI/Core/DesignSystem/InflamAIComponents.swift in Sources */,
+				SKELTN01000000000000001 /* InflamAI/Core/DesignSystem/SkeletonViews.swift in Sources */,
+				STREXT01000000000000001 /* InflamAI/Extensions/StringExtensions.swift in Sources */,
+				MEDVM01000000000000001 /* InflamAI/Features/Meditation/ViewModels/MeditationViewModel.swift in Sources */,
+				MEDCAT01000000000000001 /* InflamAI/Features/Meditation/Models/MeditationCategory.swift in Sources */,
+				MEDASSETS01000000000001 /* InflamAI/Features/Meditation/Models/MeditationAssets.swift in Sources */,
+				MEDBR01000000000000001 /* InflamAI/Features/Meditation/Models/BreathingPattern.swift in Sources */,
+				MEDSM01000000000000001 /* InflamAI/Features/Meditation/Models/MeditationSessionModel.swift in Sources */,
+				MEDPV01000000000000001 /* InflamAI/Features/Meditation/Views/MeditationProgressView.swift in Sources */,
+				MEDHV01000000000000001 /* InflamAI/Features/Meditation/Views/MeditationHomeView.swift in Sources */,
+				MEDPLV01000000000000001 /* InflamAI/Features/Meditation/Views/MeditationPlayerView.swift in Sources */,
+				MEDCE01000000000000001 /* InflamAI/Features/Meditation/Services/MeditationCorrelationEngine.swift in Sources */,
+				MEDPH01000000000000001 /* InflamAI/Core/Persistence/MeditationPersistenceHelper.swift in Sources */,
+				F5D7972F21944DD78B3CEA3A /* BASFIQuestionnaireView.swift in Sources */,
+				74E41CDCF53547E9B42E342A /* BASFIQuestionnaireViewModel.swift in Sources */,
+				5C0DDA33F35641CAAABFF43A /* ClinicalMeasurementsView.swift in Sources */,
+				9310BEE993554AA6B2948EE6 /* ClinicalMeasurementsViewModel.swift in Sources */,
+				EC2818E8BA2744C387677547 /* DailyCheckInView.swift in Sources */,
+				5DC36AF71BCC4EEC8DD11CA6 /* DailyCheckInViewModel.swift in Sources */,
+				4B6D6CBD13E741649962250B /* LabResultsView.swift in Sources */,
+				8EAB137002444B8F9BD85E7B /* LabResultsViewModel.swift in Sources */,
+				07A1DCEB605B41BDA227CD20 /* MentalHealthSurveyView.swift in Sources */,
+				38554714FFBC455986FA9965 /* MentalHealthSurveyViewModel.swift in Sources */,
+				4FEF309D76234C989FC337C0 /* MorningCheckInView.swift in Sources */,
+				20D450484C3741F6A04E86DA /* MorningCheckInViewModel.swift in Sources */,
+				6B1ECB6409564778A27EF212 /* QuickSymptomLogView.swift in Sources */,
+				A1000010000000000000001 /* InflamAI.xcdatamodeld in Sources */,
+				A1000021000000000000001 /* BASSDAIPracticeView.swift in Sources */,
+				A1000022000000000000001 /* StandardizedMedications.swift in Sources */,
+				8D9017C25DFECFEAF380F648 /* TrendsView.swift in Sources */,
+				348E08E49186F9C417B4AF18 /* TrendsViewModel.swift in Sources */,
+				93FB19CC8AB09E5BC3369689 /* MedicationManagementView.swift in Sources */,
+				AD6C8646ECDFD82521970B65 /* MedicationViewModel.swift in Sources */,
+				0C1BEB5203AD2F9176578652 /* JointTapSOSView.swift in Sources */,
+				8D7E58044C44FFA1D928879A /* FlareTimelineView.swift in Sources */,
+				0B4CF447154EF38E6CB2BC1F /* HomeView.swift in Sources */,
+				EAFBEA2DD9C70BA4AD509766 /* PDFExportService.swift in Sources */,
+				461408C93B796DACC1380D74 /* TimeRange.swift in Sources */,
+				C4289E43BA045FBCED84086C /* CorrelationEngine.swift in Sources */,
+				1C6F7C8D44C0EB9FC3502415 /* BASDAICalculator.swift in Sources */,
+				53D07DFA8EF80653BBE07CBC /* ASDACalculator.swift in Sources */,
+				EB0B71D2DB073D3E1B8B3CC8 /* InflamAIPersistenceController.swift in Sources */,
+				DEMOSEED01000000000001 /* DemoDataSeeder.swift in Sources */,
+				54F7F7857261D1108EE0EFA8 /* HealthKitService.swift in Sources */,
+				F0SHARED001000000000001 /* SharedDataSyncService.swift in Sources */,
+				F0APPGRP001000000000001 /* AppGroupConfig.swift in Sources */,
+				F0WIDGDP001000000000001 /* WidgetDataProvider.swift in Sources */,
+				F0WIDGDM001000000000001 /* WidgetDataModels.swift in Sources */,
+				ADC171EBB74E32F1C2ED1949 /* WeatherKitService.swift in Sources */,
+				OPNMTO001000000000000001 /* OpenMeteoService.swift in Sources */,
+				PRESHM001000000000000001 /* PressureHistoryManager.swift in Sources */,
+				D086E01F2041813A911E1479 /* AnkylosaurusMascot.swift in Sources */,
+				554F70FA84358D0F0C7CBB3A /* InflamAIApp.swift in Sources */,
+				DD4CFE31E71A2A80D4017B2F /* InflamAIApp.swift in Sources */,
+				9A17D4BCC37A4D39ADC9138B /* PainTrackingView.swift in Sources */,
+				D4AA5EEB8CBF4D849250EF9A /* JournalView.swift in Sources */,
+				7D9B8EADE1614C438A0C961C /* BASSDAIView.swift in Sources */,
+				37014F3C14C84574BC8412E7 /* Settings/ExportDataView.swift in Sources */,
+				5E0CD6E5DDEA4DE6BC09195E /* AssetsManager.swift in Sources */,
+				659D6BB42C8A473EAC589371 /* JournalHistoryView.swift in Sources */,
+				C4DCC7FD6B0C457A9ED82658 /* PainTrackingHistoryView.swift in Sources */,
+				9E4550B8C7554254B7936312 /* Core/Types/FlareTriggers.swift in Sources */,
+				4B8789729FF64B71A924585E /* Core/Components/TriggerSelectorView.swift in Sources */,
+				9ADF3B7A34A0AEFD43C17AC6 /* QuickLogView.swift in Sources */,
+				CF599721CBEC0CF875C51DA9 /* QuickLogViewModel.swift in Sources */,
+				2829C7B3C2F0E84B80FD415C /* SOSFlareView.swift in Sources */,
+				BF787EDF177DB354B8E0854A /* SOSFlareViewModel.swift in Sources */,
+				ADD84D8D29B777D0CE1C0891 /* QuestionnaireUserPreferences.swift in Sources */,
+				2919208AE2BFD5C60F10AD40 /* QuestionnaireSettingsView.swift in Sources */,
+				F9764A97C1D6DB4B7602A76E /* QuestionnaireConfigView.swift in Sources */,
+				CD587D4E042308754F6AA764 /* QuestionnaireModels.swift in Sources */,
+				F7E2C932D09A071E26F601E0 /* QuestionnaireManager.swift in Sources */,
+				CF04BBFE538F646C4B4E2744 /* QuestionnaireResponse+Extensions.swift in Sources */,
+				4B4B8CB55843C43F77CB343B /* QuestionnaireFormView.swift in Sources */,
+				99D0F5A2F7D649F08FD7CE9B /* QuestionnaireHistoryView.swift in Sources */,
+				922EA2A9F0E554D71529771B /* QuestionnairePreferences.swift in Sources */,
+				E32F886FE2B033B82956549E /* SettingsView.swift in Sources */,
+				7ADEBA69F5E9A03B4BAF7BA1 /* YouTubeHelper.swift in Sources */,
+				1409BDD45014FE2B50269EEB /* YouTubePlayerView.swift in Sources */,
+				D26C44A41612E355800B7437 /* AssessmentsView.swift in Sources */,
+				16291AC5A56D9AF0998343F0 /* BodyRegion.swift in Sources */,
+				5958F0CA0E48E8DA2D3B7156 /* CoreDataErrorHandler.swift in Sources */,
+				8DC196A34C6E6D19148FAEBC /* BodyDiagramView.swift in Sources */,
+				35C322BEB55DC2F36FCA5A5C /* Features/Coach/CoachCompositorView.swift in Sources */,
+				26A8497988859E827F7D845E /* Features/Routines/RoutineDetailView.swift in Sources */,
+				27B4C3D1E5F6789012345678 /* Features/Routines/RoutineAnalyticsView.swift in Sources */,
+				94162E5B501251481FFCFB5B /* Features/Routines/RoutineManagementView.swift in Sources */,
+				557713C2B02CE8BA21F541A0 /* Features/Routines/RoutineBuilderView.swift in Sources */,
+				E29C96466E0AD4E815DBBD7D /* Features/Routines/RoutineExecutionView.swift in Sources */,
+				267A4A1D292F2A70FE6D5003 /* Features/Exercise/ExerciseLibraryView.swift in Sources */,
+				5828FED0DA63099A36BAE566 /* Features/Exercise/Models/ExerciseStep.swift in Sources */,
+				01609CFB1D3D5F10D8AAC507 /* Features/Exercise/Views/ExerciseFeedbackView.swift in Sources */,
+				E330F170E3309C6ADAFD448F /* Features/Exercise/Views/ExerciseHistoryView.swift in Sources */,
+				5A6B59EBD2060AFD07320CFC /* Features/Exercise/Views/ExerciseStatsView.swift in Sources */,
+				78F638D9148A482A86C14D1B /* Features/Exercise/Views/StepCoachView.swift in Sources */,
+				B33068DE95DDCE8C2F8E979C /* Features/Exercise/ExerciseData.swift in Sources */,
+				74B472CDCEB4357EBE7D51E7 /* WeatherNotificationService.swift in Sources */,
+				4BF9217F0DDC7399CA3849FD /* Features/Weather/PressureTrendChart.swift in Sources */,
+				690B38132EDA3F87003F16C8 /* ASFlarePredictor.mlpackage in Sources */,
+				C154C19C9898755AB776475D /* Features/Weather/WeatherFlareRiskViewModel.swift in Sources */,
+				528697023BC75945925E2F30 /* Features/Weather/WeatherFlareRiskCard.swift in Sources */,
+				7281FBEE3AAB609A3CBD94F6 /* Features/Settings/WeatherNotificationSettingsView.swift in Sources */,
+				B165F003ACCAB3DFE5BBA202 /* OnboardingFlow.swift in Sources */,
+				D6391B775EEB4BA2A18A2FE9 /* Features/Settings/MLFeaturesView.swift in Sources */,
+				UNIFNE01000000000000001 /* InflamAI/Core/ML/UnifiedNeuralEngine.swift in Sources */,
+				FEATEX01000000000000001 /* InflamAI/Core/ML/FeatureExtractor.swift in Sources */,
+				FLPRED01000000000000001 /* InflamAI/Core/ML/FlarePredictor.swift in Sources */,
+				TRNCOL01000000000000001 /* InflamAI/Core/ML/TrainingDataCollector.swift in Sources */,
+				SYMEXT01000000000000001 /* InflamAI/Core/ML/SymptomLog+MLExtensions.swift in Sources */,
+				MLFD001000000000000000001 /* InflamAI/Features/AI/MLFeaturesDisplayView.swift in Sources */,
+				24257FBEB3D5A5561C531E47 /* PainLocationSelector.swift in Sources */,
+				C7A22F103DFD435B10AF52CC /* PainMapViewModel.swift in Sources */,
+				MLINT001000000000000001 /* InflamAI/Core/ML/MLIntegration.swift in Sources */,
+				MLTYP001000000000000001 /* InflamAI/Core/ML/MLTypes.swift in Sources */,
+				FLNOT001000000000000001 /* InflamAI/Core/Services/FlareNotificationService.swift in Sources */,
+				PREDHIST01000000000001 /* InflamAI/Features/AI/PredictionHistoryView.swift in Sources */,
+				UNEVIEW01000000000001 /* InflamAI/Features/AI/UnifiedNeuralEngineView.swift in Sources */,
+				OUTTRK001000000000001 /* InflamAI/Core/ML/OutcomeTracker.swift in Sources */,
+				CALENG001000000000001 /* InflamAI/Core/ML/CalibrationEngine.swift in Sources */,
+				788DA3F5F1736CB20B97DD74 /* NewOnboardingFlow.swift in Sources */,
+				LIBV001000000000000001 /* InflamAI/Features/Library/LibraryView.swift in Sources */,
+				LIBVM01000000000000001 /* InflamAI/Features/Library/LibraryViewModel.swift in Sources */,
+				LOTV001000000000000001 /* InflamAI/Core/Components/LottieView.swift in Sources */,
+				MLPRED01000000000000001 /* InflamAI/Core/ML/MLPredictionService.swift in Sources */,
+				AIINSV01000000000000001 /* InflamAI/Features/AI/AIInsightsView.swift in Sources */,
+				AIINVM01000000000000001 /* InflamAI/Features/AI/AIInsightsViewModel.swift in Sources */,
+				NEURST01000000000000001 /* InflamAI/Features/AI/NeuralEngineStatusView.swift in Sources */,
+				TRIGIV01000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsView.swift in Sources */,
+				TRIGIVM1000000000000001 /* InflamAI/Features/TriggerInsights/TriggerInsightsViewModel.swift in Sources */,
+				TRIGDV01000000000000001 /* InflamAI/Features/TriggerInsights/TriggerDetailView.swift in Sources */,
+				NEUROI01000000000000001 /* InflamAI/Features/TriggerInsights/NeuralOptInView.swift in Sources */,
+				TRIGDF01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerDefinitions.swift in Sources */,
+				TRIGTY01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Types/TriggerTypes.swift in Sources */,
+				TRIGLE01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerLog+Extensions.swift in Sources */,
+				TRIGDS01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerDataService.swift in Sources */,
+				TRIGCE01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Persistence/TriggerAnalysisCache+Extensions.swift in Sources */,
+				STATTE01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/StatisticalTriggerEngine.swift in Sources */,
+				KNNENG01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/KNNTriggerEngine.swift in Sources */,
+				NEUENG01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Engines/NeuralTriggerEngine.swift in Sources */,
+				FEATSC01000000000000001 /* InflamAI/Core/ML/NeuralEngine/data/FeatureScaler.swift in Sources */,
+				TRIGAS01000000000000001 /* InflamAI/Core/ML/TriggerAnalysis/Services/TriggerAnalysisService.swift in Sources */,
+				NEUEPS01000000000000001 /* InflamAI/Core/ML/NeuralEnginePredictionService.swift in Sources */,
+				CONTLP01000000000000001 /* InflamAI/Core/ML/ContinuousLearningPipeline.swift in Sources */,
+				BOOSTR01000000000000001 /* InflamAI/Core/ML/BootstrapStrategy.swift in Sources */,
+				PERFMN01000000000000001 /* InflamAI/Core/ML/PerformanceMonitor.swift in Sources */,
+				VALFWK01000000000000001 /* InflamAI/Core/ML/ValidationFramework.swift in Sources */,
+				EXPLAI01000000000000001 /* InflamAI/Core/ML/ExplainabilityEngine.swift in Sources */,
+				TEMPIM01000000000000001 /* InflamAI/Core/ML/TemporalImportanceAnalyzer.swift in Sources */,
+			);
+		};
+		IOSWIDGET04000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		WIDGET04000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69BF6E962EC301560039E7C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69BF6E8C2EC301540039E7C2 /* InflamAI Watch App */;
+			targetProxy = 69BF6E952EC301560039E7C2 /* PBXContainerItemProxy */;
+		};
+		IOSWIDGET12000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = IOSWIDGET01000000000001 /* InflamAIWidgets */;
+			targetProxy = IOSWIDGET11000000000001 /* PBXContainerItemProxy */;
+		};
+		WIDGET12000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = WIDGET01000000000000001 /* InflamAIWatchWidgets */;
+			targetProxy = WIDGET11000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		69BF6E992EC301560039E7C2 /* Debug configuration for PBXNativeTarget "InflamAI Watch App" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "InflamAI Watch App/InflamAI.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "InflamAI Watch App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = InflamAI;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.inflamai.InflamAI;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		69BF6E9A2EC301560039E7C2 /* Release configuration for PBXNativeTarget "InflamAI Watch App" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "InflamAI Watch App/InflamAI.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "InflamAI Watch App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = InflamAI;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.inflamai.InflamAI;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		C1000001000000000000001 /* Debug configuration for PBXProject "InflamAI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASYNC_COMPILATION_ENABLED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LY8UKF9CDR;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C1000002000000000000001 /* Release configuration for PBXProject "InflamAI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASYNC_COMPILATION_ENABLED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LY8UKF9CDR;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2000001000000000000001 /* Debug configuration for PBXNativeTarget "InflamAI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InflamAI/InflamAI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = LY8UKF9CDR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InflamAI/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to HealthKit to track your health data and pain levels.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app needs to update HealthKit with your pain and medication data.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2000002000000000000001 /* Release configuration for PBXNativeTarget "InflamAI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InflamAI/InflamAI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = LY8UKF9CDR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InflamAI/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to HealthKit to track your health data and pain levels.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app needs to update HealthKit with your pain and medication data.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		IOSWIDGET07000000000001 /* Debug configuration for PBXNativeTarget "InflamAIWidgets" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InflamAI/InflamAIWidgets/InflamAIWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InflamAI/InflamAIWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InflamAIWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		IOSWIDGET08000000000001 /* Release configuration for PBXNativeTarget "InflamAIWidgets" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InflamAI/InflamAIWidgets/InflamAIWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InflamAI/InflamAIWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InflamAIWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		WIDGET07000000000000001 /* Debug configuration for PBXNativeTarget "InflamAIWatchWidgets" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InflamAI/InflamAIWatchWidgets/InflamAIWatchWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InflamAI/InflamAIWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InflamAIWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI.watchkitapp.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		WIDGET08000000000000001 /* Release configuration for PBXNativeTarget "InflamAIWatchWidgets" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InflamAI/InflamAIWatchWidgets/InflamAIWatchWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InflamAI/InflamAIWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InflamAIWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inflamai.InflamAI.watchkitapp.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69BF6E9B2EC301570039E7C2 /* Build configuration list for PBXNativeTarget "InflamAI Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69BF6E992EC301560039E7C2 /* Debug configuration for PBXNativeTarget "InflamAI Watch App" */,
+				69BF6E9A2EC301560039E7C2 /* Release configuration for PBXNativeTarget "InflamAI Watch App" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		A7000001000000000000001 /* Build configuration list for PBXNativeTarget "InflamAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2000001000000000000001 /* Debug configuration for PBXNativeTarget "InflamAI" */,
+				C2000002000000000000001 /* Release configuration for PBXNativeTarget "InflamAI" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		B1000001000000000000001 /* Build configuration list for PBXProject "InflamAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1000001000000000000001 /* Debug configuration for PBXProject "InflamAI" */,
+				C1000002000000000000001 /* Release configuration for PBXProject "InflamAI" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		IOSWIDGET09000000000001 /* Build configuration list for PBXNativeTarget "InflamAIWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				IOSWIDGET07000000000001 /* Debug configuration for PBXNativeTarget "InflamAIWidgets" */,
+				IOSWIDGET08000000000001 /* Release configuration for PBXNativeTarget "InflamAIWidgets" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		WIDGET09000000000000001 /* Build configuration list for PBXNativeTarget "InflamAIWatchWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				WIDGET07000000000000001 /* Debug configuration for PBXNativeTarget "InflamAIWatchWidgets" */,
+				WIDGET08000000000000001 /* Release configuration for PBXNativeTarget "InflamAIWatchWidgets" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		69BE465B2EFB39AD00459CEA /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.12.3;
+			};
+		};
+		69EC72E92EE62A920020E0BB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		69BE465C2EFB39AD00459CEA /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69BE465B2EFB39AD00459CEA /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+		69EC72EA2EE62A920020E0BB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69EC72E92EE62A920020E0BB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A2000010000000000000001 /* InflamAI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A2000013000000000000001 /* InflamAI.xcdatamodel */,
+			);
+			currentVersion = A2000013000000000000001 /* InflamAI.xcdatamodel */;
+			path = InflamAI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B0000001000000000000001 /* Project object */;
+}

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="1.0">
+
+    <!-- SYMPTOM LOG - Main comprehensive symptom tracking entity -->
+    <entity name="SymptomLog" representedClassName="SymptomLog" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" indexed="YES" usesScalarValueType="NO"/>
+        <attribute name="basdaiScore" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="basdaiAnswers" optional="YES" attributeType="Binary"/>
+        <attribute name="asdasScore" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="crpValue" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fatigueLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="moodScore" attributeType="Integer 16" defaultValueString="5" usesScalarValueType="YES"/>
+        <attribute name="sleepQuality" attributeType="Integer 16" defaultValueString="5" usesScalarValueType="YES"/>
+        <attribute name="sleepDurationHours" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="morningStiffnessMinutes" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="isFlareEvent" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="source" attributeType="String" defaultValueString="manual"/>
+        <relationship name="bodyRegionLogs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BodyRegionLog" inverseName="symptomLog" inverseEntity="BodyRegionLog"/>
+        <relationship name="contextSnapshot" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ContextSnapshot" inverseName="symptomLog" inverseEntity="ContextSnapshot"/>
+        <fetchIndex name="byTimestamp">
+            <fetchIndexElement property="timestamp" type="Binary" order="descending"/>
+        </fetchIndex>
+        <fetchIndex name="byFlareEvent">
+            <fetchIndexElement property="isFlareEvent" type="Binary" order="ascending"/>
+            <fetchIndexElement property="timestamp" type="Binary" order="descending"/>
+        </fetchIndex>
+    </entity>
+
+    <!-- BODY REGION LOG - Individual body region pain tracking (47 regions) -->
+    <entity name="BodyRegionLog" representedClassName="BodyRegionLog" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="regionID" attributeType="String" indexed="YES"/>
+        <attribute name="painLevel" attributeType="Integer 16" defaultValueString="0" minValueString="0" maxValueString="10" usesScalarValueType="YES"/>
+        <attribute name="stiffnessDuration" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="swelling" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="warmth" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="rangeOfMotion" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="symptomLog" maxCount="1" deletionRule="Nullify" destinationEntity="SymptomLog" inverseName="bodyRegionLogs" inverseEntity="SymptomLog"/>
+        <fetchIndex name="byRegionID">
+            <fetchIndexElement property="regionID" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+
+    <!-- CONTEXT SNAPSHOT - Weather and biometric data at time of symptom log -->
+    <entity name="ContextSnapshot" representedClassName="ContextSnapshot" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" indexed="YES" usesScalarValueType="NO"/>
+        <attribute name="barometricPressure" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pressureChange12h" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="humidity" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temperature" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="precipitation" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="hrvValue" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="restingHeartRate" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stepCount" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sleepEfficiency" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="symptomLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SymptomLog" inverseName="contextSnapshot" inverseEntity="SymptomLog"/>
+        <fetchIndex name="byTimestamp">
+            <fetchIndexElement property="timestamp" type="Binary" order="descending"/>
+        </fetchIndex>
+    </entity>
+
+    <!-- MEDICATION - Prescribed medications -->
+    <entity name="Medication" representedClassName="Medication" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="dosage" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dosageUnit" optional="YES" attributeType="String"/>
+        <attribute name="frequency" attributeType="String"/>
+        <attribute name="route" attributeType="String" defaultValueString="oral"/>
+        <attribute name="isBiologic" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isActive" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="reminderEnabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="reminderTimes" optional="YES" attributeType="Binary"/>
+        <attribute name="prescribedBy" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="doseLogs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DoseLog" inverseName="medication" inverseEntity="DoseLog"/>
+        <fetchIndex name="byActiveStatus">
+            <fetchIndexElement property="isActive" type="Binary" order="descending"/>
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+
+    <!-- DOSE LOG - Individual medication dose tracking -->
+    <entity name="DoseLog" representedClassName="DoseLog" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" indexed="YES" usesScalarValueType="NO"/>
+        <attribute name="scheduledTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dosageTaken" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="wasSkipped" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="skipReason" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="medication" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="doseLogs" inverseEntity="Medication"/>
+        <fetchIndex name="byTimestamp">
+            <fetchIndexElement property="timestamp" type="Binary" order="descending"/>
+        </fetchIndex>
+    </entity>
+
+    <!-- EXERCISE SESSION - Mobility routine and exercise tracking -->
+    <entity name="ExerciseSession" representedClassName="ExerciseSession" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" indexed="YES" usesScalarValueType="NO"/>
+        <attribute name="routineType" attributeType="String"/>
+        <attribute name="durationMinutes" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="exercisesCompleted" optional="YES" attributeType="Binary"/>
+        <attribute name="intensityLevel" attributeType="Integer 16" defaultValueString="5" minValueString="1" maxValueString="10" usesScalarValueType="YES"/>
+        <attribute name="painBefore" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="painAfter" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <fetchIndex name="byTimestamp">
+            <fetchIndexElement property="timestamp" type="Binary" order="descending"/>
+        </fetchIndex>
+    </entity>
+
+    <!-- FLARE EVENT - Marked flare episodes for tracking -->
+    <entity name="FlareEvent" representedClassName="FlareEvent" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" indexed="YES" usesScalarValueType="NO"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="severity" attributeType="Integer 16" defaultValueString="5" minValueString="1" maxValueString="10" usesScalarValueType="YES"/>
+        <attribute name="primaryRegions" optional="YES" attributeType="Binary"/>
+        <attribute name="suspectedTriggers" optional="YES" attributeType="Binary"/>
+        <attribute name="interventions" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="isResolved" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <fetchIndex name="byStartDate">
+            <fetchIndexElement property="startDate" type="Binary" order="descending"/>
+        </fetchIndex>
+        <fetchIndex name="byResolvedStatus">
+            <fetchIndexElement property="isResolved" type="Binary" order="ascending"/>
+            <fetchIndexElement property="startDate" type="Binary" order="descending"/>
+        </fetchIndex>
+    </entity>
+
+    <!-- USER PROFILE - Singleton for app settings and user info -->
+    <entity name="UserProfile" representedClassName="UserProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="diagnosisDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="hlaB27Positive" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="biologicExperienced" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="primaryPhysicianName" optional="YES" attributeType="String"/>
+        <attribute name="primaryPhysicianPhone" optional="YES" attributeType="String"/>
+        <attribute name="rheumatologistName" optional="YES" attributeType="String"/>
+        <attribute name="rheumatologistPhone" optional="YES" attributeType="String"/>
+        <attribute name="healthKitEnabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="weatherKitEnabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="cloudSyncEnabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="biometricLockEnabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="notificationsEnabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="dailyCheckInReminderTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+
+</model>

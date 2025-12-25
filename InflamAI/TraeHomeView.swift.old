@@ -1,0 +1,468 @@
+//
+//  TraeHomeView.swift
+//  TraeAmKochen
+//
+//  Created by Codex on 2024-05-29.
+//
+
+import SwiftUI
+
+struct TraeHomeView: View {
+    @EnvironmentObject private var environment: TraeAppEnvironment
+    @State private var showOnboarding = false
+    @State private var showQuickCheckIn = false
+    @State private var showMicroRoutine = false
+    @State private var showCaregiverCard = false
+    @State private var selectedRoutine: ExerciseRoutine?
+    @State private var showMotherSettings = false
+    @State private var showDailyCheckIn = false
+    @State private var showMedication = false
+    @State private var showInsights = false
+    @State private var showClinicianReport = false
+    @State private var presentedQuestionnaire: QuestionnaireID?
+    
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: TraeSpacing.lg) {
+                    heroSection
+                    questionnaireSection
+                    essentialActionsSection
+                    symptomSummarySection
+                    careTeamSection
+                    motherModeSection
+                }
+                .padding(.horizontal, TraeSpacing.lg)
+                .padding(.vertical, TraeSpacing.lg)
+            }
+            .background(TraePalette.snow.ignoresSafeArea())
+            .navigationTitle("Trae am Kochen")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    if environment.motherModeSettings.isEnabled {
+                        Button {
+                            showMotherSettings.toggle()
+                        } label: {
+                            Image(systemName: "heart.fill")
+                                .foregroundStyle(TraePalette.saffron)
+                        }
+                        .accessibilityLabel("Mother Mode settings")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showOnboarding.toggle()
+                    } label: {
+                        Image(systemName: "sparkles.rectangle.stack")
+                            .foregroundStyle(TraePalette.saffron)
+                    }
+                    .accessibilityLabel("Replay onboarding")
+                }
+            }
+            .sheet(isPresented: $showOnboarding) {
+                TraeOnboardingRecapView()
+                    .presentationDetents([.medium, .large])
+            }
+            .sheet(isPresented: $showQuickCheckIn) {
+                QuickCheckInView(viewModel: QuickCheckInViewModel(environment: environment))
+                    .presentationDetents([.fraction(0.4)])
+            }
+            .sheet(isPresented: $showMicroRoutine) {
+                MicroRoutinePickerView(
+                    routines: environment.microRoutines,
+                    isPregnantOrPostpartum: environment.motherModeSettings.isPregnantOrPostpartum
+                ) { routine in
+                    selectedRoutine = routine
+                    showMicroRoutine = false
+                }
+                .presentationDetents([.medium])
+            }
+            .sheet(item: $selectedRoutine) { routine in
+                RoutinePlayerView(viewModel: RoutinePlayerViewModel(routine: routine, environment: environment))
+            }
+            .sheet(isPresented: $showCaregiverCard) {
+                NavigationStack {
+                    CaregiverCardView()
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Close") { showCaregiverCard = false }
+                            }
+                        }
+                }
+                .presentationDetents([.medium, .large])
+            }
+            .sheet(isPresented: $showMotherSettings) {
+                NavigationStack {
+                    MotherModeSettingsView(viewModel: MotherModeViewModel(environment: environment))
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Done") { showMotherSettings = false }
+                            }
+                        }
+                }
+            }
+            .sheet(isPresented: $showDailyCheckIn) {
+                DailyASCheckInView(viewModel: DailyCheckInViewModel(environment: environment))
+            }
+            .sheet(isPresented: $showMedication) {
+                NavigationStack { MedicationView() }
+            }
+            .sheet(isPresented: $showInsights) {
+                TraeInsightsDashboardView()
+                    .environmentObject(environment)
+            }
+            .sheet(isPresented: $showClinicianReport) {
+                NavigationStack { ClinicianReportPreview(environment: environment) }
+            }
+            .sheet(item: $presentedQuestionnaire) { questionnaireID in
+                QuestionnaireFormView(questionnaireID: questionnaireID)
+            }
+        }
+    }
+
+    private var heroSection: some View {
+        VStack(alignment: .leading, spacing: TraeSpacing.md) {
+            Text(String(localized: "home.hero.title"))
+                .font(TraeTypography.headline)
+                .textCase(.uppercase)
+                .foregroundStyle(TraePalette.saffron)
+            
+            Text(String(format: NSLocalizedString("home.hero.greeting", comment: ""), environment.profile.name))
+                .font(TraeTypography.largeTitle)
+                .foregroundStyle(TraePalette.graphite)
+            
+            Text(String(localized: "home.hero.subtitle"))
+                .font(TraeTypography.body)
+                .foregroundStyle(.secondary)
+            
+            Button {
+                showOnboarding.toggle()
+            } label: {
+                HStack(spacing: TraeSpacing.sm) {
+                    Image(systemName: "questionmark.circle")
+                    Text(String(localized: "home.hero.learn_more"))
+                        .font(TraeTypography.subheadline)
+                        .bold()
+                }
+                .padding(.vertical, TraeSpacing.sm)
+                .padding(.horizontal, TraeSpacing.md)
+                .background(TraePalette.traeOrange.gradient)
+                .foregroundStyle(Color.white)
+                .clipShape(Capsule())
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .fill(TraePalette.traeOrange.opacity(0.12))
+        )
+    }
+
+    private var questionnaireSection: some View {
+        QuestionnaireHomeSection { questionnaireID in
+            presentedQuestionnaire = questionnaireID
+        }
+    }
+
+    private var essentialActionsSection: some View {
+        VStack(alignment: .leading, spacing: TraeSpacing.md) {
+            sectionHeader(title: LocalizedStringResource("home.section.essentials"), subtitle: LocalizedStringResource("home.section.essentials.desc"))
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: TraeSpacing.md), GridItem(.flexible(), spacing: TraeSpacing.md)], spacing: TraeSpacing.md) {
+                actionCard(title: LocalizedStringResource("home.action.daily_checkin"), subtitle: LocalizedStringResource("home.action.daily_checkin.detail"), icon: "calendar.badge.clock", action: { showDailyCheckIn = true })
+                actionCard(title: LocalizedStringResource("home.action.mobility"), subtitle: LocalizedStringResource("home.action.mobility.detail"), icon: "figure.cooldown", action: { showMicroRoutine = true })
+                actionCard(title: LocalizedStringResource("home.action.medication"), subtitle: LocalizedStringResource("home.action.medication.detail"), icon: "pills.fill", action: { showMedication = true })
+                actionCard(title: LocalizedStringResource("home.action.insights"), subtitle: LocalizedStringResource("home.action.insights.detail"), icon: "chart.bar.xaxis", action: { showInsights = true })
+            }
+        }
+    }
+
+    private var symptomSummarySection: some View {
+        VStack(alignment: .leading, spacing: TraeSpacing.sm) {
+            sectionHeader(title: LocalizedStringResource("home.section.symptom"), subtitle: LocalizedStringResource("home.section.symptom.desc"))
+            if environment.symptomEntries.isEmpty {
+                Text(String(localized: "home.symptom.empty"))
+                    .font(TraeTypography.body)
+                    .foregroundStyle(.secondary)
+            } else {
+                let recent = environment.symptomEntries.prefix(7)
+                let avgPain = recent.map(\.pain).averageFormatted()
+                let avgStiffness = recent.map(\.stiffnessMinutes).averageIntFormatted()
+                let mobilityRate = recent.filter { $0.mobilityCompleted }.count * 100 / max(recent.count, 1)
+                let stiffnessValue = String(format: NSLocalizedString("home.symptom.metric.stiffness_value", comment: ""), avgStiffness)
+                let mobilityValue = String(format: NSLocalizedString("home.symptom.metric.mobility_value", comment: ""), mobilityRate)
+                symptomMetricRow(label: "home.symptom.metric.pain", value: avgPain)
+                symptomMetricRow(label: "home.symptom.metric.stiffness", value: stiffnessValue)
+                symptomMetricRow(label: "home.symptom.metric.mobility", value: mobilityValue)
+            }
+        }
+    }
+
+    private var careTeamSection: some View {
+        VStack(alignment: .leading, spacing: TraeSpacing.md) {
+            sectionHeader(title: LocalizedStringResource("home.section.care"), subtitle: LocalizedStringResource("home.section.care.desc"))
+            actionCard(title: LocalizedStringResource("home.action.caregiver"), subtitle: LocalizedStringResource("home.action.caregiver.detail"), icon: "heart.text.square", action: { showCaregiverCard = true })
+            actionCard(title: LocalizedStringResource("home.action.clinician"), subtitle: LocalizedStringResource("home.action.clinician.detail"), icon: "doc.richtext", action: { showClinicianReport = true })
+        }
+    }
+
+    private var motherModeSection: some View {
+        Group {
+            if environment.motherModeSettings.isEnabled {
+                VStack(alignment: .leading, spacing: TraeSpacing.md) {
+                    sectionHeader(title: LocalizedStringResource("home.section.mother_mode"), subtitle: LocalizedStringResource("home.section.mother_mode.desc"))
+                    HStack(spacing: TraeSpacing.md) {
+                        motherCard(title: LocalizedStringResource("mother.quick.title"), description: LocalizedStringResource("mother.quick.prompt"), icon: "hand.raised.fill") {
+                            showQuickCheckIn = true
+                        }
+                        motherCard(title: LocalizedStringResource("mother.micro.title"), description: LocalizedStringResource("mother.micro.stop"), icon: "bolt.heart") {
+                            showMicroRoutine = true
+                        }
+                    }
+                    HStack(spacing: TraeSpacing.md) {
+                        motherCard(title: LocalizedStringResource("mother.caregiver.title"), description: LocalizedStringResource("mother.caregiver.subtitle"), icon: "person.3.fill") {
+                            showCaregiverCard = true
+                        }
+                    }
+                    if let recent = environment.motherQuickEntries.first {
+                        Text(String(format: NSLocalizedString("mother.section.last_quick", comment: ""), recent.timestamp.formatted(date: .abbreviated, time: .shortened)))
+                            .font(TraeTypography.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func sectionHeader(title: LocalizedStringResource, subtitle: LocalizedStringResource) -> some View {
+        VStack(alignment: .leading, spacing: TraeSpacing.xs) {
+            Text(title)
+                .font(TraeTypography.headline)
+                .foregroundStyle(TraePalette.graphite)
+            Text(subtitle)
+                .font(TraeTypography.subheadline)
+                .foregroundStyle(.secondary)
+        }
+    }
+    
+    private func actionCard(title: LocalizedStringResource, subtitle: LocalizedStringResource, icon: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: 8) {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundStyle(TraePalette.traeOrange)
+                Text(title)
+                    .font(TraeTypography.headline)
+                Text(subtitle)
+                    .font(TraeTypography.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(RoundedRectangle(cornerRadius: 18).fill(Color(.secondarySystemBackground)))
+        }
+        .buttonStyle(.plain)
+    }
+    
+    private func symptomMetricRow(label: LocalizedStringResource, value: String) -> some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(label)
+                    .font(TraeTypography.subheadline)
+                Text(value)
+                    .font(TraeTypography.headline)
+            }
+            Spacer()
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 18).fill(Color(.secondarySystemBackground)))
+    }
+    
+    private func motherCard(title: LocalizedStringResource, description: LocalizedStringResource, icon: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: 8) {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundStyle(TraePalette.traeOrange)
+                Text(title)
+                    .font(TraeTypography.headline)
+                Text(description)
+                    .font(TraeTypography.footnote)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+            }
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(RoundedRectangle(cornerRadius: 18).fill(Color(.secondarySystemBackground)))
+        }
+        .buttonStyle(.plain)
+    }
+    
+}
+
+struct TraePantryAlertRow: View {
+    let alert: PantryAlert
+    
+    var icon: String {
+        switch alert.type {
+        case .restock:
+            return "cart.badge.plus"
+        case .spoilage:
+            return "exclamationmark.triangle"
+        case .allergenConflict:
+            return "hand.raised"
+        case .upcomingRecipe:
+            return "calendar"
+        }
+    }
+    
+    var tint: Color {
+        switch alert.type {
+        case .restock:
+            return TraePalette.saffron
+        case .spoilage:
+            return TraePalette.warning
+        case .allergenConflict:
+            return TraePalette.danger
+        case .upcomingRecipe:
+            return TraePalette.forestGreen
+        }
+    }
+    
+    var body: some View {
+        HStack(alignment: .top, spacing: TraeSpacing.md) {
+            Image(systemName: icon)
+                .font(.title3)
+                .foregroundStyle(tint)
+            VStack(alignment: .leading, spacing: TraeSpacing.xs) {
+                Text(alert.title)
+                    .font(TraeTypography.headline)
+                    .foregroundStyle(TraePalette.graphite)
+                Text(alert.message)
+                    .font(TraeTypography.body)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 18).fill(.background))
+        .overlay(RoundedRectangle(cornerRadius: 18).stroke(tint.opacity(0.2), lineWidth: 1))
+    }
+}
+
+struct TraeMealPlanSnapshot: View {
+    let plan: MealPlan
+    
+    private let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: TraeSpacing.md) {
+            HStack {
+                VStack(alignment: .leading, spacing: TraeSpacing.xs) {
+                    Text(plan.title)
+                        .font(TraeTypography.title2)
+                        .foregroundStyle(TraePalette.graphite)
+                    Text("Collaborators: \(plan.collaborators.joined(separator: ", "))")
+                        .font(TraeTypography.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Text("\(plan.entries.count) meals")
+                    .font(TraeTypography.subheadline)
+                    .foregroundStyle(TraePalette.forestGreen)
+            }
+            
+            ForEach(plan.entries) { entry in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(entry.recipe.title)
+                            .font(TraeTypography.headline)
+                        Text("\(entry.mealType.rawValue.capitalized) • \(formatter.string(from: entry.date))")
+                            .font(TraeTypography.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    Image(systemName: "person.2")
+                        .foregroundStyle(TraePalette.saffron)
+                }
+                .padding(.vertical, TraeSpacing.xs)
+                .onTapGesture {
+                    TraeHaptics.shared.performGentleProgress()
+                }
+            }
+            
+            if !plan.comments.isEmpty {
+                Divider()
+                VStack(alignment: .leading, spacing: TraeSpacing.xs) {
+                    Text("Latest comments")
+                        .font(TraeTypography.subheadline)
+                        .foregroundStyle(.secondary)
+                    ForEach(plan.comments) { comment in
+                        HStack(alignment: .top, spacing: TraeSpacing.sm) {
+                            Circle()
+                                .fill(TraePalette.traeOrange.opacity(0.3))
+                                .frame(width: 30, height: 30)
+                                .overlay(Text(String(comment.user.prefix(1))).font(TraeTypography.subheadline))
+                            VStack(alignment: .leading, spacing: TraeSpacing.xs) {
+                                Text(comment.user)
+                                    .font(TraeTypography.subheadline)
+                                Text(comment.message)
+                                    .font(TraeTypography.body)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 24).fill(.background))
+        .shadow(color: Color.black.opacity(0.06), radius: 16, x: 0, y: 6)
+    }
+}
+
+struct TraeOnboardingRecapView: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: TraeSpacing.lg) {
+            Text(String(localized: "onboarding.recap.title"))
+                .font(TraeTypography.title)
+            
+            VStack(alignment: .leading, spacing: TraeSpacing.md) {
+                Label(String(localized: "onboarding.recap.privacy"), systemImage: "lock.shield")
+                Label(String(localized: "onboarding.recap.metrics"), systemImage: "calendar.badge.clock")
+                Label(String(localized: "onboarding.recap.mobility"), systemImage: "figure.cooldown")
+            }
+            .font(TraeTypography.body)
+            .foregroundStyle(.secondary)
+            
+            Button(String(localized: "onboarding.recap.button")) {}
+            .buttonStyle(.borderedProminent)
+            .tint(TraePalette.traeOrange)
+            
+            Spacer()
+        }
+        .padding()
+    }
+}
+
+private extension Array where Element == Double {
+    func averageFormatted() -> String {
+        guard !isEmpty else { return "--" }
+        let value = reduce(0, +) / Double(count)
+        return String(format: "%.1f", value)
+    }
+}
+
+private extension Array where Element == Int {
+    func averageIntFormatted() -> Int {
+        guard !isEmpty else { return 0 }
+        let value = Double(reduce(0, +)) / Double(count)
+        return Int(value.rounded())
+    }
+}
