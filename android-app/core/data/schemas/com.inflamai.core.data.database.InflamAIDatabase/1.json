@@ -1,0 +1,2427 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "2dccc7434953fe98b26044e4f90649bf",
+    "entities": [
+      {
+        "tableName": "symptom_logs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `basdaiScore` REAL NOT NULL, `asdasScore` REAL NOT NULL, `fatigueLevel` INTEGER NOT NULL, `moodScore` INTEGER NOT NULL, `sleepQuality` INTEGER NOT NULL, `sleepDurationHours` REAL NOT NULL, `morningStiffnessMinutes` INTEGER NOT NULL, `isFlareEvent` INTEGER NOT NULL, `basfi` REAL, `basmi` REAL, `patientGlobal` INTEGER, `tenderJointCount` INTEGER, `swollenJointCount` INTEGER, `crpValue` REAL, `esrValue` REAL, `painAverage24h` REAL, `painMax24h` REAL, `nocturnalPain` INTEGER, `painBurning` INTEGER NOT NULL, `painSharp` INTEGER NOT NULL, `painDull` INTEGER NOT NULL, `painRadiating` INTEGER NOT NULL, `stressLevel` INTEGER, `anxietyLevel` INTEGER, `mentalFatigue` INTEGER, `depressionRisk` INTEGER, `moodValence` INTEGER, `exerciseMinutesToday` INTEGER, `activityLimitationScore` INTEGER, `physicalFunctionScore` REAL, `overallFeeling` INTEGER, `dayQuality` INTEGER, `energyLevel` INTEGER, `copingAbility` INTEGER, `q1Fatigue` REAL NOT NULL, `q2SpinalPain` REAL NOT NULL, `q3PeripheralPain` REAL NOT NULL, `q4Tenderness` REAL NOT NULL, `q5MorningStiffnessSeverity` REAL NOT NULL, `q6MorningStiffnessDuration` REAL NOT NULL, `notes` TEXT, `lastModified` INTEGER NOT NULL, `isSynced` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "basdaiScore",
+            "columnName": "basdaiScore",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "asdasScore",
+            "columnName": "asdasScore",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fatigueLevel",
+            "columnName": "fatigueLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "moodScore",
+            "columnName": "moodScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sleepQuality",
+            "columnName": "sleepQuality",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sleepDurationHours",
+            "columnName": "sleepDurationHours",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "morningStiffnessMinutes",
+            "columnName": "morningStiffnessMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFlareEvent",
+            "columnName": "isFlareEvent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "basfi",
+            "columnName": "basfi",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "basmi",
+            "columnName": "basmi",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "patientGlobal",
+            "columnName": "patientGlobal",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tenderJointCount",
+            "columnName": "tenderJointCount",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "swollenJointCount",
+            "columnName": "swollenJointCount",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "crpValue",
+            "columnName": "crpValue",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "esrValue",
+            "columnName": "esrValue",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "painAverage24h",
+            "columnName": "painAverage24h",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "painMax24h",
+            "columnName": "painMax24h",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nocturnalPain",
+            "columnName": "nocturnalPain",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "painBurning",
+            "columnName": "painBurning",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "painSharp",
+            "columnName": "painSharp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "painDull",
+            "columnName": "painDull",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "painRadiating",
+            "columnName": "painRadiating",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stressLevel",
+            "columnName": "stressLevel",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "anxietyLevel",
+            "columnName": "anxietyLevel",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mentalFatigue",
+            "columnName": "mentalFatigue",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "depressionRisk",
+            "columnName": "depressionRisk",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "moodValence",
+            "columnName": "moodValence",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exerciseMinutesToday",
+            "columnName": "exerciseMinutesToday",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activityLimitationScore",
+            "columnName": "activityLimitationScore",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "physicalFunctionScore",
+            "columnName": "physicalFunctionScore",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "overallFeeling",
+            "columnName": "overallFeeling",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dayQuality",
+            "columnName": "dayQuality",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "energyLevel",
+            "columnName": "energyLevel",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "copingAbility",
+            "columnName": "copingAbility",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "q1Fatigue",
+            "columnName": "q1Fatigue",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "q2SpinalPain",
+            "columnName": "q2SpinalPain",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "q3PeripheralPain",
+            "columnName": "q3PeripheralPain",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "q4Tenderness",
+            "columnName": "q4Tenderness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "q5MorningStiffnessSeverity",
+            "columnName": "q5MorningStiffnessSeverity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "q6MorningStiffnessDuration",
+            "columnName": "q6MorningStiffnessDuration",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSynced",
+            "columnName": "isSynced",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_symptom_logs_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_symptom_logs_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          },
+          {
+            "name": "index_symptom_logs_isFlareEvent",
+            "unique": false,
+            "columnNames": [
+              "isFlareEvent"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_symptom_logs_isFlareEvent` ON `${TABLE_NAME}` (`isFlareEvent`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "body_region_logs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `symptomLogId` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `regionId` TEXT NOT NULL, `regionName` TEXT NOT NULL, `painLevel` INTEGER NOT NULL, `stiffnessDuration` INTEGER NOT NULL, `stiffnessSeverity` INTEGER NOT NULL, `hasSwelling` INTEGER NOT NULL, `hasWarmth` INTEGER NOT NULL, `hasRedness` INTEGER NOT NULL, `rangeOfMotion` TEXT, `mobilityScore` INTEGER, `notes` TEXT, `photoUri` TEXT, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`symptomLogId`) REFERENCES `symptom_logs`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "symptomLogId",
+            "columnName": "symptomLogId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "regionId",
+            "columnName": "regionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "regionName",
+            "columnName": "regionName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "painLevel",
+            "columnName": "painLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stiffnessDuration",
+            "columnName": "stiffnessDuration",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stiffnessSeverity",
+            "columnName": "stiffnessSeverity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hasSwelling",
+            "columnName": "hasSwelling",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hasWarmth",
+            "columnName": "hasWarmth",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hasRedness",
+            "columnName": "hasRedness",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rangeOfMotion",
+            "columnName": "rangeOfMotion",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobilityScore",
+            "columnName": "mobilityScore",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "photoUri",
+            "columnName": "photoUri",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_body_region_logs_symptomLogId",
+            "unique": false,
+            "columnNames": [
+              "symptomLogId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_body_region_logs_symptomLogId` ON `${TABLE_NAME}` (`symptomLogId`)"
+          },
+          {
+            "name": "index_body_region_logs_regionId",
+            "unique": false,
+            "columnNames": [
+              "regionId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_body_region_logs_regionId` ON `${TABLE_NAME}` (`regionId`)"
+          },
+          {
+            "name": "index_body_region_logs_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_body_region_logs_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "symptom_logs",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "symptomLogId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "context_snapshots",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `symptomLogId` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `barometricPressure` REAL, `pressureChange12h` REAL, `pressureChange24h` REAL, `humidity` INTEGER, `temperature` REAL, `temperatureFeelsLike` REAL, `precipitation` INTEGER NOT NULL, `precipitationType` TEXT, `cloudCover` INTEGER, `windSpeed` REAL, `uvIndex` INTEGER, `weatherCondition` TEXT, `latitude` REAL, `longitude` REAL, `locationName` TEXT, `hrvValue` REAL, `hrvRmssd` REAL, `restingHeartRate` INTEGER, `averageHeartRate` INTEGER, `stepCount` INTEGER, `distanceMeters` REAL, `sleepDurationHours` REAL, `sleepEfficiency` REAL, `sleepStartTime` INTEGER, `sleepEndTime` INTEGER, `sleepStages` TEXT, `activeEnergyBurned` REAL, `flightsClimbed` INTEGER, `exerciseMinutes` INTEGER, `oxygenSaturation` REAL, `respiratoryRate` REAL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`symptomLogId`) REFERENCES `symptom_logs`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "symptomLogId",
+            "columnName": "symptomLogId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "barometricPressure",
+            "columnName": "barometricPressure",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pressureChange12h",
+            "columnName": "pressureChange12h",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pressureChange24h",
+            "columnName": "pressureChange24h",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "humidity",
+            "columnName": "humidity",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "temperature",
+            "columnName": "temperature",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "temperatureFeelsLike",
+            "columnName": "temperatureFeelsLike",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "precipitation",
+            "columnName": "precipitation",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "precipitationType",
+            "columnName": "precipitationType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cloudCover",
+            "columnName": "cloudCover",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "windSpeed",
+            "columnName": "windSpeed",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uvIndex",
+            "columnName": "uvIndex",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weatherCondition",
+            "columnName": "weatherCondition",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "locationName",
+            "columnName": "locationName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hrvValue",
+            "columnName": "hrvValue",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hrvRmssd",
+            "columnName": "hrvRmssd",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "restingHeartRate",
+            "columnName": "restingHeartRate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "averageHeartRate",
+            "columnName": "averageHeartRate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stepCount",
+            "columnName": "stepCount",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "distanceMeters",
+            "columnName": "distanceMeters",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sleepDurationHours",
+            "columnName": "sleepDurationHours",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sleepEfficiency",
+            "columnName": "sleepEfficiency",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sleepStartTime",
+            "columnName": "sleepStartTime",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sleepEndTime",
+            "columnName": "sleepEndTime",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sleepStages",
+            "columnName": "sleepStages",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activeEnergyBurned",
+            "columnName": "activeEnergyBurned",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "flightsClimbed",
+            "columnName": "flightsClimbed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exerciseMinutes",
+            "columnName": "exerciseMinutes",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "oxygenSaturation",
+            "columnName": "oxygenSaturation",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "respiratoryRate",
+            "columnName": "respiratoryRate",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_context_snapshots_symptomLogId",
+            "unique": true,
+            "columnNames": [
+              "symptomLogId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_context_snapshots_symptomLogId` ON `${TABLE_NAME}` (`symptomLogId`)"
+          },
+          {
+            "name": "index_context_snapshots_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_context_snapshots_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "symptom_logs",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "symptomLogId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "medications",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `genericName` TEXT, `category` TEXT NOT NULL, `dosage` REAL NOT NULL, `dosageUnit` TEXT NOT NULL, `frequency` TEXT NOT NULL, `route` TEXT NOT NULL, `isBiologic` INTEGER NOT NULL, `isNSAID` INTEGER NOT NULL, `isDMARD` INTEGER NOT NULL, `startDate` INTEGER NOT NULL, `endDate` INTEGER, `isActive` INTEGER NOT NULL, `reminderEnabled` INTEGER NOT NULL, `reminderTimesJson` TEXT NOT NULL, `prescribedBy` TEXT, `prescribedDate` INTEGER, `instructions` TEXT, `sideEffects` TEXT, `notes` TEXT, `refillReminder` INTEGER NOT NULL, `lastRefillDate` INTEGER, `pillCount` INTEGER, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, `isSynced` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "genericName",
+            "columnName": "genericName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dosage",
+            "columnName": "dosage",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dosageUnit",
+            "columnName": "dosageUnit",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "frequency",
+            "columnName": "frequency",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "route",
+            "columnName": "route",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isBiologic",
+            "columnName": "isBiologic",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isNSAID",
+            "columnName": "isNSAID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDMARD",
+            "columnName": "isDMARD",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "startDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "endDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reminderEnabled",
+            "columnName": "reminderEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reminderTimesJson",
+            "columnName": "reminderTimesJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "prescribedBy",
+            "columnName": "prescribedBy",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prescribedDate",
+            "columnName": "prescribedDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "instructions",
+            "columnName": "instructions",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sideEffects",
+            "columnName": "sideEffects",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "refillReminder",
+            "columnName": "refillReminder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastRefillDate",
+            "columnName": "lastRefillDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pillCount",
+            "columnName": "pillCount",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSynced",
+            "columnName": "isSynced",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_medications_isActive",
+            "unique": false,
+            "columnNames": [
+              "isActive"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_medications_isActive` ON `${TABLE_NAME}` (`isActive`)"
+          },
+          {
+            "name": "index_medications_name",
+            "unique": false,
+            "columnNames": [
+              "name"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_medications_name` ON `${TABLE_NAME}` (`name`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "dose_logs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `medicationId` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `scheduledTime` INTEGER NOT NULL, `actualTakenTime` INTEGER, `dosageTaken` REAL NOT NULL, `wasSkipped` INTEGER NOT NULL, `wasTakenLate` INTEGER NOT NULL, `skipReason` TEXT, `skipReasonOther` TEXT, `hadSideEffects` INTEGER NOT NULL, `sideEffectNotes` TEXT, `notes` TEXT, `lastModified` INTEGER NOT NULL, `isSynced` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`medicationId`) REFERENCES `medications`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medicationId",
+            "columnName": "medicationId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scheduledTime",
+            "columnName": "scheduledTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "actualTakenTime",
+            "columnName": "actualTakenTime",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dosageTaken",
+            "columnName": "dosageTaken",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wasSkipped",
+            "columnName": "wasSkipped",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wasTakenLate",
+            "columnName": "wasTakenLate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skipReason",
+            "columnName": "skipReason",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skipReasonOther",
+            "columnName": "skipReasonOther",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hadSideEffects",
+            "columnName": "hadSideEffects",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sideEffectNotes",
+            "columnName": "sideEffectNotes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSynced",
+            "columnName": "isSynced",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_dose_logs_medicationId",
+            "unique": false,
+            "columnNames": [
+              "medicationId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_dose_logs_medicationId` ON `${TABLE_NAME}` (`medicationId`)"
+          },
+          {
+            "name": "index_dose_logs_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_dose_logs_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          },
+          {
+            "name": "index_dose_logs_scheduledTime",
+            "unique": false,
+            "columnNames": [
+              "scheduledTime"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_dose_logs_scheduledTime` ON `${TABLE_NAME}` (`scheduledTime`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "medications",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "medicationId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "flare_events",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `startDate` INTEGER NOT NULL, `endDate` INTEGER, `isResolved` INTEGER NOT NULL, `severity` INTEGER NOT NULL, `peakSeverity` INTEGER, `peakSeverityDate` INTEGER, `primaryRegionsJson` TEXT NOT NULL, `secondaryRegionsJson` TEXT NOT NULL, `suspectedTriggersJson` TEXT NOT NULL, `flareType` TEXT NOT NULL, `interventionsJson` TEXT NOT NULL, `medicationsTakenJson` TEXT NOT NULL, `workMissedDays` INTEGER NOT NULL, `hospitalVisit` INTEGER NOT NULL, `emergencyVisit` INTEGER NOT NULL, `notes` TEXT, `triggerNotes` TEXT, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, `isSynced` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "startDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "endDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isResolved",
+            "columnName": "isResolved",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "severity",
+            "columnName": "severity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "peakSeverity",
+            "columnName": "peakSeverity",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "peakSeverityDate",
+            "columnName": "peakSeverityDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "primaryRegionsJson",
+            "columnName": "primaryRegionsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "secondaryRegionsJson",
+            "columnName": "secondaryRegionsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "suspectedTriggersJson",
+            "columnName": "suspectedTriggersJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flareType",
+            "columnName": "flareType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "interventionsJson",
+            "columnName": "interventionsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medicationsTakenJson",
+            "columnName": "medicationsTakenJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workMissedDays",
+            "columnName": "workMissedDays",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hospitalVisit",
+            "columnName": "hospitalVisit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emergencyVisit",
+            "columnName": "emergencyVisit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "triggerNotes",
+            "columnName": "triggerNotes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSynced",
+            "columnName": "isSynced",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_flare_events_startDate",
+            "unique": false,
+            "columnNames": [
+              "startDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_flare_events_startDate` ON `${TABLE_NAME}` (`startDate`)"
+          },
+          {
+            "name": "index_flare_events_isResolved",
+            "unique": false,
+            "columnNames": [
+              "isResolved"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_flare_events_isResolved` ON `${TABLE_NAME}` (`isResolved`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "exercise_sessions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `routineType` TEXT NOT NULL, `routineName` TEXT, `durationMinutes` INTEGER NOT NULL, `durationSeconds` INTEGER NOT NULL, `exercisesCompletedJson` TEXT NOT NULL, `exerciseCount` INTEGER NOT NULL, `intensityLevel` INTEGER NOT NULL, `perceivedExertion` INTEGER, `painBefore` INTEGER NOT NULL, `painAfter` INTEGER NOT NULL, `painDelta` INTEGER NOT NULL, `hadPainIncrease` INTEGER NOT NULL, `preExerciseJointPainJson` TEXT NOT NULL, `postExerciseJointPainJson` TEXT NOT NULL, `flowId` TEXT, `flowTitle` TEXT, `cyclesCompleted` INTEGER NOT NULL, `cyclesTarget` INTEGER NOT NULL, `romMultiplier` REAL NOT NULL, `speedMultiplier` REAL NOT NULL, `userConfidence` INTEGER, `wasInFlareMode` INTEGER NOT NULL, `flareAdjustments` TEXT, `notes` TEXT, `mood` TEXT, `averageHeartRate` INTEGER, `maxHeartRate` INTEGER, `caloriesBurned` REAL, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, `isSynced` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "routineType",
+            "columnName": "routineType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "routineName",
+            "columnName": "routineName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "durationMinutes",
+            "columnName": "durationMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationSeconds",
+            "columnName": "durationSeconds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exercisesCompletedJson",
+            "columnName": "exercisesCompletedJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exerciseCount",
+            "columnName": "exerciseCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "intensityLevel",
+            "columnName": "intensityLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "perceivedExertion",
+            "columnName": "perceivedExertion",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "painBefore",
+            "columnName": "painBefore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "painAfter",
+            "columnName": "painAfter",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "painDelta",
+            "columnName": "painDelta",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hadPainIncrease",
+            "columnName": "hadPainIncrease",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preExerciseJointPainJson",
+            "columnName": "preExerciseJointPainJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "postExerciseJointPainJson",
+            "columnName": "postExerciseJointPainJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flowId",
+            "columnName": "flowId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "flowTitle",
+            "columnName": "flowTitle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cyclesCompleted",
+            "columnName": "cyclesCompleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cyclesTarget",
+            "columnName": "cyclesTarget",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "romMultiplier",
+            "columnName": "romMultiplier",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "speedMultiplier",
+            "columnName": "speedMultiplier",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userConfidence",
+            "columnName": "userConfidence",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wasInFlareMode",
+            "columnName": "wasInFlareMode",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flareAdjustments",
+            "columnName": "flareAdjustments",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mood",
+            "columnName": "mood",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "averageHeartRate",
+            "columnName": "averageHeartRate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "maxHeartRate",
+            "columnName": "maxHeartRate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "caloriesBurned",
+            "columnName": "caloriesBurned",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSynced",
+            "columnName": "isSynced",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_exercise_sessions_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_exercise_sessions_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          },
+          {
+            "name": "index_exercise_sessions_routineType",
+            "unique": false,
+            "columnNames": [
+              "routineType"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_exercise_sessions_routineType` ON `${TABLE_NAME}` (`routineType`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "exercises",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `category` TEXT NOT NULL, `difficultyLevel` INTEGER NOT NULL, `durationSeconds` INTEGER NOT NULL, `repetitions` INTEGER, `sets` INTEGER, `targetAreasJson` TEXT NOT NULL, `instructionsJson` TEXT NOT NULL, `tips` TEXT, `warnings` TEXT, `videoUrl` TEXT, `imageUrl` TEXT, `animationData` TEXT, `isAsRecommended` INTEGER NOT NULL, `flareModeSafe` INTEGER NOT NULL, `flareAlternativeId` TEXT, `allowRomAdjustment` INTEGER NOT NULL, `allowSpeedAdjustment` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "difficultyLevel",
+            "columnName": "difficultyLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationSeconds",
+            "columnName": "durationSeconds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repetitions",
+            "columnName": "repetitions",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sets",
+            "columnName": "sets",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "targetAreasJson",
+            "columnName": "targetAreasJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "instructionsJson",
+            "columnName": "instructionsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tips",
+            "columnName": "tips",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "warnings",
+            "columnName": "warnings",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "videoUrl",
+            "columnName": "videoUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imageUrl",
+            "columnName": "imageUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "animationData",
+            "columnName": "animationData",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isAsRecommended",
+            "columnName": "isAsRecommended",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flareModeSafe",
+            "columnName": "flareModeSafe",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flareAlternativeId",
+            "columnName": "flareAlternativeId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "allowRomAdjustment",
+            "columnName": "allowRomAdjustment",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "allowSpeedAdjustment",
+            "columnName": "allowSpeedAdjustment",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_exercises_category",
+            "unique": false,
+            "columnNames": [
+              "category"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_exercises_category` ON `${TABLE_NAME}` (`category`)"
+          },
+          {
+            "name": "index_exercises_difficultyLevel",
+            "unique": false,
+            "columnNames": [
+              "difficultyLevel"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_exercises_difficultyLevel` ON `${TABLE_NAME}` (`difficultyLevel`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "user_profile",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT, `dateOfBirth` INTEGER, `gender` TEXT, `heightCm` REAL, `weightKg` REAL, `bmi` REAL, `diagnosisDate` INTEGER, `diagnosisType` TEXT NOT NULL, `hlaB27Positive` INTEGER, `yearsWithCondition` INTEGER, `biologicExperienced` INTEGER NOT NULL, `currentBiologic` TEXT, `previousBiologicsJson` TEXT NOT NULL, `primaryPhysicianName` TEXT, `primaryPhysicianPhone` TEXT, `rheumatologistName` TEXT, `rheumatologistPhone` TEXT, `physicalTherapistName` TEXT, `physicalTherapistPhone` TEXT, `healthConnectEnabled` INTEGER NOT NULL, `weatherEnabled` INTEGER NOT NULL, `locationEnabled` INTEGER NOT NULL, `cloudSyncEnabled` INTEGER NOT NULL, `lastSyncDate` INTEGER, `biometricLockEnabled` INTEGER NOT NULL, `autoLockTimeout` INTEGER NOT NULL, `notificationsEnabled` INTEGER NOT NULL, `dailyCheckInReminderEnabled` INTEGER NOT NULL, `dailyCheckInReminderTime` TEXT NOT NULL, `medicationRemindersEnabled` INTEGER NOT NULL, `flareAlertsEnabled` INTEGER NOT NULL, `exerciseRemindersEnabled` INTEGER NOT NULL, `measurementSystem` TEXT NOT NULL, `temperatureUnit` TEXT NOT NULL, `themeMode` TEXT NOT NULL, `useDynamicColors` INTEGER NOT NULL, `hapticFeedbackEnabled` INTEGER NOT NULL, `reducedMotion` INTEGER NOT NULL, `largeText` INTEGER NOT NULL, `hasCompletedOnboarding` INTEGER NOT NULL, `onboardingCompletedDate` INTEGER, `termsAcceptedDate` INTEGER, `privacyAcceptedDate` INTEGER, `firstLaunchDate` INTEGER NOT NULL, `lastOpenDate` INTEGER NOT NULL, `totalCheckIns` INTEGER NOT NULL, `streakDays` INTEGER NOT NULL, `longestStreak` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateOfBirth",
+            "columnName": "dateOfBirth",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gender",
+            "columnName": "gender",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "heightCm",
+            "columnName": "heightCm",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weightKg",
+            "columnName": "weightKg",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bmi",
+            "columnName": "bmi",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "diagnosisDate",
+            "columnName": "diagnosisDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "diagnosisType",
+            "columnName": "diagnosisType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hlaB27Positive",
+            "columnName": "hlaB27Positive",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "yearsWithCondition",
+            "columnName": "yearsWithCondition",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "biologicExperienced",
+            "columnName": "biologicExperienced",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentBiologic",
+            "columnName": "currentBiologic",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "previousBiologicsJson",
+            "columnName": "previousBiologicsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "primaryPhysicianName",
+            "columnName": "primaryPhysicianName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "primaryPhysicianPhone",
+            "columnName": "primaryPhysicianPhone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rheumatologistName",
+            "columnName": "rheumatologistName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rheumatologistPhone",
+            "columnName": "rheumatologistPhone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "physicalTherapistName",
+            "columnName": "physicalTherapistName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "physicalTherapistPhone",
+            "columnName": "physicalTherapistPhone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "healthConnectEnabled",
+            "columnName": "healthConnectEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weatherEnabled",
+            "columnName": "weatherEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locationEnabled",
+            "columnName": "locationEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cloudSyncEnabled",
+            "columnName": "cloudSyncEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastSyncDate",
+            "columnName": "lastSyncDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "biometricLockEnabled",
+            "columnName": "biometricLockEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "autoLockTimeout",
+            "columnName": "autoLockTimeout",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notificationsEnabled",
+            "columnName": "notificationsEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyCheckInReminderEnabled",
+            "columnName": "dailyCheckInReminderEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyCheckInReminderTime",
+            "columnName": "dailyCheckInReminderTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medicationRemindersEnabled",
+            "columnName": "medicationRemindersEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flareAlertsEnabled",
+            "columnName": "flareAlertsEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exerciseRemindersEnabled",
+            "columnName": "exerciseRemindersEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "measurementSystem",
+            "columnName": "measurementSystem",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "temperatureUnit",
+            "columnName": "temperatureUnit",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "themeMode",
+            "columnName": "themeMode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "useDynamicColors",
+            "columnName": "useDynamicColors",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hapticFeedbackEnabled",
+            "columnName": "hapticFeedbackEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reducedMotion",
+            "columnName": "reducedMotion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "largeText",
+            "columnName": "largeText",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hasCompletedOnboarding",
+            "columnName": "hasCompletedOnboarding",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "onboardingCompletedDate",
+            "columnName": "onboardingCompletedDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "termsAcceptedDate",
+            "columnName": "termsAcceptedDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "privacyAcceptedDate",
+            "columnName": "privacyAcceptedDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "firstLaunchDate",
+            "columnName": "firstLaunchDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastOpenDate",
+            "columnName": "lastOpenDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalCheckIns",
+            "columnName": "totalCheckIns",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "streakDays",
+            "columnName": "streakDays",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longestStreak",
+            "columnName": "longestStreak",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "meditation_sessions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `meditationType` TEXT NOT NULL, `durationMinutes` INTEGER NOT NULL, `durationSeconds` INTEGER NOT NULL, `wasCompleted` INTEGER NOT NULL, `contentId` TEXT, `contentTitle` TEXT, `instructorName` TEXT, `stressBefore` INTEGER, `painBefore` INTEGER, `anxietyBefore` INTEGER, `moodBefore` INTEGER, `stressAfter` INTEGER, `painAfter` INTEGER, `anxietyAfter` INTEGER, `moodAfter` INTEGER, `heartRateBefore` INTEGER, `heartRateAfter` INTEGER, `hrvBefore` REAL, `hrvAfter` REAL, `focus` INTEGER, `relaxation` INTEGER, `difficulty` INTEGER, `notes` TEXT, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "meditationType",
+            "columnName": "meditationType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationMinutes",
+            "columnName": "durationMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationSeconds",
+            "columnName": "durationSeconds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wasCompleted",
+            "columnName": "wasCompleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentId",
+            "columnName": "contentId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "contentTitle",
+            "columnName": "contentTitle",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "instructorName",
+            "columnName": "instructorName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stressBefore",
+            "columnName": "stressBefore",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "painBefore",
+            "columnName": "painBefore",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "anxietyBefore",
+            "columnName": "anxietyBefore",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "moodBefore",
+            "columnName": "moodBefore",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stressAfter",
+            "columnName": "stressAfter",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "painAfter",
+            "columnName": "painAfter",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "anxietyAfter",
+            "columnName": "anxietyAfter",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "moodAfter",
+            "columnName": "moodAfter",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "heartRateBefore",
+            "columnName": "heartRateBefore",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "heartRateAfter",
+            "columnName": "heartRateAfter",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hrvBefore",
+            "columnName": "hrvBefore",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hrvAfter",
+            "columnName": "hrvAfter",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "focus",
+            "columnName": "focus",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "relaxation",
+            "columnName": "relaxation",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "difficulty",
+            "columnName": "difficulty",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_meditation_sessions_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_meditation_sessions_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          },
+          {
+            "name": "index_meditation_sessions_meditationType",
+            "unique": false,
+            "columnNames": [
+              "meditationType"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_meditation_sessions_meditationType` ON `${TABLE_NAME}` (`meditationType`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "meditation_streaks",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `currentStreak` INTEGER NOT NULL, `longestStreak` INTEGER NOT NULL, `totalSessions` INTEGER NOT NULL, `totalMinutes` INTEGER NOT NULL, `lastSessionDate` INTEGER, `streakStartDate` INTEGER, `weeklyGoalMinutes` INTEGER NOT NULL, `weeklyCompletedMinutes` INTEGER NOT NULL, `weekStartDate` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentStreak",
+            "columnName": "currentStreak",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longestStreak",
+            "columnName": "longestStreak",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalSessions",
+            "columnName": "totalSessions",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalMinutes",
+            "columnName": "totalMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastSessionDate",
+            "columnName": "lastSessionDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "streakStartDate",
+            "columnName": "streakStartDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weeklyGoalMinutes",
+            "columnName": "weeklyGoalMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weeklyCompletedMinutes",
+            "columnName": "weeklyCompletedMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weekStartDate",
+            "columnName": "weekStartDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "trigger_logs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `symptomLogId` TEXT, `timestamp` INTEGER NOT NULL, `triggerType` TEXT NOT NULL, `triggerName` TEXT NOT NULL, `triggerValue` REAL, `triggerDescription` TEXT, `impactLevel` INTEGER, `confidenceLevel` INTEGER, `hoursBeforeSymptoms` INTEGER, `lagCategory` TEXT NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`symptomLogId`) REFERENCES `symptom_logs`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "symptomLogId",
+            "columnName": "symptomLogId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerType",
+            "columnName": "triggerType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerName",
+            "columnName": "triggerName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerValue",
+            "columnName": "triggerValue",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "triggerDescription",
+            "columnName": "triggerDescription",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "impactLevel",
+            "columnName": "impactLevel",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "confidenceLevel",
+            "columnName": "confidenceLevel",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hoursBeforeSymptoms",
+            "columnName": "hoursBeforeSymptoms",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lagCategory",
+            "columnName": "lagCategory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_trigger_logs_symptomLogId",
+            "unique": false,
+            "columnNames": [
+              "symptomLogId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_trigger_logs_symptomLogId` ON `${TABLE_NAME}` (`symptomLogId`)"
+          },
+          {
+            "name": "index_trigger_logs_triggerType",
+            "unique": false,
+            "columnNames": [
+              "triggerType"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_trigger_logs_triggerType` ON `${TABLE_NAME}` (`triggerType`)"
+          },
+          {
+            "name": "index_trigger_logs_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_trigger_logs_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "symptom_logs",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "symptomLogId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "trigger_analysis_cache",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `analysisDate` INTEGER NOT NULL, `startDate` INTEGER NOT NULL, `endDate` INTEGER NOT NULL, `dataPointsAnalyzed` INTEGER NOT NULL, `correlationsJson` TEXT NOT NULL, `topTriggersJson` TEXT NOT NULL, `confidenceLevel` REAL NOT NULL, `analysisVersion` TEXT NOT NULL, `isValid` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "analysisDate",
+            "columnName": "analysisDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "startDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "endDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataPointsAnalyzed",
+            "columnName": "dataPointsAnalyzed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correlationsJson",
+            "columnName": "correlationsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "topTriggersJson",
+            "columnName": "topTriggersJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "confidenceLevel",
+            "columnName": "confidenceLevel",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "analysisVersion",
+            "columnName": "analysisVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isValid",
+            "columnName": "isValid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_trigger_analysis_cache_analysisDate",
+            "unique": false,
+            "columnNames": [
+              "analysisDate"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_trigger_analysis_cache_analysisDate` ON `${TABLE_NAME}` (`analysisDate`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2dccc7434953fe98b26044e4f90649bf')"
+    ]
+  }
+}

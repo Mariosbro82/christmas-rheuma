@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M54,54m-40,0a40,40 0,1 1,80 0a40,40 0,1 1,-80 0" />
+
+    <!-- Heart/health symbol -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,40c-5,-8 -16,-8 -20,0c-4,8 0,16 8,24l12,12l12,-12c8,-8 12,-16 8,-24c-4,-8 -15,-8 -20,0z" />
+
+    <!-- Watch symbol -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeColor="#FFFFFF"
+        android:pathData="M44,70 L54,70 L54,60"
+        android:strokeLineCap="round" />
+</vector>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InflamAI</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Startseite</string>
+    <string name="nav_checkin">Check-in</string>
+    <string name="nav_trends">Trends</string>
+    <string name="nav_exercise">Übungen</string>
+    <string name="nav_settings">Einstellungen</string>
+
+    <!-- Medical Disclaimers -->
+    <string name="disclaimer_not_medical_advice">Diese App dient ausschließlich zu Informationszwecken und ersetzt keine professionelle medizinische Beratung, Diagnose oder Behandlung. Konsultieren Sie immer einen qualifizierten Arzt.</string>
+    <string name="disclaimer_basdai">BASDAI-Werte dienen ausschließlich der Selbstüberwachung. Besprechen Sie Bedenken mit Ihrem Rheumatologen.</string>
+    <string name="disclaimer_patterns">Die Musteranalyse ist statistischer Natur und stellt keine medizinische Diagnose oder Vorhersage dar.</string>
+
+    <!-- BASDAI -->
+    <string name="basdai_title">BASDAI-Bewertung</string>
+    <string name="basdai_q1">Wie würden Sie das allgemeine Niveau der Müdigkeit/Erschöpfung beschreiben, das Sie erlebt haben?</string>
+    <string name="basdai_q2">Wie würden Sie das allgemeine Niveau der Schmerzen in Nacken, Rücken oder Hüfte durch Morbus Bechterew beschreiben?</string>
+    <string name="basdai_q3">Wie würden Sie das allgemeine Niveau der Schmerzen/Schwellungen in anderen Gelenken als Nacken, Rücken oder Hüften beschreiben?</string>
+    <string name="basdai_q4">Wie würden Sie das allgemeine Niveau des Unbehagens durch berührungsempfindliche oder druckempfindliche Bereiche beschreiben?</string>
+    <string name="basdai_q5">Wie würden Sie das allgemeine Niveau der Morgensteifigkeit beschreiben, die Sie seit dem Aufwachen hatten?</string>
+    <string name="basdai_q6">Wie lange dauert Ihre Morgensteifigkeit ab dem Zeitpunkt des Aufwachens?</string>
+
+    <!-- Score Interpretations -->
+    <string name="score_remission">Remission</string>
+    <string name="score_low_activity">Niedrige Aktivität</string>
+    <string name="score_moderate_activity">Mittlere Aktivität</string>
+    <string name="score_high_activity">Hohe Aktivität</string>
+    <string name="score_very_high_activity">Sehr hohe Aktivität</string>
+
+    <!-- Body Regions -->
+    <string name="region_cervical_spine">Halswirbelsäule</string>
+    <string name="region_thoracic_spine">Brustwirbelsäule</string>
+    <string name="region_lumbar_spine">Lendenwirbelsäule</string>
+    <string name="region_sacrum">Kreuzbein</string>
+    <string name="region_si_joint">Iliosakralgelenk</string>
+    <string name="region_shoulder">Schulter</string>
+    <string name="region_elbow">Ellbogen</string>
+    <string name="region_wrist">Handgelenk</string>
+    <string name="region_hand">Hand</string>
+    <string name="region_hip">Hüfte</string>
+    <string name="region_knee">Knie</string>
+    <string name="region_ankle">Knöchel</string>
+    <string name="region_foot">Fuß</string>
+
+    <!-- Biometric Authentication -->
+    <string name="biometric_title">Authentifizierung</string>
+    <string name="biometric_subtitle">Verwenden Sie Biometrie, um auf Ihre Gesundheitsdaten zuzugreifen</string>
+    <string name="biometric_description">Ihre Gesundheitsdaten sind durch biometrische Authentifizierung geschützt</string>
+
+    <!-- Health Connect -->
+    <string name="health_connect_title">Health Connect</string>
+    <string name="health_connect_description">Verbinden Sie sich mit Health Connect, um Ihre biometrischen Daten für eine bessere Musteranalyse zu synchronisieren.</string>
+    <string name="health_connect_permission_rationale">InflamAI verwendet Health Connect, um Ihre Herzfrequenz, HRV, Schlaf- und Aktivitätsdaten zu lesen. Dies hilft dabei, Muster zwischen Ihren biometrischen Daten und Morbus-Bechterew-Symptomen zu identifizieren. Alle Daten bleiben auf Ihrem Gerät.</string>
+
+    <!-- Settings -->
+    <string name="settings_general">Allgemein</string>
+    <string name="settings_privacy">Datenschutz &amp; Sicherheit</string>
+    <string name="settings_health_data">Gesundheitsdaten</string>
+    <string name="settings_notifications">Benachrichtigungen</string>
+    <string name="settings_about">Über</string>
+
+    <!-- Common Actions -->
+    <string name="action_save">Speichern</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_delete">Löschen</string>
+    <string name="action_edit">Bearbeiten</string>
+    <string name="action_continue">Weiter</string>
+    <string name="action_skip">Überspringen</string>
+    <string name="action_done">Fertig</string>
+    <string name="action_retry">Erneut versuchen</string>
+
+    <!-- Accessibility -->
+    <string name="content_description_pain_level">Schmerzlevel %1$d von 10</string>
+    <string name="content_description_basdai_score">BASDAI-Wert %1$.1f</string>
+    <string name="content_description_body_region">%1$s, tippen zum Aufzeichnen von Schmerzen</string>
+</resources>

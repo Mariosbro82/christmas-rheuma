@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Health Connect Permissions -->
+    <string-array name="health_permissions">
+        <item>android.permission.health.READ_HEART_RATE</item>
+        <item>android.permission.health.READ_HEART_RATE_VARIABILITY</item>
+        <item>android.permission.health.READ_RESTING_HEART_RATE</item>
+        <item>android.permission.health.READ_STEPS</item>
+        <item>android.permission.health.READ_DISTANCE</item>
+        <item>android.permission.health.READ_SLEEP</item>
+        <item>android.permission.health.READ_ACTIVE_CALORIES_BURNED</item>
+        <item>android.permission.health.READ_OXYGEN_SATURATION</item>
+        <item>android.permission.health.READ_RESPIRATORY_RATE</item>
+        <item>android.permission.health.READ_EXERCISE</item>
+    </string-array>
+
+    <!-- Morning Stiffness Duration Options (minutes) -->
+    <string-array name="stiffness_duration_options">
+        <item>0 - 15 minutes</item>
+        <item>15 - 30 minutes</item>
+        <item>30 - 60 minutes</item>
+        <item>1 - 2 hours</item>
+        <item>More than 2 hours</item>
+    </string-array>
+
+    <!-- Medication Frequencies -->
+    <string-array name="medication_frequency_options">
+        <item>As needed</item>
+        <item>Once daily</item>
+        <item>Twice daily</item>
+        <item>Three times daily</item>
+        <item>Weekly</item>
+        <item>Every two weeks</item>
+        <item>Monthly</item>
+    </string-array>
+
+    <!-- Flare Triggers -->
+    <string-array name="flare_trigger_options">
+        <item>Weather change</item>
+        <item>Stress</item>
+        <item>Poor sleep</item>
+        <item>Missed medication</item>
+        <item>Overexertion</item>
+        <item>Prolonged sitting</item>
+        <item>Illness/Infection</item>
+        <item>Diet</item>
+        <item>Alcohol</item>
+        <item>Unknown</item>
+    </string-array>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Backup rules for Android 11 and below
+   Health data should NOT be included in cloud backups for privacy
+-->
+<full-backup-content>
+    <!-- Exclude sensitive health data -->
+    <exclude domain="database" path="inflamai_database" />
+    <exclude domain="sharedpref" path="security_prefs.preferences_pb" />
+
+    <!-- Include user preferences -->
+    <include domain="sharedpref" path="user_preferences.preferences_pb" />
+</full-backup-content>

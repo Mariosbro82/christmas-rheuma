@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primary">#006874</color>
+    <color name="primary_variant">#004F58</color>
+    <color name="on_primary">#FFFFFF</color>
+
+    <color name="secondary">#4A6267</color>
+    <color name="secondary_variant">#334B4F</color>
+    <color name="on_secondary">#FFFFFF</color>
+
+    <!-- Background Colors -->
+    <color name="background">#FAFDFD</color>
+    <color name="surface">#FAFDFD</color>
+    <color name="splash_background">#006874</color>
+
+    <!-- Score Colors (BASDAI/ASDAS) -->
+    <color name="score_remission">#4CAF50</color>
+    <color name="score_low_activity">#8BC34A</color>
+    <color name="score_moderate_activity">#FF9800</color>
+    <color name="score_high_activity">#FF5722</color>
+    <color name="score_very_high_activity">#F44336</color>
+
+    <!-- Pain Heatmap -->
+    <color name="pain_none">#4CAF50</color>
+    <color name="pain_mild">#8BC34A</color>
+    <color name="pain_moderate">#FFEB3B</color>
+    <color name="pain_severe">#FF9800</color>
+    <color name="pain_extreme">#F44336</color>
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+</resources>

@@ -99,10 +99,12 @@ Package.resolved
 Pods/
 
 # ============ ANDROID ============
-# Entire Android app (commit separately when ready)
-android-app/
-
-# Android build artifacts (backup rules)
+# Android build artifacts only (source code is tracked)
+android-app/.gradle/
+android-app/**/build/
+android-app/build/
+android-app/local.properties
+android-app/.idea/
 **/.gradle/
 **/intermediates/
 *.apk

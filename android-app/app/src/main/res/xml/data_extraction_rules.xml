@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Data extraction rules for Android 12+
+   Health data should NOT be included in cloud backups for privacy
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Exclude sensitive health data from cloud backups -->
+        <exclude domain="database" path="inflamai_database" />
+        <exclude domain="sharedpref" path="security_prefs.preferences_pb" />
+        <exclude domain="sharedpref" path="health_connect_prefs.preferences_pb" />
+
+        <!-- Allow general preferences backup -->
+        <include domain="sharedpref" path="user_preferences.preferences_pb" />
+    </cloud-backup>
+
+    <device-transfer>
+        <!-- Allow all data for device-to-device transfer -->
+        <include domain="database" path="." />
+        <include domain="sharedpref" path="." />
+    </device-transfer>
+</data-extraction-rules>
