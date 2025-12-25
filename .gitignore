@@ -108,8 +108,15 @@ RheumaApp-Swift/Core/ML/NeuralEngine/data/comprehensive_training_data.*
 RheumaApp-Swift/Core/ML/NeuralEngine/data/huge_training_set.*
 RheumaApp-Swift/Core/ML/NeuralEngine/data/training_data_*.parquet
 
+# InflamAI ML artifacts
+InflamAI/Core/ML/NeuralEngine/models/
+InflamAI/Core/ML/NeuralEngine/logs/
+InflamAI/Core/ML/NeuralEngine/data/*.parquet
+InflamAI/Core/ML/NeuralEngine/data/*training*
+
 # Keep production CoreML model
 !RheumaApp-Swift/Resources/ML/
+!InflamAI/Resources/ML/
 
 # Python cache
 __pycache__/
@@ -163,7 +170,16 @@ rive-file/*.rev
 # Large builds
 android-app/.gradle/
 android-app/**/build/
-video-reference/
 *.pth
 *.apk
 *.bin
+
+# Video files and frames (keep analysis reports only)
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.avi
+*.mkv
+video-reference/extract_frames
+video-reference/frames/
