@@ -57,36 +57,6 @@ enum class LagCategory {
 }
 
 /**
- * Cached trigger analysis results
- * Stores computed correlations to avoid recalculating
- */
-@Entity(
-    tableName = "trigger_analysis_cache",
-    indices = [Index("analysisDate")]
-)
-data class TriggerAnalysisCacheEntity(
-    @PrimaryKey
-    val id: String = UUID.randomUUID().toString(),
-    val analysisDate: Long = System.currentTimeMillis(),
-
-    // Analysis Period
-    val startDate: Long,
-    val endDate: Long,
-    val dataPointsAnalyzed: Int,
-
-    // Results (JSON)
-    val correlationsJson: String,        // Array of CorrelationResult
-    val topTriggersJson: String,         // Top N triggers
-    val confidenceLevel: Double,         // Overall analysis confidence
-
-    // Metadata
-    val analysisVersion: String = "1.0",
-    val isValid: Boolean = true,
-
-    val lastModified: Long = System.currentTimeMillis()
-)
-
-/**
  * Data class representing a correlation result
  * Used in JSON serialization for cache
  */

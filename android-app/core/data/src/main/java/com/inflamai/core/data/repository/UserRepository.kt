@@ -1,6 +1,7 @@
 package com.inflamai.core.data.repository
 
 import com.inflamai.core.data.database.dao.UserProfileDao
+import com.inflamai.core.data.database.entity.ThemeMode
 import com.inflamai.core.data.database.entity.UserProfileEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -35,16 +36,15 @@ class UserRepository @Inject constructor(
         if (profile == null) {
             profile = UserProfileEntity(
                 id = "user_profile",
-                diagnosisYear = null,
-                hasHlaB27 = null,
-                biologicMedication = null,
-                isMale = true,
-                birthYear = null,
+                diagnosisDate = null,
+                hlaB27Positive = null,
+                currentBiologic = null,
+                gender = null,
+                dateOfBirth = null,
                 notificationsEnabled = true,
-                morningReminderTime = "08:00",
-                eveningReminderTime = "20:00",
-                useBiometric = false,
-                isDarkMode = false,
+                dailyCheckInReminderTime = "09:00",
+                biometricLockEnabled = false,
+                themeMode = ThemeMode.SYSTEM,
                 hasCompletedOnboarding = false,
                 streakDays = 0,
                 longestStreak = 0,
@@ -63,12 +63,12 @@ class UserRepository @Inject constructor(
 
     suspend fun updateBiometricEnabled(enabled: Boolean) {
         val profile = getUserProfile() ?: return
-        updateProfile(profile.copy(useBiometric = enabled))
+        updateProfile(profile.copy(biometricLockEnabled = enabled))
     }
 
     suspend fun updateDarkMode(enabled: Boolean) {
         val profile = getUserProfile() ?: return
-        updateProfile(profile.copy(isDarkMode = enabled))
+        updateProfile(profile.copy(themeMode = if (enabled) ThemeMode.DARK else ThemeMode.LIGHT))
     }
 
     suspend fun setOnboardingComplete() {
@@ -76,13 +76,8 @@ class UserRepository @Inject constructor(
         updateProfile(profile.copy(hasCompletedOnboarding = true))
     }
 
-    suspend fun updateMorningReminder(time: String) {
+    suspend fun updateDailyCheckInReminder(time: String) {
         val profile = getUserProfile() ?: return
-        updateProfile(profile.copy(morningReminderTime = time))
-    }
-
-    suspend fun updateEveningReminder(time: String) {
-        val profile = getUserProfile() ?: return
-        updateProfile(profile.copy(eveningReminderTime = time))
+        updateProfile(profile.copy(dailyCheckInReminderTime = time))
     }
 }

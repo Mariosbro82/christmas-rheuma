@@ -196,7 +196,7 @@ fun BASDAIScoreCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .semantics { contentDescription = "BASDAI score ${String.format("%.1f", score)} out of 10" },
+            .semantics { contentDescription = "BASDAI score ${String.format(Locale.getDefault(), "%.1f", score)} out of 10" },
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
         ),
@@ -226,7 +226,7 @@ fun BASDAIScoreCard(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
-                        text = String.format("%.1f", score),
+                        text = String.format(Locale.getDefault(), "%.1f", score),
                         style = MaterialTheme.typography.displayLarge,
                         fontWeight = FontWeight.Bold,
                         color = scoreColor
@@ -538,22 +538,24 @@ fun HealthSnapshotCard(
 
                 HealthMetric(
                     icon = Icons.Default.DirectionsWalk,
-                    value = snapshot.stepCount.toString(),
+                    value = (snapshot.stepCount).toString(),
                     unit = "",
                     label = "Steps"
                 )
 
-                HealthMetric(
-                    icon = Icons.Default.Bedtime,
-                    value = "${snapshot.sleepDurationMinutes / 60}h ${snapshot.sleepDurationMinutes % 60}m",
-                    unit = "",
-                    label = "Sleep"
-                )
+                snapshot.sleepDurationMinutes?.let { sleepMinutes ->
+                    HealthMetric(
+                        icon = Icons.Default.Bedtime,
+                        value = "${sleepMinutes / 60}h ${sleepMinutes % 60}m",
+                        unit = "",
+                        label = "Sleep"
+                    )
+                }
 
                 snapshot.latestHrv?.let { hrv ->
                     HealthMetric(
                         icon = Icons.Default.ShowChart,
-                        value = String.format("%.0f", hrv),
+                        value = String.format(Locale.getDefault(), "%.0f", hrv),
                         unit = "ms",
                         label = "HRV"
                     )

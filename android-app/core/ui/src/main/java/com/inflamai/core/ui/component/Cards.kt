@@ -425,72 +425,71 @@ fun JournalEntryCard(
             .clickable(onClick = onClick),
         color = Surface
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            // Header: Date + Mood badge
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = date,
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = TextPrimary
-                )
-
-                Surface(
-                    shape = RoundedCornerShape(12.dp),
-                    color = moodBgColor
+        Column {
+            Column(modifier = Modifier.padding(16.dp)) {
+                // Header: Date + Mood badge
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = moodStatus,
-                        fontSize = 12.sp,
-                        color = moodColor,
-                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                        text = date,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = TextPrimary
+                    )
+
+                    Surface(
+                        shape = RoundedCornerShape(12.dp),
+                        color = moodBgColor
+                    ) {
+                        Text(
+                            text = moodStatus,
+                            fontSize = 12.sp,
+                            color = moodColor,
+                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                // Metrics row
+                Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Text(text = "⚡ $energyLevel/10", fontSize = 13.sp, color = TextSecondary)
+                    Text(text = "🛏 $sleepQuality/10", fontSize = 13.sp, color = TextSecondary)
+                    Text(text = "🔺 $painLevel/10", fontSize = 13.sp, color = TextSecondary)
+                }
+
+                Spacer(modifier = Modifier.height(4.dp))
+
+                // Tags
+                if (tags.isNotEmpty()) {
+                    Text(
+                        text = tags.joinToString(", "),
+                        fontSize = 13.sp,
+                        color = TextTertiary,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
                     )
                 }
-            }
 
-            Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(4.dp))
 
-            // Metrics row
-            Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                Text(text = "⚡ $energyLevel/10", fontSize = 13.sp, color = TextSecondary)
-                Text(text = "🛏 $sleepQuality/10", fontSize = 13.sp, color = TextSecondary)
-                Text(text = "🔺 $painLevel/10", fontSize = 13.sp, color = TextSecondary)
-            }
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            // Tags
-            if (tags.isNotEmpty()) {
+                // Content preview
                 Text(
-                    text = tags.joinToString(", "),
-                    fontSize = 13.sp,
-                    color = TextTertiary,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
+                    text = contentPreview,
+                    fontSize = 14.sp,
+                    color = TextSecondary,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis,
+                    lineHeight = 20.sp
                 )
             }
 
-            Spacer(modifier = Modifier.height(4.dp))
-
-            // Content preview
-            Text(
-                text = contentPreview,
-                fontSize = 14.sp,
-                color = TextSecondary,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-                lineHeight = 20.sp
-            )
+            HorizontalDivider(color = Divider)
         }
-
-        HorizontalDivider(
-            modifier = Modifier.align(Alignment.BottomCenter),
-            color = Divider
-        )
     }
 }
 

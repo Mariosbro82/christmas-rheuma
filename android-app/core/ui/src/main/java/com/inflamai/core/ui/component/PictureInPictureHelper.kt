@@ -7,6 +7,7 @@ import android.content.ContextWrapper
 import android.content.pm.PackageManager
 import android.os.Build
 import android.util.Rational
+import androidx.activity.ComponentActivity
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -89,14 +90,15 @@ fun PictureInPictureModeEffect(
     val activity = context.findActivity()
 
     DisposableEffect(activity) {
-        if (activity != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        val componentActivity = activity as? ComponentActivity
+        if (componentActivity != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val listener = Consumer<PictureInPictureModeChangedInfo> { info ->
                 onPictureInPictureModeChanged(info.isInPictureInPictureMode)
             }
-            activity.addOnPictureInPictureModeChangedListener(listener)
+            componentActivity.addOnPictureInPictureModeChangedListener(listener)
 
             onDispose {
-                activity.removeOnPictureInPictureModeChangedListener(listener)
+                componentActivity.removeOnPictureInPictureModeChangedListener(listener)
             }
         } else {
             onDispose { }

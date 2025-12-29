@@ -26,6 +26,7 @@ data class MeditationSessionEntity(
     val durationMinutes: Int,
     val durationSeconds: Int = 0,
     val wasCompleted: Boolean = true,
+    val category: String? = null, // Added to match Repository usage
 
     // Audio/Content
     val contentId: String? = null,
@@ -57,6 +58,7 @@ data class MeditationSessionEntity(
 
     // Notes
     val notes: String? = null,
+    val sessionType: String? = null, // Added to match Repository usage
 
     val createdAt: Long = System.currentTimeMillis(),
     val lastModified: Long = System.currentTimeMillis()
@@ -73,22 +75,3 @@ enum class MeditationType {
     PAIN_MANAGEMENT,
     UNGUIDED
 }
-
-/**
- * Meditation streak tracking (singleton)
- */
-@Entity(tableName = "meditation_streak")
-data class MeditationStreakEntity(
-    @PrimaryKey
-    val id: String = "meditation_streak",
-
-    val currentStreak: Int = 0,
-    val longestStreak: Int = 0,
-    val totalSessions: Int = 0,
-    val totalMinutes: Int = 0,
-
-    val lastSessionDate: Long? = null,
-    val streakStartDate: Long? = null,
-
-    val lastModified: Long = System.currentTimeMillis()
-)

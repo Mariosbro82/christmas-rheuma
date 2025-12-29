@@ -28,27 +28,6 @@ import com.inflamai.core.ui.component.*
 import com.inflamai.core.ui.theme.*
 
 /**
- * Meditation session data
- */
-data class MeditationSession(
-    val id: String,
-    val title: String,
-    val description: String,
-    val durationMinutes: Int,
-    val category: MeditationCategory,
-    val icon: ImageVector = Icons.Default.SelfImprovement,
-    val isPremium: Boolean = false
-)
-
-enum class MeditationCategory(val displayName: String, val color: Color) {
-    BREATHING("Breathing", MeditationBreathIn),
-    PAIN_RELIEF("Pain Relief", AccentPurple),
-    SLEEP("Sleep", MeditationCalm),
-    STRESS("Stress Relief", AccentTeal),
-    FOCUS("Focus", PrimaryBlue)
-}
-
-/**
  * Meditation Hub Screen
  * Based on Frame Analysis: Categories, session cards, breathing player, streak
  */

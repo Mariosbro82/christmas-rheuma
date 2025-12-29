@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "2dccc7434953fe98b26044e4f90649bf",
+    "version": 2,
+    "identityHash": "4887687b013c6d0fdde309c7fd1a15c3",
     "entities": [
       {
         "tableName": "symptom_logs",
@@ -1443,7 +1443,7 @@
       },
       {
         "tableName": "exercises",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `category` TEXT NOT NULL, `difficultyLevel` INTEGER NOT NULL, `durationSeconds` INTEGER NOT NULL, `repetitions` INTEGER, `sets` INTEGER, `targetAreasJson` TEXT NOT NULL, `instructionsJson` TEXT NOT NULL, `tips` TEXT, `warnings` TEXT, `videoUrl` TEXT, `imageUrl` TEXT, `animationData` TEXT, `isAsRecommended` INTEGER NOT NULL, `flareModeSafe` INTEGER NOT NULL, `flareAlternativeId` TEXT, `allowRomAdjustment` INTEGER NOT NULL, `allowSpeedAdjustment` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `category` TEXT NOT NULL, `difficulty` TEXT NOT NULL, `durationMinutes` INTEGER NOT NULL, `targetAreas` TEXT NOT NULL, `stepsJson` TEXT NOT NULL, `videoUrl` TEXT, `thumbnailUrl` TEXT, `benefitsJson` TEXT NOT NULL, `safetyTipsJson` TEXT NOT NULL, `displayOrder` INTEGER NOT NULL, `isBuiltIn` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -1458,64 +1458,34 @@
             "notNull": true
           },
           {
-            "fieldPath": "description",
-            "columnName": "description",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
             "fieldPath": "category",
             "columnName": "category",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "difficultyLevel",
-            "columnName": "difficultyLevel",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "durationSeconds",
-            "columnName": "durationSeconds",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "repetitions",
-            "columnName": "repetitions",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "sets",
-            "columnName": "sets",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "targetAreasJson",
-            "columnName": "targetAreasJson",
+            "fieldPath": "level",
+            "columnName": "difficulty",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "instructionsJson",
-            "columnName": "instructionsJson",
+            "fieldPath": "durationMinutes",
+            "columnName": "durationMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetAreas",
+            "columnName": "targetAreas",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "tips",
-            "columnName": "tips",
+            "fieldPath": "stepsJson",
+            "columnName": "stepsJson",
             "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "warnings",
-            "columnName": "warnings",
-            "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "videoUrl",
@@ -1524,44 +1494,32 @@
             "notNull": false
           },
           {
-            "fieldPath": "imageUrl",
-            "columnName": "imageUrl",
+            "fieldPath": "thumbnailUrl",
+            "columnName": "thumbnailUrl",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "animationData",
-            "columnName": "animationData",
+            "fieldPath": "benefitsJson",
+            "columnName": "benefitsJson",
             "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "isAsRecommended",
-            "columnName": "isAsRecommended",
-            "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "flareModeSafe",
-            "columnName": "flareModeSafe",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "flareAlternativeId",
-            "columnName": "flareAlternativeId",
+            "fieldPath": "safetyTipsJson",
+            "columnName": "safetyTipsJson",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
-            "fieldPath": "allowRomAdjustment",
-            "columnName": "allowRomAdjustment",
+            "fieldPath": "displayOrder",
+            "columnName": "displayOrder",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "allowSpeedAdjustment",
-            "columnName": "allowSpeedAdjustment",
+            "fieldPath": "isBuiltIn",
+            "columnName": "isBuiltIn",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -1578,26 +1536,7 @@
             "id"
           ]
         },
-        "indices": [
-          {
-            "name": "index_exercises_category",
-            "unique": false,
-            "columnNames": [
-              "category"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_exercises_category` ON `${TABLE_NAME}` (`category`)"
-          },
-          {
-            "name": "index_exercises_difficultyLevel",
-            "unique": false,
-            "columnNames": [
-              "difficultyLevel"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_exercises_difficultyLevel` ON `${TABLE_NAME}` (`difficultyLevel`)"
-          }
-        ],
+        "indices": [],
         "foreignKeys": []
       },
       {
@@ -1922,7 +1861,7 @@
       },
       {
         "tableName": "meditation_sessions",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `meditationType` TEXT NOT NULL, `durationMinutes` INTEGER NOT NULL, `durationSeconds` INTEGER NOT NULL, `wasCompleted` INTEGER NOT NULL, `contentId` TEXT, `contentTitle` TEXT, `instructorName` TEXT, `stressBefore` INTEGER, `painBefore` INTEGER, `anxietyBefore` INTEGER, `moodBefore` INTEGER, `stressAfter` INTEGER, `painAfter` INTEGER, `anxietyAfter` INTEGER, `moodAfter` INTEGER, `heartRateBefore` INTEGER, `heartRateAfter` INTEGER, `hrvBefore` REAL, `hrvAfter` REAL, `focus` INTEGER, `relaxation` INTEGER, `difficulty` INTEGER, `notes` TEXT, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `meditationType` TEXT NOT NULL, `durationMinutes` INTEGER NOT NULL, `durationSeconds` INTEGER NOT NULL, `wasCompleted` INTEGER NOT NULL, `category` TEXT, `contentId` TEXT, `contentTitle` TEXT, `instructorName` TEXT, `stressBefore` INTEGER, `painBefore` INTEGER, `anxietyBefore` INTEGER, `moodBefore` INTEGER, `stressAfter` INTEGER, `painAfter` INTEGER, `anxietyAfter` INTEGER, `moodAfter` INTEGER, `heartRateBefore` INTEGER, `heartRateAfter` INTEGER, `hrvBefore` REAL, `hrvAfter` REAL, `focus` INTEGER, `relaxation` INTEGER, `difficulty` INTEGER, `notes` TEXT, `sessionType` TEXT, `createdAt` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -1959,6 +1898,12 @@
             "columnName": "wasCompleted",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "contentId",
@@ -2071,6 +2016,12 @@
           {
             "fieldPath": "notes",
             "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sessionType",
+            "columnName": "sessionType",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -2329,11 +2280,83 @@
       },
       {
         "tableName": "trigger_analysis_cache",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `analysisDate` INTEGER NOT NULL, `startDate` INTEGER NOT NULL, `endDate` INTEGER NOT NULL, `dataPointsAnalyzed` INTEGER NOT NULL, `correlationsJson` TEXT NOT NULL, `topTriggersJson` TEXT NOT NULL, `confidenceLevel` REAL NOT NULL, `analysisVersion` TEXT NOT NULL, `isValid` INTEGER NOT NULL, `lastModified` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `triggerType` TEXT NOT NULL, `triggerName` TEXT NOT NULL, `correlationCoefficient` REAL NOT NULL, `pValue` REAL NOT NULL, `confidenceLevel` TEXT NOT NULL, `sampleSize` INTEGER NOT NULL, `lagAnalysisJson` TEXT NOT NULL, `strongestLagHours` INTEGER NOT NULL, `effectDirection` TEXT NOT NULL, `averageEffectSize` REAL NOT NULL, `effectDescription` TEXT NOT NULL, `recommendation` TEXT NOT NULL, `analysisDate` INTEGER NOT NULL, `dataRangeStartDate` INTEGER NOT NULL, `dataRangeEndDate` INTEGER NOT NULL, `dataPointsAnalyzed` INTEGER NOT NULL, `isValid` INTEGER NOT NULL, `expiresAt` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerType",
+            "columnName": "triggerType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerName",
+            "columnName": "triggerName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correlationCoefficient",
+            "columnName": "correlationCoefficient",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pValue",
+            "columnName": "pValue",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "confidenceLevel",
+            "columnName": "confidenceLevel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sampleSize",
+            "columnName": "sampleSize",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lagAnalysisJson",
+            "columnName": "lagAnalysisJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "strongestLagHours",
+            "columnName": "strongestLagHours",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "effectDirection",
+            "columnName": "effectDirection",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "averageEffectSize",
+            "columnName": "averageEffectSize",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "effectDescription",
+            "columnName": "effectDescription",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recommendation",
+            "columnName": "recommendation",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -2344,14 +2367,14 @@
             "notNull": true
           },
           {
-            "fieldPath": "startDate",
-            "columnName": "startDate",
+            "fieldPath": "dataRangeStartDate",
+            "columnName": "dataRangeStartDate",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "endDate",
-            "columnName": "endDate",
+            "fieldPath": "dataRangeEndDate",
+            "columnName": "dataRangeEndDate",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -2362,38 +2385,20 @@
             "notNull": true
           },
           {
-            "fieldPath": "correlationsJson",
-            "columnName": "correlationsJson",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "topTriggersJson",
-            "columnName": "topTriggersJson",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "confidenceLevel",
-            "columnName": "confidenceLevel",
-            "affinity": "REAL",
-            "notNull": true
-          },
-          {
-            "fieldPath": "analysisVersion",
-            "columnName": "analysisVersion",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
             "fieldPath": "isValid",
             "columnName": "isValid",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "lastModified",
-            "columnName": "lastModified",
+            "fieldPath": "expiresAt",
+            "columnName": "expiresAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -2404,24 +2409,14 @@
             "id"
           ]
         },
-        "indices": [
-          {
-            "name": "index_trigger_analysis_cache_analysisDate",
-            "unique": false,
-            "columnNames": [
-              "analysisDate"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_trigger_analysis_cache_analysisDate` ON `${TABLE_NAME}` (`analysisDate`)"
-          }
-        ],
+        "indices": [],
         "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2dccc7434953fe98b26044e4f90649bf')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4887687b013c6d0fdde309c7fd1a15c3')"
     ]
   }
 }

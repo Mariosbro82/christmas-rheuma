@@ -41,6 +41,8 @@ val TextDisabled = Color(0xFFCCCCCC)
 
 val BackgroundPrimary = Color(0xFFF8F9FA)
 val BackgroundSecondary = Color(0xFFF5F5F5)
+val BackgroundTertiary = Color(0xFFE0E0E0)
+val Background = BackgroundPrimary // Alias for Navigation components
 val Surface = Color(0xFFFFFFFF)
 val SurfaceElevated = Color(0xFFFFFFFF)
 
@@ -65,6 +67,35 @@ val BasdaiRemission = Color(0xFF4CAF50)      // 0-2: Green
 val BasdaiLowActivity = Color(0xFF8BC34A)    // 2-4: Light Green
 val BasdaiModerateActivity = Color(0xFFFF9800) // 4-6: Orange
 val BasdaiHighActivity = Color(0xFFF44336)   // 6+: Red
+
+// BASDAI Badge Colors (with light backgrounds)
+val BASDAIRemission = Color(0xFF4CAF50)
+val BASDAIRemissionLight = Color(0xFFE8F5E9)
+val BASDAILow = Color(0xFF8BC34A)
+val BASDAILowLight = Color(0xFFF1F8E9)
+val BASDAIModerate = Color(0xFFFF9800)
+val BASDAIModerateLight = Color(0xFFFFF3E0)
+val BASDAIHigh = Color(0xFFF44336)
+val BASDAIHighLight = Color(0xFFFFEBEE)
+
+// Streak Colors
+val StreakFlame = Color(0xFFFF6B35)
+val StreakFlameLight = Color(0xFFFFF3E0)
+
+// Severity Colors (0-10 scale with named levels)
+val SeverityNone = Color(0xFF4CAF50)       // 0-2: Green
+val SeverityMild = Color(0xFF8BC34A)       // 3-4: Light Green
+val SeverityModerate = Color(0xFFFFC107)   // 5-6: Yellow/Amber
+val SeveritySevere = Color(0xFFFF9800)     // 7-8: Orange
+val SeverityExtreme = Color(0xFFF44336)    // 9-10: Red
+
+// Meditation Breathing Colors
+val MeditationBreathIn = Color(0xFF42A5F5)  // Blue - inhale
+val MeditationBreathInLight = Color(0xFFE3F2FD)  // Light Blue background
+val MeditationHold = Color(0xFF66BB6A)      // Green - hold
+val MeditationBreathOut = Color(0xFFAB47BC) // Purple - exhale
+val MeditationCalm = Color(0xFF7E57C2)      // Purple - calm/sleep
+val MeditationCalmLight = Color(0xFFF3E5F5) // Light Purple background
 
 // Mood Badge Colors
 val MoodPositive = Color(0xFF4CAF50)

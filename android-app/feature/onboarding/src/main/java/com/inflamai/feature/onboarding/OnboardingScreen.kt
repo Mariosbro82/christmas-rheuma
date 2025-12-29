@@ -2,6 +2,7 @@ package com.inflamai.feature.onboarding
 
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.*
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -190,6 +191,7 @@ val onboardingPages = listOf(
  * Main Onboarding Screen
  * Based on Frame Analysis: Pager with mascot, title, description, features, dots, CTA
  */
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnboardingScreen(
     viewModel: OnboardingViewModel = hiltViewModel(),

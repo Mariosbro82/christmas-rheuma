@@ -284,9 +284,14 @@ fun InflamAITabRow(
         contentColor = TextPrimary,
         indicator = { tabPositions ->
             if (selectedIndex < tabPositions.size) {
-                TabRowDefaults.SecondaryIndicator(
-                    modifier = Modifier.tabIndicatorOffset(tabPositions[selectedIndex]),
-                    color = PrimaryBlue
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .wrapContentSize(Alignment.BottomStart)
+                        .offset(x = tabPositions[selectedIndex].left)
+                        .width(tabPositions[selectedIndex].width)
+                        .height(3.dp)
+                        .background(PrimaryBlue, RoundedCornerShape(topStart = 3.dp, topEnd = 3.dp))
                 )
             }
         },

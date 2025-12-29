@@ -4,6 +4,7 @@ import com.inflamai.core.data.database.dao.DoseLogDao
 import com.inflamai.core.data.database.dao.MedicationDao
 import com.inflamai.core.data.database.entity.DoseLogEntity
 import com.inflamai.core.data.database.entity.MedicationEntity
+import com.inflamai.core.data.database.entity.SkipReason
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -73,13 +74,14 @@ class MedicationRepository @Inject constructor(
     // Log a dose taken now
     suspend fun logDoseTaken(
         medicationId: String,
-        dosage: String,
+        dosage: Double,
         notes: String? = null
     ): Long {
         val doseLog = DoseLogEntity(
             medicationId = medicationId,
             timestamp = System.currentTimeMillis(),
             scheduledTime = System.currentTimeMillis(),
+            actualTakenTime = System.currentTimeMillis(),
             dosageTaken = dosage,
             wasSkipped = false,
             notes = notes
@@ -91,12 +93,13 @@ class MedicationRepository @Inject constructor(
     suspend fun logDoseSkipped(
         medicationId: String,
         scheduledTime: Long,
-        reason: String? = null
+        reason: SkipReason? = null
     ): Long {
         val doseLog = DoseLogEntity(
             medicationId = medicationId,
             timestamp = System.currentTimeMillis(),
             scheduledTime = scheduledTime,
+            dosageTaken = 0.0,
             wasSkipped = true,
             skipReason = reason
         )

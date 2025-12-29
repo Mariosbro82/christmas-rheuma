@@ -59,8 +59,8 @@ private val OnTertiaryDark = Color(0xFF00363D)
 private val TertiaryContainerDark = Color(0xFF004F58)
 private val OnTertiaryContainerDark = Color(0xFF9EEFFD)
 
-// Error Colors
-private val ErrorLight = Color(0xFFBA1A1A)
+// Error Colors (M3 prefix to avoid conflict with Color.kt semantic colors)
+private val M3ErrorLight = Color(0xFFBA1A1A)
 private val OnErrorLight = Color(0xFFFFFFFF)
 private val ErrorContainerLight = Color(0xFFFFDAD6)
 private val OnErrorContainerLight = Color(0xFF410002)
@@ -138,7 +138,7 @@ private val LightColorScheme = lightColorScheme(
     onTertiary = OnTertiaryLight,
     tertiaryContainer = TertiaryContainerLight,
     onTertiaryContainer = OnTertiaryContainerLight,
-    error = ErrorLight,
+    error = M3ErrorLight,
     onError = OnErrorLight,
     errorContainer = ErrorContainerLight,
     onErrorContainer = OnErrorContainerLight,

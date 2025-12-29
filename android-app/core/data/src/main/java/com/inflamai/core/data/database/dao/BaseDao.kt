@@ -219,13 +219,13 @@ interface ExerciseDao {
     @Query("SELECT * FROM exercises ORDER BY name")
     fun observeAll(): Flow<List<ExerciseEntity>>
 
-    @Query("SELECT * FROM exercises WHERE category = :category ORDER BY level, name")
+    @Query("SELECT * FROM exercises WHERE category = :category ORDER BY `difficulty`, name")
     fun observeByCategory(category: String): Flow<List<ExerciseEntity>>
 
-    @Query("SELECT * FROM exercises WHERE level = 'BEGINNER' ORDER BY category, name")
+    @Query("SELECT * FROM exercises WHERE `difficulty` = 'BEGINNER' ORDER BY category, name")
     fun observeBeginner(): Flow<List<ExerciseEntity>>
 
-    @Query("SELECT * FROM exercises WHERE name LIKE '%' || :query || '%' OR targetAreas LIKE '%' || :query || '%'")
+    @Query("SELECT * FROM exercises WHERE name LIKE '%' || :query || '%' OR `targetAreas` LIKE '%' || :query || '%'")
     fun search(query: String): Flow<List<ExerciseEntity>>
 }
 

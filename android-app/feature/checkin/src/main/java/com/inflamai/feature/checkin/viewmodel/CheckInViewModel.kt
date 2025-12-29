@@ -309,11 +309,11 @@ class CheckInViewModel @Inject constructor(
                 humidity = weather?.humidity,
                 temperature = weather?.temperature,
                 weatherCondition = weather?.weatherCondition,
-                hrvValue = healthSnapshot.latestHrv,
-                restingHeartRate = healthSnapshot.restingHeartRate,
-                stepCount = healthSnapshot.stepCount,
-                sleepDurationHours = healthSnapshot.sleepDurationMinutes.toDouble() / 60,
-                sleepEfficiency = healthSnapshot.sleepEfficiency
+                hrvValue = healthSnapshot?.latestHrv,
+                restingHeartRate = healthSnapshot?.restingHeartRate,
+                stepCount = healthSnapshot?.stepCount,
+                sleepDurationHours = healthSnapshot?.sleepDurationMinutes?.toDouble()?.div(60),
+                sleepEfficiency = healthSnapshot?.sleepEfficiency
             )
 
             contextSnapshotDao.insert(snapshot)

@@ -60,23 +60,24 @@ class ExerciseRepository @Inject constructor(
 
     // Log a completed exercise session
     suspend fun logExerciseSession(
-        exerciseId: String,
+        routineName: String,
         durationMinutes: Int,
-        difficulty: Int,
+        intensityLevel: Int,
         notes: String? = null,
         painBefore: Int? = null,
         painAfter: Int? = null
     ): Long {
         val session = ExerciseSessionEntity(
             id = UUID.randomUUID().toString(),
-            exerciseId = exerciseId,
+            routineName = routineName,
             timestamp = System.currentTimeMillis(),
             durationMinutes = durationMinutes,
-            difficulty = difficulty,
+            intensityLevel = intensityLevel,
             notes = notes,
-            painLevelBefore = painBefore,
-            painLevelAfter = painAfter,
-            wasCompleted = true
+            painBefore = painBefore ?: 0,
+            painAfter = painAfter ?: 0,
+            painDelta = (painAfter ?: 0) - (painBefore ?: 0),
+            hadPainIncrease = (painAfter ?: 0) > (painBefore ?: 0)
         )
         return exerciseSessionDao.insert(session)
     }

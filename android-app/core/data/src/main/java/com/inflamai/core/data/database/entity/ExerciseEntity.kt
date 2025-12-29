@@ -1,5 +1,6 @@
 package com.inflamai.core.data.database.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.UUID
@@ -13,12 +14,20 @@ data class ExerciseEntity(
     @PrimaryKey
     val id: String = UUID.randomUUID().toString(),
 
+    @ColumnInfo(name = "name")
     val name: String,
+
+    @ColumnInfo(name = "category")
     val category: ExerciseCategory,
+
+    @ColumnInfo(name = "difficulty")
     val level: ExerciseLevel,
+
+    @ColumnInfo(name = "durationMinutes")
     val durationMinutes: Int,
 
     // Target areas (comma-separated)
+    @ColumnInfo(name = "targetAreas")
     val targetAreas: String,
 
     // Steps as JSON array

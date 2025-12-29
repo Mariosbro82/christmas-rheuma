@@ -36,7 +36,7 @@ import com.inflamai.core.data.database.entity.*
         TriggerLogEntity::class,
         TriggerAnalysisCacheEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = true
 )
 @TypeConverters(Converters::class)

@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.inflamai.core.ui.component.*
 import com.inflamai.core.ui.theme.*
+import com.inflamai.core.ui.theme.SliderColors
 
 /**
  * Quick symptom options for fast logging

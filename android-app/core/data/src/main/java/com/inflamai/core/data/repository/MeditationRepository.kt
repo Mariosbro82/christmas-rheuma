@@ -83,7 +83,8 @@ class MeditationRepository @Inject constructor(
                 )
             )
         } else {
-            val lastSessionDate = LocalDate.ofEpochDay(currentStreak.lastSessionDate / 86400000)
+            val lastSessionDateMillis = currentStreak.lastSessionDate ?: 0L
+            val lastSessionDate = LocalDate.ofEpochDay(lastSessionDateMillis / 86400000)
             val daysDiff = today.toEpochDay() - lastSessionDate.toEpochDay()
 
             val newStreak = when {

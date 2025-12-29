@@ -2,9 +2,16 @@ package com.inflamai.feature.meditation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.inflamai.core.data.repository.MeditationRepository
+import com.inflamai.core.ui.theme.AccentPurple
+import com.inflamai.core.ui.theme.AccentTeal
+import com.inflamai.core.ui.theme.MeditationBreathIn
+import com.inflamai.core.ui.theme.MeditationCalm
+import com.inflamai.core.ui.theme.PrimaryBlue
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -13,6 +20,27 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
+/**
+ * Meditation session data
+ */
+data class MeditationSession(
+    val id: String,
+    val title: String,
+    val description: String,
+    val durationMinutes: Int,
+    val category: MeditationCategory,
+    val icon: ImageVector = Icons.Default.SelfImprovement,
+    val isPremium: Boolean = false
+)
+
+enum class MeditationCategory(val displayName: String, val color: Color) {
+    BREATHING("Breathing", MeditationBreathIn),
+    PAIN_RELIEF("Pain Relief", AccentPurple),
+    SLEEP("Sleep", MeditationCalm),
+    STRESS("Stress Relief", AccentTeal),
+    FOCUS("Focus", PrimaryBlue)
+}
 
 /**
  * Meditation Hub ViewModel

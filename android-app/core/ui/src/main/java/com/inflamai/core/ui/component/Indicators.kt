@@ -275,12 +275,15 @@ fun BASDAIScoreBadge(
     modifier: Modifier = Modifier,
     showLabel: Boolean = true
 ) {
-    val (backgroundColor, textColor, label) = when {
+    val badgeInfo: Triple<Color, Color, String> = when {
         score < 2 -> Triple(BASDAIRemissionLight, BASDAIRemission, "Remission")
         score < 4 -> Triple(BASDAILowLight, BASDAILow, "Low Activity")
         score < 6 -> Triple(BASDAIModerateLight, BASDAIModerate, "Moderate")
         else -> Triple(BASDAIHighLight, BASDAIHigh, "High Activity")
     }
+    val backgroundColor = badgeInfo.first
+    val textColor = badgeInfo.second
+    val label = badgeInfo.third
 
     Surface(
         modifier = modifier,
@@ -378,7 +381,7 @@ fun SeverityDot(
     modifier: Modifier = Modifier,
     size: Dp = 12.dp
 ) {
-    val color = when {
+    val dotColor: Color = when {
         level <= 2 -> SeverityNone
         level <= 4 -> SeverityMild
         level <= 6 -> SeverityModerate
@@ -390,7 +393,7 @@ fun SeverityDot(
         modifier = modifier
             .size(size)
             .clip(CircleShape)
-            .background(color)
+            .background(color = dotColor)
     )
 }
 

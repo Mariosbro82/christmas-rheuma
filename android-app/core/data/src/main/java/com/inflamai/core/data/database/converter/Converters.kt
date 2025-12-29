@@ -108,6 +108,13 @@ class Converters {
         ExerciseCategory.valueOf(value)
 
     @TypeConverter
+    fun fromExerciseLevel(value: ExerciseLevel): String = value.name
+
+    @TypeConverter
+    fun toExerciseLevel(value: String): ExerciseLevel =
+        ExerciseLevel.valueOf(value)
+
+    @TypeConverter
     fun fromMeditationType(value: MeditationType): String = value.name
 
     @TypeConverter
@@ -155,4 +162,18 @@ class Converters {
     @TypeConverter
     fun toLagCategory(value: String): LagCategory =
         LagCategory.valueOf(value)
+
+    @TypeConverter
+    fun fromConfidenceLevel(value: ConfidenceLevel): String = value.name
+
+    @TypeConverter
+    fun toConfidenceLevel(value: String): ConfidenceLevel =
+        ConfidenceLevel.valueOf(value)
+
+    @TypeConverter
+    fun fromEffectDirection(value: EffectDirection): String = value.name
+
+    @TypeConverter
+    fun toEffectDirection(value: String): EffectDirection =
+        EffectDirection.valueOf(value)
 }

@@ -42,7 +42,7 @@ class FlareRepository @Inject constructor(
     // Quick flare logging
     suspend fun logQuickFlare(
         severity: Int,
-        symptoms: List<String> = emptyList(),
+        suspectedTriggers: List<String> = emptyList(),
         affectedRegions: List<String> = emptyList(),
         notes: String? = null
     ): Long {
@@ -50,8 +50,8 @@ class FlareRepository @Inject constructor(
             id = UUID.randomUUID().toString(),
             startDate = System.currentTimeMillis(),
             severity = severity,
-            symptoms = symptoms.joinToString(","),
-            affectedRegions = affectedRegions.joinToString(","),
+            suspectedTriggersJson = "[${suspectedTriggers.joinToString(",") { "\"$it\"" }}]",
+            primaryRegionsJson = "[${affectedRegions.joinToString(",") { "\"$it\"" }}]",
             notes = notes,
             isResolved = false
         )

@@ -83,7 +83,7 @@ class QuickCaptureViewModel @Inject constructor(
                 // Create FlareEvent using repository
                 flareRepository.logQuickFlare(
                     severity = state.painLevel,
-                    symptoms = state.selectedSymptoms.toList(),
+                    suspectedTriggers = state.selectedSymptoms.toList(),
                     affectedRegions = state.selectedRegions.toList(),
                     notes = state.notes.ifBlank { null }
                 )

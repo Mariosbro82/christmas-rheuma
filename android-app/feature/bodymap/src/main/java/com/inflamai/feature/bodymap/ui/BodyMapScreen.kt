@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -19,7 +20,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.inflamai.core.data.database.entity.BodyRegion
 import com.inflamai.core.ui.theme.InflamAIColors
 import com.inflamai.feature.bodymap.component.BodyMapCanvas
-import com.inflamai.feature.bodymap.viewmodel.BodyMapUiState
 import com.inflamai.feature.bodymap.viewmodel.BodyMapViewMode
 import com.inflamai.feature.bodymap.viewmodel.BodyMapViewModel
 import com.inflamai.feature.bodymap.viewmodel.TimeRange
@@ -54,7 +54,7 @@ fun BodyMapScreen(
                 title = { Text("Body Map") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 actions = {
@@ -113,7 +113,7 @@ fun BodyMapScreen(
                         regionPainData = uiState.regionPainData,
                         selectedRegionId = uiState.selectedRegionId,
                         timeRange = uiState.selectedTimeRange,
-                        onRegionTap = { region ->
+                        onRegionTap = { region: BodyRegion ->
                             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                             viewModel.selectRegion(region)
                             showRegionSheet = true
@@ -364,7 +364,7 @@ fun RegionDetailSheet(
 
             val avgPain = history.map { it.painLevel }.average()
             Text(
-                text = "Average pain (last ${history.size} entries): ${String.format("%.1f", avgPain)}",
+                text = "Average pain (last ${history.size} entries): ${String.format(java.util.Locale.getDefault(), "%.1f", avgPain)}",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
